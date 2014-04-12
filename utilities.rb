@@ -13,6 +13,13 @@
 @locales[:ka][:types][:rent] = 'ქირავდება'
 @locales[:ka][:types][:lease] = 'გირავდება'
 @locales[:ka][:types][:daily_rent] = 'დღიური გაქ.'
+@locales[:ka][:property_types] = {}
+@locales[:ka][:property_types][:apartment] = 'ბინა'
+@locales[:ka][:property_types][:private_house] = 'საკუთარი სახლი'
+@locales[:ka][:property_types][:office] = 'ოფისი'
+@locales[:ka][:property_types][:commerical_space] = 'კომერციული ფართი'
+@locales[:ka][:property_types][:country_house] = 'აგარაკი'
+@locales[:ka][:property_types][:land] = 'მიწა'
 @locales[:ka][:keys] = {}
 @locales[:ka][:keys][:details] = {}
 @locales[:ka][:keys][:details][:daily_rent] = 'დღიური გაქ.'
@@ -24,6 +31,7 @@
 @locales[:ka][:keys][:details][:view] = 'ხედი'
 @locales[:ka][:keys][:details][:project] = 'პროექტი'
 @locales[:ka][:keys][:details][:condition] = 'მდგომარეობა'
+@locales[:ka][:keys][:details][:function] = 'დანიშნულება'
 @locales[:ka][:keys][:details][:address] = 'მისამართი'
 @locales[:ka][:keys][:details][:phone] = 'ტელეფონი'
 @locales[:ka][:keys][:specs] = {}
@@ -40,10 +48,20 @@
 @locales[:ka][:keys][:specs][:balcony] = 'აივანი:'
 @locales[:ka][:keys][:specs][:veranda] = 'ვერანდა (m²):'
 @locales[:ka][:keys][:specs][:loft] = 'სხვენი (m²):'
-@locales[:ka][:keys][:specs][:stockroom] = 'სასაწყობე ფართი (m²):'
 @locales[:ka][:keys][:specs][:bodrum] = 'სარდაფი (m²):'
+@locales[:ka][:keys][:specs][:mansard] = 'მანსარდა (m²):'
 @locales[:ka][:keys][:specs][:parking] = 'პარკინგი:'
 @locales[:ka][:keys][:specs][:garage] = 'ავტოფარეხი:'
+@locales[:ka][:keys][:specs][:dist_from_tbilisi]= 'დაშორება თბილისიდან:'
+@locales[:ka][:keys][:specs][:dist_from_cent_street] = 'დაშორება ცენტ. გზიდან:'
+@locales[:ka][:keys][:specs][:box] = 'ბოქსი:'
+@locales[:ka][:keys][:specs][:buildings] = 'შენობა-ნაგებობა:'
+@locales[:ka][:keys][:specs][:administration_building] = 'ადმინისტ. შენობა (m²):'
+@locales[:ka][:keys][:specs][:workroom] = 'საწარმოო შენობ (m²):'
+@locales[:ka][:keys][:specs][:stockroom] = 'სასაწყობე ფართი (m²):'
+@locales[:ka][:keys][:specs][:coefficient_k1] = 'კოეფიციენტი k1:'
+@locales[:ka][:keys][:specs][:coefficient_k2] = 'კოეფიციენტი k2:'
+@locales[:ka][:keys][:additional_info]  = 'დამატებითი ინფორმაცია'
 
 # english
 @locales[:en] = {}
@@ -54,6 +72,13 @@
 @locales[:en][:types][:rent] = 'for rent'
 @locales[:en][:types][:lease] = 'for lease'
 @locales[:en][:types][:daily_rent] = 'daily rent'
+@locales[:en][:property_types] = {}
+@locales[:en][:property_types][:apartment] = 'apartment'
+@locales[:en][:property_types][:private_house] = 'private house'
+@locales[:en][:property_types][:office] = 'office'
+@locales[:en][:property_types][:commerical_space] = 'commercial space'
+@locales[:en][:property_types][:country_house] = 'country house'
+@locales[:en][:property_types][:land] = 'land'
 @locales[:en][:keys] = {}
 @locales[:en][:keys][:details] = {}
 @locales[:en][:keys][:details][:daily_rent] = 'daily rent'
@@ -65,6 +90,7 @@
 @locales[:en][:keys][:details][:view] = 'view'
 @locales[:en][:keys][:details][:project] = 'project'
 @locales[:en][:keys][:details][:condition] = 'condition'
+@locales[:en][:keys][:details][:function] = 'function'
 @locales[:en][:keys][:details][:address] = 'address'
 @locales[:en][:keys][:details][:phone] = 'phone'
 @locales[:en][:keys][:specs] = {}
@@ -81,16 +107,32 @@
 @locales[:en][:keys][:specs][:balcony] = 'balcony:'
 @locales[:en][:keys][:specs][:veranda] = 'veranda (m²):'
 @locales[:en][:keys][:specs][:loft] = 'loft (m²):'
-@locales[:en][:keys][:specs][:stockroom] = 'stockroom (m²):'
 @locales[:en][:keys][:specs][:bodrum] = 'bodrum (m²):'
+@locales[:en][:keys][:specs][:mansard] = 'mansard (m²):'
 @locales[:en][:keys][:specs][:parking] = 'parking:'
 @locales[:en][:keys][:specs][:garage] = 'garage:'
+@locales[:en][:keys][:specs][:dist_from_tbilisi]= 'distance from tbilisi:'
+@locales[:en][:keys][:specs][:dist_from_cent_street] = 'distance from cent. street:'
+@locales[:en][:keys][:specs][:box] = 'box:'
+@locales[:en][:keys][:specs][:buildings] = 'buildings:'
+@locales[:en][:keys][:specs][:administration_building] = 'administ. building (m²):'
+@locales[:en][:keys][:specs][:workroom] = 'workroom (m²):'
+@locales[:en][:keys][:specs][:stockroom] = 'stockroom (m²):'
+@locales[:en][:keys][:specs][:coefficient_k1] = 'coefficient k1:'
+@locales[:en][:keys][:specs][:coefficient_k2] = 'coefficient k2:'
+@locales[:en][:keys][:additional_info]  = 'additional information'
+
+# the price for a place for rent and for sale include
+# the price and the price per square meter
+@price_split_keys = [:for_rent, :for_sale, :daily_rent]
 
 
 def json_template
   json = {}
-  json[:type] = nil
   json[:id] = nil
+  json[:locale] = nil
+  json[:type] = nil
+  json[:property_type] = nil
   json[:date] = nil
   json[:additional_info] = nil
   
@@ -98,12 +140,15 @@ def json_template
   json[:details][:daily_rent] = nil
   json[:details][:for_sale] = nil
   json[:details][:for_rent] = nil
+  json[:details][:price] = nil
+  json[:details][:price_sq_meter] = nil
   json[:details][:space] = nil
   json[:details][:land] = nil
   json[:details][:renovation] = nil
   json[:details][:view] = nil
   json[:details][:project] = nil
   json[:details][:condition] = nil
+  json[:details][:function] = nil
   json[:details][:address] = nil
   json[:details][:phone] = nil
 
@@ -121,10 +166,19 @@ def json_template
   json[:specs][:balcony] = nil
   json[:specs][:veranda] = nil
   json[:specs][:loft] = nil
-  json[:specs][:stockroom] = nil
   json[:specs][:bodrum] = nil
+  json[:specs][:mansard] = nil
   json[:specs][:parking] = nil
   json[:specs][:garage] = nil
+  json[:specs][:dist_from_tbilisi]= nil
+  json[:specs][:dist_from_cent_street] = nil
+  json[:specs][:box] = nil
+  json[:specs][:buildings] = nil
+  json[:specs][:administration_building] = nil
+  json[:specs][:workroom] = nil
+  json[:specs][:stockroom] = nil
+  json[:specs][:coefficient_k1] = nil
+  json[:specs][:coefficient_k2] = nil
 
   return json
 end
@@ -142,9 +196,20 @@ end
 def get_page_type(text, locale_id)
   key = get_locale_key(locale_id)
   if !key.nil?  
-    type_index = @locales[key][:types].values.index{|x| text.downcase.index(x) == 0}
-    if !type_index.nil?
-      return @locales[key][:types].keys[type_index]
+    type = @locales[key][:types].values.select{|x| text.downcase.index(x) == 0}
+    if !type.nil?
+      return type.first
+    end
+  end
+end
+
+# determine the property type of page being viewed
+def get_property_type(text, locale_id)
+  key = get_locale_key(locale_id)
+  if !key.nil?  
+    type = @locales[key][:property_types].values.select{|x| !text.downcase.index(x).nil?}
+    if !type.nil?
+      return type.first
     end
   end
 end

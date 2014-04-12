@@ -33,6 +33,8 @@ require_relative 'utilities'
 
 
 ####################################################
+@nbsp = Nokogiri::HTML("&nbsp;").text
+####################################################
 
 
 # process the response
@@ -40,7 +42,9 @@ def process_response(response)
   # pull out the locale and id from the url
   id = get_param_value(response.request.url, 'id')
   locale = get_param_value(response.request.url, 'lan')
-  if id.nil? || locale.nil?
+  locale_key = get_locale_key(locale)
+  
+  if id.nil? || locale.nil? || locale_key.nil?
     @log.error "response url is not in expected format: #{response.request.url}; expected url.split('/') to have length of 8 but has length of #{params.length}"
     return
   end
@@ -70,104 +74,88 @@ def process_response(response)
     # create the json
     json = json_template
     
+    json[:id] = id
+    json[:locale] = locale_key.to_s
     
-    
-    # get the type/id/date
+    # get the type/date
     header_row = doc.css('.div_for_content > .page_title')
     if header_row.length > 0
       type_text = header_row.css('span')[0].xpath('text()').text.strip
       json[:type] = get_page_type(type_text, locale).to_s
-
-      json[:id] = header_row.css('span')[2].xpath('text()').text.strip
+      json[:property_type] = get_property_type(type_text, locale).to_s
 
       json[:date] = header_row.css('span')[header_row.css('span').length-1].xpath('text()').text.strip.gsub('.', '/')
       
     end
     
+    # details info
+    details_titles = doc.css('td.mc_title')
+    details_values = doc.css('td.mc_title + td')
+    if details_titles.length > 0 && details_values.length > 0
+      json[:details].keys.each do |key|
+        index = details_titles.to_a.index{|x| x.text.strip.downcase == @locales[locale_key][:keys][:details][key]}
+        if index
+          json[:details][key] = details_values[index].text.strip    
+          
+          # if this is a price, pull out the price and price per sq meter
+          if @price_split_keys.include?(key)
+            prices = details_values[index].text.strip.split('/')
+            if prices.length == 2
+              json[:details][:price] = prices[0].strip
+              json[:details][:price_sq_meter] = prices[1].strip
+            else
+              # does not have price per square meter so just save price
+              json[:details][:price] = details_values[index].text.strip
+            end
+          end
+        end      
+      end      
+    end
+
+    # spec info
+    specs_titles = doc.css('span.dc_title')
+    specs_values = doc.css('span.dc_title + span')
+    if specs_titles.length > 0 && specs_values.length > 0
+      json[:specs].keys.each do |key|
+        index = specs_titles.to_a.index{|x| x.text.strip.downcase == @locales[locale_key][:keys][:specs][key]}
+        if index
+          json[:specs][key] = specs_values[index].text.strip    
+        end      
+      end      
+    end
+
+    # additional info
+    tables = nil
+    if locale_key == :en
+      tables = doc.css('table.fen')
+    else
+      tables = doc.css('table.fge')
+    end
+    if tables.length > 6
+      tds = tables[5].css('td')
+      if tds.length > 2
+        # there may be many rows so grab them all
+        # ignore first row for it is header
+        tds.each_with_index do |td, index|
+          # if this is not the additional info section, stop
+          break if index == 0 && td.text.strip.downcase != @locales[locale_key][:keys][:additional_info]
+          if index > 0
+            text = td.text.strip 
+            if text != @nbsp
+              if json[:additional_info].nil?
+                json[:additional_info] = text
+              else
+                json[:additional_info] += " \n #{text}"
+              end
+            end
+          end
+        end
+      end
+    end
+
+
     puts json
-    
-    
-=begin    
-    # create the json
-    json = json_template
-    
-    # general info
-    general_title = doc.css('#content-main #general_info li.title')
-    general_lists = doc.css('#content-main #general_info li.info')
-    if general_title.length > 0 && general_lists.length > 0
-      json[:general].keys.each do |key|
-        index = general_title.to_a.index{|x| x.text.strip.downcase == @keys[locale.to_sym][:general][key]}
-        if index
-          json[:general][key] = general_lists[index].text.strip    
-        end      
-      end      
-    end
-
-    # job description
-    descriptions = doc.css('#content-main #job_description p')
-    if descriptions.length > 0
-      json[:job_description] = descriptions[0].text.strip
-      json[:additional_requirements] = descriptions[1].text.strip if descriptions.length > 1
-      json[:additional_info] = descriptions[2].text.strip if descriptions.length > 2
-    end
-
-    # contact info
-    contacts_title = doc.css('#content-main #contact_info li.title')
-    contacts = doc.css('#content-main #contact_info li.info')
-    if contacts_title.length > 0 && contacts.length > 0
-      json[:contact].keys.each do |key|
-        index = contacts_title.to_a.index{|x| x.text.strip.downcase == @keys[locale.to_sym][:contact][key]}
-        if index
-          json[:contact][key] = contacts[index].text.strip    
-        end      
-      end      
-    end
-    
-    # qualifications
-    qualifications_title = doc.css('#content-main #qualifications li.title')
-    qualifications = doc.css('#content-main #qualifications li.info')
-    if qualifications_title.length > 0 && qualifications.length > 0
-      json[:qualifications].keys.each do |key|
-        index = qualifications_title.to_a.index{|x| x.text.strip.downcase == @keys[locale.to_sym][:qualifications][key]}
-        if index
-          json[:qualifications][key] = qualifications[index].text.strip    
-        end      
-      end      
-    end    
-
-    # computers
-    computers = doc.css('#content-main #computer table tr')
-    if computers.length > 0
-      computers.each_with_index do |computer, index|
-        if index > 0
-          h = {}
-          tds = computer.css('td')
-          if tds.length > 0
-            h[:program] = tds[0].text.strip
-            h[:knowledge] = tds[1].text.strip
-            json[:computers] << h            
-          end
-        end
-      end
-    end
-
-    # languages
-    languages = doc.css('#content-main #languages table tr')
-    if languages.length > 0
-      languages.each_with_index do |language, index|
-        if index > 0
-          h = {}
-          tds = language.css('td')
-          if tds.length > 0
-            h[:language] = tds[0].text.strip
-            h[:writing] = tds[1].text.strip
-            h[:reading] = tds[2].text.strip
-            json[:languages] << h            
-          end
-        end
-      end
-    end
-
+=begin
     # save the json
     file_path = folder_path + @json_file
 		create_directory(File.dirname(file_path))
