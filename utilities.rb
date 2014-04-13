@@ -30,6 +30,7 @@
 @locales[:ka][:keys][:details][:daily_rent] = 'დღიური გაქ.'
 @locales[:ka][:keys][:details][:for_sale] = 'იყიდება'
 @locales[:ka][:keys][:details][:for_rent] = 'ქირავდება'
+@locales[:ka][:keys][:details][:for_lease] = 'გირავდება'
 @locales[:ka][:keys][:details][:space] = 'ფართობი'
 @locales[:ka][:keys][:details][:land] = 'მიწა'
 @locales[:ka][:keys][:details][:renovation] = 'რემონტი'
@@ -89,6 +90,7 @@
 @locales[:en][:keys][:details][:daily_rent] = 'daily rent'
 @locales[:en][:keys][:details][:for_sale] = 'for sale'
 @locales[:en][:keys][:details][:for_rent] = 'for rent'
+@locales[:en][:keys][:details][:for_lease] = 'for lease'
 @locales[:en][:keys][:details][:space] = 'space'
 @locales[:en][:keys][:details][:land] = 'land'
 @locales[:en][:keys][:details][:renovation] = 'renovation'
@@ -129,7 +131,7 @@
 
 # the price for a place for rent and for sale include
 # the price and the price per square meter
-@sale_keys = [:for_sale]
+@sale_keys = [:for_sale, :for_lease]
 @rent_keys = [:for_rent, :daily_rent]
 @sq_m_keys = [:space, :land]
 @address_key = :address
@@ -148,6 +150,7 @@ def json_template
   json[:details][:daily_rent] = nil
   json[:details][:for_rent] = nil
   json[:details][:for_sale] = nil
+  json[:details][:for_lease] = nil
   json[:details][:rent_price] = nil
   json[:details][:rent_price_currency] = nil
   json[:details][:rent_price_exchange_rate] = 1
