@@ -20,6 +20,7 @@ require_relative 'utilities'
 # log file to record messages
 # delete existing log file
 @log = Logger.new('makler.log')
+@missing_param_log = Logger.new('makler_missing_params.log')
 
 @log.info "**********************************************"
 @log.info "**********************************************"
@@ -92,14 +93,20 @@ def process_response(response)
     details_titles = doc.css('td.mc_title')
     details_values = doc.css('td.mc_title + td')
     if details_titles.length > 0 && details_values.length > 0
-      json[:details].keys.each do |key|
-        index = details_titles.to_a.index{|x| x.text.strip.downcase == @locales[locale_key][:keys][:details][key]}
+      details_titles.each_with_index do |title, title_index|
+        title_text = title.text.strip.downcase
+        # get the index for the key with this text
+        index = @locales[locale_key][:keys][:details].values.index{|x| title_text == x}
         if index
-          json[:details][key] = details_values[index].text.strip    
+          # get the key name for this text
+          key = @locales[locale_key][:keys][:details].keys[index]
+          
+          # save the value
+          json[:details][key] = details_values[title_index].text.strip    
           
           # if this is a sale price, pull out the price and price per sq meter
           if @sale_keys.include?(key)
-            prices = details_values[index].text.strip.split('/')
+            prices = details_values[title_index].text.strip.split('/')
             price_ary = prices[0].strip.split(' ')
             
             json[:details][:sale_price] = price_ary[0].strip
@@ -111,7 +118,7 @@ def process_response(response)
             end
           # if this is a rent price, pull out the price and price per sq meter
           elsif @rent_keys.include?(key)
-            prices = details_values[index].text.strip.split('/')
+            prices = details_values[title_index].text.strip.split('/')
             price_ary = prices[0].strip.split(' ')
             
             json[:details][:rent_price] = price_ary[0].strip
@@ -123,12 +130,14 @@ def process_response(response)
             end
           # if this is a square meter key, split the number and measurement
           elsif @sq_m_keys.include?(key)
-            values = details_values[index].text.strip.split(' ')
+            values = details_values[title_index].text.strip.split(' ')
             json[:details][key] = values[0].strip
             new_key = key.to_s + '_measurement'
             json[:details][new_key.to_sym] = values[1].strip
           end
-        end      
+        else
+          @missing_param_log.error "Missing detail json key for text: '#{title_text}' in record #{id}"
+        end
       end      
     end
 
@@ -136,12 +145,19 @@ def process_response(response)
     specs_titles = doc.css('span.dc_title')
     specs_values = doc.css('span.dc_title + span')
     if specs_titles.length > 0 && specs_values.length > 0
-      json[:specs].keys.each do |key|
-        index = specs_titles.to_a.index{|x| x.text.strip.downcase == @locales[locale_key][:keys][:specs][key]}
+      specs_titles.each_with_index do |title, title_index|
+        title_text = title.text.strip.downcase
+        # get the index for the key with this text
+        index = @locales[locale_key][:keys][:specs].values.index{|x| title_text == x}
         if index
-          json[:specs][key] = specs_values[index].text.strip    
-        end      
-      end      
+          # get the key name for this text
+          key = @locales[locale_key][:keys][:specs].keys[index]
+          # save the value
+          json[:specs][key] = specs_values[title_index].text.strip    
+        else
+          @missing_param_log.error "Missing spec json key for text: '#{title_text}' in record #{id}"
+        end
+      end
     end
 
     # additional info
