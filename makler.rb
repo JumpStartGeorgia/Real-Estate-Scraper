@@ -75,7 +75,7 @@ def process_response(response)
     # create the json
     json = json_template
     
-    json[:id] = id
+    json[:posting_id] = id
     json[:locale] = locale_key.to_s
     
     # get the type/date
@@ -134,6 +134,25 @@ def process_response(response)
             json[:details][key] = values[0].strip
             new_key = key.to_s + '_measurement'
             json[:details][new_key.to_sym] = values[1].strip
+
+          # if this is address, split it into its parts
+          elsif @address_key == key
+            address_parts = json[:details][key].split(',')
+            if !address_parts[0].nil?
+              json[:details][:address_city] = address_parts[0].strip
+            end
+            if !address_parts[1].nil?
+              json[:details][:address_area] = address_parts[1].strip
+            end
+            if !address_parts[2].nil?
+              json[:details][:address_district] = address_parts[2].strip
+            end
+            if !address_parts[3].nil?
+              json[:details][:address_street] = address_parts[3].strip
+            end
+            if !address_parts[4].nil?
+              json[:details][:address_number] = address_parts[4].strip
+            end
           end
         else
           @missing_param_log.error "Missing detail json key for text: '#{title_text}' in record #{id}"
@@ -190,7 +209,7 @@ def process_response(response)
     end
 
 
-    puts json
+   puts json
 =begin
     # save the json
     file_path = folder_path + @json_file
@@ -214,6 +233,7 @@ def make_requests
 
   # pull in first search results page
   url = @serach_url + @lang_param + '1'
+
   doc = Nokogiri::HTML(open(url))
 
   search_results = doc.css('td.table_content div.main_search div.ann_thmb a')
@@ -236,7 +256,7 @@ def make_requests
     @log.error "There are no search result IDs at this url to process (#{url})"
     return
   end
-ids = ['4157276']
+
   # record total number of records to process 
   total_to_process = ids.length * @locales.keys.length
   total_left_to_process = ids.length * @locales.keys.length
