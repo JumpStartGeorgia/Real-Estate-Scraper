@@ -97,16 +97,36 @@ def process_response(response)
         if index
           json[:details][key] = details_values[index].text.strip    
           
-          # if this is a price, pull out the price and price per sq meter
-          if @price_split_keys.include?(key)
+          # if this is a sale price, pull out the price and price per sq meter
+          if @sale_keys.include?(key)
             prices = details_values[index].text.strip.split('/')
-            if prices.length == 2
-              json[:details][:price] = prices[0].strip
-              json[:details][:price_sq_meter] = prices[1].strip
-            else
-              # does not have price per square meter so just save price
-              json[:details][:price] = details_values[index].text.strip
+            price_ary = prices[0].strip.split(' ')
+            
+            json[:details][:sale_price] = price_ary[0].strip
+            json[:details][:sale_price_currency] = price_ary[1].strip
+
+            # if price per sq meter present, save it
+            if prices.length > 1
+              json[:details][:sale_price_sq_meter] = prices[1].strip.split(' ')[0].strip
             end
+          # if this is a rent price, pull out the price and price per sq meter
+          elsif @rent_keys.include?(key)
+            prices = details_values[index].text.strip.split('/')
+            price_ary = prices[0].strip.split(' ')
+            
+            json[:details][:rent_price] = price_ary[0].strip
+            json[:details][:rent_price_currency] = price_ary[1].strip
+
+            # if price per sq meter present, save it
+            if prices.length > 1
+              json[:details][:rent_price_sq_meter] = prices[1].strip.split(' ')[0].strip
+            end
+          # if this is a square meter key, split the number and measurement
+          elsif @sq_m_keys.include?(key)
+            values = details_values[index].text.strip.split(' ')
+            json[:details][key] = values[0].strip
+            new_key = key.to_s + '_measurement'
+            json[:details][new_key.to_sym] = values[1].strip
           end
         end      
       end      
@@ -200,7 +220,7 @@ def make_requests
     @log.error "There are no search result IDs at this url to process (#{url})"
     return
   end
-
+ids = ['4157276']
   # record total number of records to process 
   total_to_process = ids.length * @locales.keys.length
   total_left_to_process = ids.length * @locales.keys.length

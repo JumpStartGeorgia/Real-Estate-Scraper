@@ -124,7 +124,10 @@
 
 # the price for a place for rent and for sale include
 # the price and the price per square meter
-@price_split_keys = [:for_rent, :for_sale, :daily_rent]
+@sale_keys = [:for_sale]
+@rent_keys = [:for_rent, :daily_rent]
+
+@sq_m_keys = [:space, :land]
 
 
 def json_template
@@ -138,12 +141,20 @@ def json_template
   
   json[:details] = {}
   json[:details][:daily_rent] = nil
-  json[:details][:for_sale] = nil
   json[:details][:for_rent] = nil
-  json[:details][:price] = nil
-  json[:details][:price_sq_meter] = nil
+  json[:details][:for_sale] = nil
+  json[:details][:rent_price] = nil
+  json[:details][:rent_price_currency] = nil
+  json[:details][:rent_price_exchange_rate] = 1
+  json[:details][:rent_price_sq_meter] = nil
+  json[:details][:sale_price] = nil
+  json[:details][:sale_price_currency] = nil
+  json[:details][:sale_price_exchange_rate] = 1
+  json[:details][:sale_price_sq_meter] = nil
   json[:details][:space] = nil
+  json[:details][:space_measurement] = nil
   json[:details][:land] = nil
+  json[:details][:land_measurement] = nil
   json[:details][:renovation] = nil
   json[:details][:view] = nil
   json[:details][:project] = nil
@@ -236,3 +247,5 @@ def get_param_value(url, key)
 
   return value
 end
+
+
