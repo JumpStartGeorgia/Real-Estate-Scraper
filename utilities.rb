@@ -6,6 +6,7 @@
 @response_file = 'response.html'
 @json_file = 'data.json'
 @db_config_path = 'database.yml'
+@status_file = 'status.json'
 
 # which languages to process
 # georgian
@@ -261,4 +262,56 @@ def get_param_value(url, key)
   return value
 end
 
+def get_status
+  status = nil
+  if File.exists? @status_file
+    status = JSON.parse(File.read(@status_file))
+  else
+    status = {}
+    status['last_id_processed'] = []
+    File.open(@status_file, 'w') { |f| f.write(status.to_json) }
+  end
+  return status
+end
 
+def update_status
+  @status = get_status if @status.nil?
+  if File.exists? @status_file
+    File.open(@status_file, 'w') { |f| f.write(@status.to_json) }
+  end
+end
+
+# pull out the id of each property from the link
+def pull_out_ids(search_results, record_last_id_status=false)
+  ids = []
+  recorded_first_id = false
+  search_results.each_with_index do |search_result, index|
+    id = get_param_value(search_result['href'], 'id')
+    if !id.nil?
+      if !recorded_first_id 
+        # if this is a new id, update the status
+        # else, stop for we found the id of one that is already processed
+        if @status['last_id_processed'].last == id
+          @log.info "Found the smae id as the last id processed, so stopping"
+          @found_all_ids = true
+          break
+        elsif record_last_id_status
+          @status['last_id_processed'] << id
+          update_status
+        end
+        recorded_first_id = true
+      end
+      # if we find the id that was process during the last run, stop
+      # for we have found all of the new ids
+      if @status['last_id_processed'].length > 1 && 
+            id == @status['last_id_processed'][@status['last_id_processed'].length-2]
+
+        @found_all_ids = true
+        break
+      end
+      ids << id
+    end
+  end  
+
+  return ids
+end

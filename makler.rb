@@ -32,6 +32,10 @@ require_relative 'utilities'
 @page_param = "&p="
 @lang_param = "&lan="
 
+# track processing status
+@status = get_status
+@found_all_ids = false
+
 
 ####################################################
 @nbsp = Nokogiri::HTML("&nbsp;").text
@@ -49,17 +53,22 @@ def process_response(response)
     @log.error "response url is not in expected format: #{response.request.url}; expected url.split('/') to have length of 8 but has length of #{params.length}"
     return
   end
+  
 =begin
   # get the name of the folder for this id
   # - the name is the id minus it's last 2 digits
   id_folder = id[0..id.length-3]
   folder_path = @data_path + id_folder + "/" + id + "/" + locale + "/"
 =end
-  @log.info "processing response for id #{id} and locale #{locale}"
 
   # get the response body
   doc = Nokogiri::HTML(response.body)
     
+  if doc.css('td.table_content').length != 2
+    @log.error "the response does not have any content to process"
+    return
+  end
+
 =begin
   
     # save the response body
@@ -67,157 +76,151 @@ def process_response(response)
 		create_directory(File.dirname(file_path))
     File.open(file_path, 'w'){|f| f.write(doc)}
 =end    
-    if doc.css('td.table_content').length != 2
-      @log.error "the response does not have any content to process"
-      return
-    end
     
-    # create the json
-    json = json_template
+  # create the json
+  json = json_template
+  
+  json[:posting_id] = id
+  json[:locale] = locale_key.to_s
+  
+  # get the type/date
+  header_row = doc.css('.div_for_content > .page_title')
+  if header_row.length > 0
+    type_text = header_row.css('span')[0].xpath('text()').text.strip
+    json[:type] = get_page_type(type_text, locale).to_s
+    json[:property_type] = get_property_type(type_text, locale).to_s
+
+    json[:date] = header_row.css('span')[header_row.css('span').length-1].xpath('text()').text.strip.gsub('.', '/')
     
-    json[:posting_id] = id
-    json[:locale] = locale_key.to_s
-    
-    # get the type/date
-    header_row = doc.css('.div_for_content > .page_title')
-    if header_row.length > 0
-      type_text = header_row.css('span')[0].xpath('text()').text.strip
-      json[:type] = get_page_type(type_text, locale).to_s
-      json[:property_type] = get_property_type(type_text, locale).to_s
-
-      json[:date] = header_row.css('span')[header_row.css('span').length-1].xpath('text()').text.strip.gsub('.', '/')
-      
-    end
-    
-    # details info
-    details_titles = doc.css('td.mc_title')
-    details_values = doc.css('td.mc_title + td')
-    if details_titles.length > 0 && details_values.length > 0
-      details_titles.each_with_index do |title, title_index|
-        title_text = title.text.strip.downcase
-        # get the index for the key with this text
-        index = @locales[locale_key][:keys][:details].values.index{|x| title_text == x}
-        if index
-          # get the key name for this text
-          key = @locales[locale_key][:keys][:details].keys[index]
-          
-          # save the value
-          json[:details][key] = details_values[title_index].text.strip    
-          
-          # if this is a sale price, pull out the price and price per sq meter
-          if @sale_keys.include?(key)
-            prices = details_values[title_index].text.strip.split('/')
-            price_ary = prices[0].strip.split(' ')
-            
-            json[:details][:sale_price] = price_ary[0].strip
-            json[:details][:sale_price_currency] = price_ary[1].strip
-
-            # if price per sq meter present, save it
-            if prices.length > 1
-              json[:details][:sale_price_sq_meter] = prices[1].strip.split(' ')[0].strip
-            end
-          # if this is a rent price, pull out the price and price per sq meter
-          elsif @rent_keys.include?(key)
-            prices = details_values[title_index].text.strip.split('/')
-            price_ary = prices[0].strip.split(' ')
-            
-            json[:details][:rent_price] = price_ary[0].strip
-            json[:details][:rent_price_currency] = price_ary[1].strip
-
-            # if price per sq meter present, save it
-            if prices.length > 1
-              json[:details][:rent_price_sq_meter] = prices[1].strip.split(' ')[0].strip
-            end
-          # if this is a square meter key, split the number and measurement
-          elsif @sq_m_keys.include?(key)
-            values = details_values[title_index].text.strip.split(' ')
-            json[:details][key] = values[0].strip
-            new_key = key.to_s + '_measurement'
-            json[:details][new_key.to_sym] = values[1].strip
-
-          # if this is address, split it into its parts
-          elsif @address_key == key
-            address_parts = json[:details][key].split(',')
-            if !address_parts[0].nil?
-              json[:details][:address_city] = address_parts[0].strip
-            end
-            if !address_parts[1].nil?
-              json[:details][:address_area] = address_parts[1].strip
-            end
-            if !address_parts[2].nil?
-              json[:details][:address_district] = address_parts[2].strip
-            end
-            if !address_parts[3].nil?
-              json[:details][:address_street] = address_parts[3].strip
-            end
-            if !address_parts[4].nil?
-              json[:details][:address_number] = address_parts[4].strip
-            end
-          end
-        else
-          @missing_param_log.error "Missing detail json key for text: '#{title_text}' in record #{id}"
-        end
-      end      
-    end
-
-    # spec info
-    specs_titles = doc.css('span.dc_title')
-    specs_values = doc.css('span.dc_title + span')
-    if specs_titles.length > 0 && specs_values.length > 0
-      specs_titles.each_with_index do |title, title_index|
-        title_text = title.text.strip.downcase
-        # get the index for the key with this text
-        index = @locales[locale_key][:keys][:specs].values.index{|x| title_text == x}
-        if index
-          # get the key name for this text
-          key = @locales[locale_key][:keys][:specs].keys[index]
-          # save the value
-          json[:specs][key] = specs_values[title_index].text.strip    
-        else
-          @missing_param_log.error "Missing spec json key for text: '#{title_text}' in record #{id}"
-        end
-      end
-    end
-
-    # additional info
-    tables = nil
-    if locale_key == :en
-      tables = doc.css('table.fen')
-    else
-      tables = doc.css('table.fge')
-    end
-    if tables.length > 6
-      tds = tables[5].css('td')
-      if tds.length > 2
-        # there may be many rows so grab them all
-        # ignore first row for it is header
-        tds.each_with_index do |td, index|
-          # if this is not the additional info section, stop
-          break if index == 0 && td.text.strip.downcase != @locales[locale_key][:keys][:additional_info]
-          if index > 0
-            text = td.text.strip 
-            if text != @nbsp
-              if json[:additional_info].nil?
-                json[:additional_info] = text
-              else
-                json[:additional_info] += " \n #{text}"
-              end
-            end
-          end
-        end
-      end
-    end
-
-
-   puts json
-=begin
-    # save the json
-    file_path = folder_path + @json_file
-		create_directory(File.dirname(file_path))
-    File.open(file_path, 'w'){|f| f.write(json.to_json)}
-  else
-    @log.error "response url is not in expected format: #{response.request.url}; expected url.split('/') to have length of 8 but has length of #{params.length}"
   end
+  
+  # details info
+  details_titles = doc.css('td.mc_title')
+  details_values = doc.css('td.mc_title + td')
+  if details_titles.length > 0 && details_values.length > 0
+    details_titles.each_with_index do |title, title_index|
+      title_text = title.text.strip.downcase
+      # get the index for the key with this text
+      index = @locales[locale_key][:keys][:details].values.index{|x| title_text == x}
+      if index
+        # get the key name for this text
+        key = @locales[locale_key][:keys][:details].keys[index]
+        
+        # save the value
+        json[:details][key] = details_values[title_index].text.strip    
+        
+        # if this is a sale price, pull out the price and price per sq meter
+        if @sale_keys.include?(key)
+          prices = details_values[title_index].text.strip.split('/')
+          price_ary = prices[0].strip.split(' ')
+          
+          json[:details][:sale_price] = price_ary[0].strip
+          json[:details][:sale_price_currency] = price_ary[1].strip
+
+          # if price per sq meter present, save it
+          if prices.length > 1
+            json[:details][:sale_price_sq_meter] = prices[1].strip.split(' ')[0].strip
+          end
+        # if this is a rent price, pull out the price and price per sq meter
+        elsif @rent_keys.include?(key)
+          prices = details_values[title_index].text.strip.split('/')
+          price_ary = prices[0].strip.split(' ')
+          
+          json[:details][:rent_price] = price_ary[0].strip
+          json[:details][:rent_price_currency] = price_ary[1].strip
+
+          # if price per sq meter present, save it
+          if prices.length > 1
+            json[:details][:rent_price_sq_meter] = prices[1].strip.split(' ')[0].strip
+          end
+        # if this is a square meter key, split the number and measurement
+        elsif @sq_m_keys.include?(key)
+          values = details_values[title_index].text.strip.split(' ')
+          json[:details][key] = values[0].strip
+          new_key = key.to_s + '_measurement'
+          json[:details][new_key.to_sym] = values[1].strip
+
+        # if this is address, split it into its parts
+        elsif @address_key == key
+          address_parts = json[:details][key].split(',')
+          if !address_parts[0].nil?
+            json[:details][:address_city] = address_parts[0].strip
+          end
+          if !address_parts[1].nil?
+            json[:details][:address_area] = address_parts[1].strip
+          end
+          if !address_parts[2].nil?
+            json[:details][:address_district] = address_parts[2].strip
+          end
+          if !address_parts[3].nil?
+            json[:details][:address_street] = address_parts[3].strip
+          end
+          if !address_parts[4].nil?
+            json[:details][:address_number] = address_parts[4].strip
+          end
+        end
+      else
+        @missing_param_log.error "Missing detail json key for text: '#{title_text}' in record #{id}"
+      end
+    end      
+  end
+
+  # spec info
+  specs_titles = doc.css('span.dc_title')
+  specs_values = doc.css('span.dc_title + span')
+  if specs_titles.length > 0 && specs_values.length > 0
+    specs_titles.each_with_index do |title, title_index|
+      title_text = title.text.strip.downcase
+      # get the index for the key with this text
+      index = @locales[locale_key][:keys][:specs].values.index{|x| title_text == x}
+      if index
+        # get the key name for this text
+        key = @locales[locale_key][:keys][:specs].keys[index]
+        # save the value
+        json[:specs][key] = specs_values[title_index].text.strip    
+      else
+        @missing_param_log.error "Missing spec json key for text: '#{title_text}' in record #{id}"
+      end
+    end
+  end
+
+  # additional info
+  tables = nil
+  if locale_key == :en
+    tables = doc.css('table.fen')
+  else
+    tables = doc.css('table.fge')
+  end
+  if tables.length > 6
+    tds = tables[5].css('td')
+    if tds.length > 2
+      # there may be many rows so grab them all
+      # ignore first row for it is header
+      tds.each_with_index do |td, index|
+        # if this is not the additional info section, stop
+        break if index == 0 && td.text.strip.downcase != @locales[locale_key][:keys][:additional_info]
+        if index > 0
+          text = td.text.strip 
+          if text != @nbsp
+            if json[:additional_info].nil?
+              json[:additional_info] = text
+            else
+              json[:additional_info] += " \n #{text}"
+            end
+          end
+        end
+      end
+    end
+  end
+
+
+ puts json
+
+=begin
+  # save the json
+  file_path = folder_path + @json_file
+	create_directory(File.dirname(file_path))
+  File.open(file_path, 'w'){|f| f.write(json.to_json)}
 =end  
 end
 
@@ -232,26 +235,78 @@ def make_requests
   request = nil
 
   # pull in first search results page
-  url = @serach_url + @lang_param + '1'
+  url = @serach_url + @lang_param + @locales[:ka][:id]
 
   doc = Nokogiri::HTML(open(url))
 
-  search_results = doc.css('td.table_content div.main_search div.ann_thmb a')
-
-  # if the search results has either no response, stop
-  if search_results.length == 0
-    @log.error "the response does not have any content to process"
-    return
+  # get the number of pages of search results that exist
+  # - get the p param out of the last page pagination link
+  last_page = nil
+  pagination_links = doc.css('.pagination a')
+  if pagination_links.length > 0
+    last_page = get_param_value(pagination_links[pagination_links.length-1]['href'], 'p')
   end
-  
-  # pull out the id of each property from the link
-  search_results.each do |search_result|
-    id = get_param_value(search_result['href'], 'id')
-    if !id.nil?
-      ids << id
-    end
-  end  
+  last_page = last_page.to_i if !last_page.nil?  
 
+
+  # get all of the ids that are new since the last run
+  i = 1
+  while !@found_all_ids && i <= last_page
+    puts "i = #{i}"
+    # create the url
+    url = @serach_url + @lang_param + @locales[:ka][:id] + @page_param + i.to_s
+  
+    # get the html
+    doc = Nokogiri::HTML(open(url))
+   
+    # pull out the links for this page
+    search_results = doc.css('td.table_content div.main_search div.ann_thmb a')
+
+    # if the search results has either no response, stop
+    if search_results.length == 0
+      @log.error "the response does not have any content to process"
+      break
+    end
+    
+    # get the ids for this page
+    record_last_id_status = i == 1
+    ids << pull_out_ids(search_results, record_last_id_status)
+    ids.flatten!
+    
+    i+=1
+  end
+=begin
+  i = last_page
+  while !@found_all_ids && i > 0
+    puts "i = #{i}"
+    # create the url
+    url = @serach_url + @lang_param + @locales[:ka][:id] + @page_param + i.to_s
+  
+    # get the html
+    doc = Nokogiri::HTML(open(url))
+   
+    # pull out the links for this page
+    search_results = doc.css('td.table_content div.main_search div.ann_thmb a')
+
+    # if the search results has either no response, stop
+    if search_results.length == 0
+      @log.error "the response does not have any content to process"
+      break
+    end
+    
+    # get the ids for this page
+    # since this is the first time loading data, save the first id of every page
+    record_last_id_status = true
+    ids << pull_out_ids(search_results, record_last_id_status)
+    ids.flatten!
+    
+    i-=1
+  end
+=end
+  
+  puts ids
+
+=begin
   if ids.length == 0
     @log.error "There are no search result IDs at this url to process (#{url})"
     return
@@ -301,7 +356,7 @@ def make_requests
   end
 
   hydra.run
-    
+=end    
 end
 
 make_requests
