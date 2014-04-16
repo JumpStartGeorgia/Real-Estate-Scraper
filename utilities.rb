@@ -41,6 +41,7 @@
 @locales[:ka][:keys][:details][:function] = 'დანიშნულება'
 @locales[:ka][:keys][:details][:address] = 'მისამართი'
 @locales[:ka][:keys][:details][:phone] = 'ტელეფონი'
+@locales[:ka][:keys][:details][:cadastral] = 'საკადასტრო'
 @locales[:ka][:keys][:specs] = {}
 @locales[:ka][:keys][:specs][:all_floors] = 'სართული სულ:'
 @locales[:ka][:keys][:specs][:floor] = 'სართული:'
@@ -64,7 +65,7 @@
 @locales[:ka][:keys][:specs][:box] = 'ბოქსი:'
 @locales[:ka][:keys][:specs][:buildings] = 'შენობა-ნაგებობა:'
 @locales[:ka][:keys][:specs][:administration_building] = 'ადმინისტ. შენობა (m²):'
-@locales[:ka][:keys][:specs][:workroom] = 'საწარმოო შენობ (m²):'
+@locales[:ka][:keys][:specs][:workroom] = 'საწარმოო შენობა (m²):'
 @locales[:ka][:keys][:specs][:stockroom] = 'სასაწყობე ფართი (m²):'
 @locales[:ka][:keys][:specs][:coefficient_k1] = 'კოეფიციენტი k1:'
 @locales[:ka][:keys][:specs][:coefficient_k2] = 'კოეფიციენტი k2:'
@@ -101,6 +102,7 @@
 @locales[:en][:keys][:details][:function] = 'function'
 @locales[:en][:keys][:details][:address] = 'address'
 @locales[:en][:keys][:details][:phone] = 'phone'
+@locales[:ka][:keys][:details][:cadastral] = 'cadastral'
 @locales[:en][:keys][:specs] = {}
 @locales[:en][:keys][:specs][:all_floors] = 'all floors:'
 @locales[:en][:keys][:specs][:floor] = 'floor:'
@@ -176,6 +178,7 @@ def json_template
   json[:details][:address_street] = nil
   json[:details][:address_number] = nil
   json[:details][:phone] = nil
+  json[:details][:cadastral] = nil
 
   json[:specs] = {}
   json[:specs][:all_floors] = nil
@@ -214,6 +217,11 @@ def create_directory(file_path)
 	end
 end
 
+# get the parent folder for the provided id
+# - the folder is the id minus it's last 3 digits
+def get_parent_id_folder(id)
+  id.to_s[0..id.to_s.length-4]
+end
 
 def get_locale_key(locale_id)
   match = @locales.keys.select{|x| @locales[x][:id] == locale_id}.first
@@ -274,9 +282,36 @@ def get_status
   else
     status = {}
     status['last_id_processed'] = []
+    status['ids_to_process'] = {}
+    ['json', 'db'].each do |key|
+      status['ids_to_process'][key] = {}
+      @locales.keys.each do |locale|
+        status['ids_to_process'][key][locale.to_s] = []
+      end
+    end
     File.open(@status_file, 'w') { |f| f.write(status.to_json) }
   end
   return status
+end
+
+def save_new_status_ids(ids)
+  ['json', 'db'].each do |key|
+    @locales.keys.each do |locale|
+      @status['ids_to_process'][key][locale.to_s] << ids
+      @status['ids_to_process'][key][locale.to_s].flatten!
+    end
+  end
+  update_status  
+end
+
+def remove_status_json_id(id, locale)
+  @status['ids_to_process']['json'][locale.to_s].delete(id)
+  update_status
+end
+
+def remove_status_db_id(id, locale)
+  @status['ids_to_process']['db'][locale.to_s].delete(id)
+  update_status
 end
 
 def update_status
@@ -318,4 +353,274 @@ def pull_out_ids(search_results, record_last_id_status=false)
   end  
 
   return ids
+end
+
+
+# create sql for insert statements
+def create_sql_insert(mysql, json, source, locale)
+  fields = []
+  values = []
+  sql = nil
+  
+  fields << 'source'
+  values << source
+
+  fields << 'locale'
+  values << locale
+  
+  fields << 'created_at'
+  values << Time.now
+
+  if !json["posting_id"].nil?
+    fields << 'posting_id'
+    values << json["posting_id"]
+  end
+  if !json["type"].nil?
+    fields << 'type'
+    values << json["type"]
+  end
+  if !json["property_type"].nil?
+    fields << 'property_type'
+    values << json["property_type"]
+  end
+  if !json["date"].nil?
+    fields << 'date'
+    values << json["date"]
+  end
+  if !json["additional_info"].nil?
+    fields << 'additional_info'
+    values << json["additional_info"]
+  end
+
+  if !json["details"]["daily_rent"].nil?
+    fields << 'daily_rent'
+    values << json["details"]["daily_rent"]
+  end
+  if !json["details"]["for_rent"].nil?
+    fields << 'for_rent'
+    values << json["details"]["for_rent"]
+  end
+  if !json["details"]["for_sale"].nil?
+    fields << 'for_sale'
+    values << json["details"]["for_sale"]
+  end
+  if !json["details"]["for_lease"].nil?
+    fields << 'for_lease'
+    values << json["details"]["for_lease"]
+  end
+  if !json["details"]["rent_price"].nil?
+    fields << 'rent_price'
+    values << json["details"]["rent_price"]
+  end
+  if !json["details"]["rent_price_currency"].nil?
+    fields << 'rent_price_currency'
+    values << json["details"]["rent_price_currency"]
+  end
+  if !json["details"]["rent_price_exchange_rate"].nil?
+    fields << 'rent_price_exchange_rate'
+    values << json["details"]["rent_price_exchange_rate"]
+  end
+  if !json["details"]["rent_price_sq_meter"].nil?
+    fields << 'rent_price_sq_meter'
+    values << json["details"]["rent_price_sq_meter"]
+  end
+  if !json["details"]["sale_price"].nil?
+    fields << 'sale_price'
+    values << json["details"]["sale_price"]
+  end
+  if !json["details"]["sale_price_currency"].nil?
+    fields << 'sale_price_currency'
+    values << json["details"]["sale_price_currency"]
+  end
+  if !json["details"]["sale_price_exchange_rate"].nil?
+    fields << 'sale_price_exchange_rate'
+    values << json["details"]["sale_price_exchange_rate"]
+  end
+  if !json["details"]["sale_price_sq_meter"].nil?
+    fields << 'sale_price_sq_meter'
+    values << json["details"]["sale_price_sq_meter"]
+  end
+  if !json["details"]["space"].nil?
+    fields << 'space'
+    values << json["details"]["space"]
+  end
+  if !json["details"]["space_measurement"].nil?
+    fields << 'space_measurement'
+    values << json["details"]["space_measurement"]
+  end
+  if !json["details"]["land"].nil?
+    fields << 'land'
+    values << json["details"]["land"]
+  end
+  if !json["details"]["land_measurement"].nil?
+    fields << 'land_measurement'
+    values << json["details"]["land_measurement"]
+  end
+  if !json["details"]["renovation"].nil?
+    fields << 'renovation'
+    values << json["details"]["renovation"]
+  end
+  if !json["details"]["view"].nil?
+    fields << 'view'
+    values << json["details"]["view"]
+  end
+  if !json["details"]["project"].nil?
+    fields << 'project'
+    values << json["details"]["project"]
+  end
+  if !json["details"]["condition"].nil?
+    fields << 'place_condition'
+    values << json["details"]["condition"]
+  end
+  if !json["details"]["function"].nil?
+    fields << 'function'
+    values << json["details"]["function"]
+  end
+  if !json["details"]["address"].nil?
+    fields << 'address'
+    values << json["details"]["address"]
+  end
+  if !json["details"]["address_city"].nil?
+    fields << 'address_city'
+    values << json["details"]["address_city"]
+  end
+  if !json["details"]["address_area"].nil?
+    fields << 'address_area'
+    values << json["details"]["address_area"]
+  end
+  if !json["details"]["address_district"].nil?
+    fields << 'address_district'
+    values << json["details"]["address_district"]
+  end
+  if !json["details"]["address_street"].nil?
+    fields << 'address_street'
+    values << json["details"]["address_street"]
+  end
+  if !json["details"]["address_number"].nil?
+    fields << 'address_number'
+    values << json["details"]["address_number"]
+  end
+  if !json["details"]["phone"].nil?
+    fields << 'phone'
+    values << json["details"]["phone"]
+  end
+  if !json["details"]["cadastral"].nil?
+    fields << 'cadastral'
+    values << json["details"]["cadastral"]
+  end
+
+  if !json["specs"]["all_floors"].nil?
+    fields << 'all_floors'
+    values << json["specs"]["all_floors"]
+  end
+  if !json["specs"]["floor"].nil?
+    fields << 'floor'
+    values << json["specs"]["floor"]
+  end
+  if !json["specs"]["rooms"].nil?
+    fields << 'rooms'
+    values << json["specs"]["rooms"]
+  end
+  if !json["specs"]["bedrooms"].nil?
+    fields << 'bedrooms'
+    values << json["specs"]["bedrooms"]
+  end
+  if !json["specs"]["conference_room"].nil?
+    fields << 'conference_room'
+    values << json["specs"]["conference_room"]
+  end
+  if !json["specs"]["wc"].nil?
+    fields << 'wc'
+    values << json["specs"]["wc"]
+  end
+  if !json["specs"]["bathroom"].nil?
+    fields << 'bathroom'
+    values << json["specs"]["bathroom"]
+  end
+  if !json["specs"]["shower"].nil?
+    fields << 'shower'
+    values << json["specs"]["shower"]
+  end
+  if !json["specs"]["fireplace"].nil?
+    fields << 'fireplace'
+    values << json["specs"]["fireplace"]
+  end
+  if !json["specs"]["air_conditioner"].nil?
+    fields << 'air_conditioner'
+    values << json["specs"]["air_conditioner"]
+  end
+  if !json["specs"]["balcony"].nil?
+    fields << 'balcony'
+    values << json["specs"]["balcony"]
+  end
+  if !json["specs"]["veranda"].nil?
+    fields << 'veranda'
+    values << json["specs"]["veranda"]
+  end
+  if !json["specs"]["loft"].nil?
+    fields << 'loft'
+    values << json["specs"]["loft"]
+  end
+  if !json["specs"]["bodrum"].nil?
+    fields << 'bodrum'
+    values << json["specs"]["bodrum"]
+  end
+  if !json["specs"]["mansard"].nil?
+    fields << 'mansard'
+    values << json["specs"]["mansard"]
+  end
+  if !json["specs"]["parking"].nil?
+    fields << 'parking'
+    values << json["specs"]["parking"]
+  end
+  if !json["specs"]["garage"].nil?
+    fields << 'garage'
+    values << json["specs"]["garage"]
+  end
+  if !json["specs"]["dist_from_tbilisi"].nil?
+    fields << 'dist_from_tbilisi'
+    values << json["specs"]["dist_from_tbilisi"]
+  end
+  if !json["specs"]["dist_from_cent_street"].nil?
+    fields << 'dist_from_cent_street'
+    values << json["specs"]["dist_from_cent_street"]
+  end
+  if !json["specs"]["box"].nil?
+    fields << 'box'
+    values << json["specs"]["box"]
+  end
+  if !json["specs"]["buildings"].nil?
+    fields << 'buildings'
+    values << json["specs"]["buildings"]
+  end
+  if !json["specs"]["administration_building"].nil?
+    fields << 'administration_building'
+    values << json["specs"]["administration_building"]
+  end
+  if !json["specs"]["workroom"].nil?
+    fields << 'workroom'
+    values << json["specs"]["workroom"]
+  end
+  if !json["specs"]["stockroom"].nil?
+    fields << 'stockroom'
+    values << json["specs"]["stockroom"]
+  end
+  if !json["specs"]["coefficient_k1"].nil?
+    fields << 'coefficient_k1'
+    values << json["specs"]["coefficient_k1"]
+  end
+  if !json["specs"]["coefficient_k2"].nil?
+    fields << 'coefficient_k2'
+    values << json["specs"]["coefficient_k2"]
+  end
+
+  if !fields.empty? && !values.empty?
+    sql = "insert into postings("
+    sql << fields.join(', ')
+    sql << ") values("
+    sql << values.map{|x| "\"#{mysql.escape(x.to_s)}\""}.join(', ')
+    sql << ")"
+  end
+  
+  return sql
 end

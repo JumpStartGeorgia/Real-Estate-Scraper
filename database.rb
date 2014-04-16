@@ -63,7 +63,7 @@ def update_database
           `id` int(11) NOT NULL AUTO_INCREMENT,\
           `posting_id` varchar(255) not null,\
           `locale` varchar(10) not null,\
-          `source` varchar(255) not null
+          `source` varchar(255) not null,\
           `type` varchar(255) default null,\
           `property_type` varchar(255) default null,\
           `date` date not null,\
@@ -86,7 +86,7 @@ def update_database
           `renovation` varchar(255) default null,\
           `view` varchar(255) default null,\
           `project` varchar(255) default null,\
-          `condition` varchar(255) default null,\
+          `place_condition` varchar(255) default null,\
           `function` varchar(255) default null,\
           `address` varchar(1000) default null,\
           `address_city` varchar(255) default null,\
@@ -95,6 +95,7 @@ def update_database
           `address_street` varchar(255) default null,\
           `address_number` varchar(255) default null,\
           `phone` varchar(255) default null,\
+          `cadastral` varchar(255) default null,\
           `all_floors` smallint default null,\
           `floor` smallint default null,\
           `rooms` smallint default null,\
@@ -122,7 +123,7 @@ def update_database
           `coefficient_k1` smallint default null,\
           `coefficient_k2` smallint default null,\
           `created_at` datetime,\
-          KEY `Index 1` (`id`),\
+          PRIMARY KEY `Index 1` (`id`),\
           KEY `Index 2` (`posting_id`),\
           KEY `Index 3` (`locale`),\
           KEY `Index 4` (`source`),\
@@ -135,9 +136,84 @@ def update_database
           KEY `Index 11` (`address_city`),\
           KEY `Index 12` (`address_area`),\
           KEY `Index 13` (`address_district`),\
-          KEY `Index 14` (`address_street`)\
+          KEY `Index 14` (`address_street`),\
+          CONSTRAINT uc_id_locale UNIQUE (posting_id, locale)\
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8"
     mysql.query(sql)
+
+
+    ####################################################
+    # load the data
+    ####################################################
+    files_processed = 0
+    length = @data_path.split('/').length
+
+    @locales.keys.each do |locale_key|
+      locale = locale_key.to_s
+      # if there are any ids for this locale, procss them
+      if @status['ids_to_process']['db'][locale].length > 0
+        ids = @status['ids_to_process']['db'][locale].dup
+        ids.each do |id|
+          parent_id = get_parent_id_folder(id)
+          file_path = @data_path + parent_id + "/" + id + "/" + locale + "/" + @json_file
+          if File.exists?(file_path)
+            # pull in json
+            json = JSON.parse(File.read(file_path))
+            
+            # create sql statement
+            sql = create_sql_insert(mysql, json, source, locale)
+            if !sql.nil?
+              # create record
+              mysql.query(sql)
+              
+              # remove the id from the status list to indicate it was processed
+              remove_status_db_id(id, locale)
+
+              files_processed += 1
+
+              if files_processed % 100 == 0
+                puts "#{files_processed} json files processed so far"
+              end
+            end
+          end
+        end
+      end
+    end
+
+=begin
+    # for each json file in this folder, load into table
+    Dir.glob(@data_path + "/**/*.json").sort.each do |json_file|      
+      # get the folder id
+      folder_id = json_file.split('/')[length+2].to_i
+
+      # get the locale
+      locale = json_file.split('/')[length+3]
+
+      ####################################################
+      # get data from json file and save to db
+      ####################################################
+      # pull in json
+      json = JSON.parse(File.read(json_file))
+      
+      # create sql statement
+      sql = create_sql_insert(mysql, json, source, locale)
+      if !sql.nil?
+        log.info sql
+        
+        # create job
+        mysql.query(sql)
+        
+        # remove the id from the status list to indicate it was processed
+        remove_status_db_id(folder_id, locale)
+
+        files_processed += 1
+
+        if files_processed % 100 == 0
+          puts "#{files_processed} json files processed so far"
+        end
+      end
+    end
+=end
 
     
     log.info "------------------------------"

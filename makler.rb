@@ -13,6 +13,7 @@ require 'logger'
 require 'fileutils'
 
 require_relative 'utilities'
+require_relative 'database'
 
 
 @start = Time.now
@@ -56,7 +57,7 @@ def process_response(response)
   
   # get the name of the folder for this id
   # - the name is the id minus it's last 3 digits
-  id_folder = id[0..id.length-4]
+  id_folder = get_parent_id_folder(id)
   folder_path = @data_path + id_folder + "/" + id + "/" + locale_key.to_s + "/"
 
   # get the response body
@@ -85,8 +86,9 @@ def process_response(response)
     json[:type] = get_page_type(type_text, locale).to_s
     json[:property_type] = get_property_type(type_text, locale).to_s
 
-    json[:date] = header_row.css('span')[header_row.css('span').length-1].xpath('text()').text.strip.gsub('.', '/')
-    
+    date = header_row.css('span')[header_row.css('span').length-1].xpath('text()').text.strip
+    # need to convert from dd/mm/yyyy to yyyy-mm-dd
+    json[:date] = Date.strptime(date, '%d.%m.%Y').strftime
   end
   
   # details info
@@ -214,6 +216,8 @@ def process_response(response)
   create_directory(File.dirname(file_path))
   File.open(file_path, 'w'){|f| f.write(json.to_json)}
 
+  # remove the id from the status list to indicate it was processed
+  remove_status_json_id(id, locale_key.to_s)
 end
 
 ##########################
@@ -240,7 +244,8 @@ def make_requests
   end
   last_page = last_page.to_i if !last_page.nil?  
 
-last_page = 3
+last_page = 4
+
   # get all of the ids that are new since the last run
   i = 1
   while !@found_all_ids && i <= last_page
@@ -269,9 +274,12 @@ last_page = 3
   end
   
   if ids.length == 0
-    @log.warn "There are no IDs to process so stopping"
+    @log.warn "There are no new IDs to process so stopping"
     return
   end
+
+  # update status
+  save_new_status_ids(ids)
 
   # record total number of records to process 
   total_to_process = ids.length * @locales.keys.length
@@ -308,6 +316,9 @@ last_page = 3
           @log.info "------------------------------"
           @log.info "It took #{Time.now - @start} seconds to process #{total_to_process} items"
           @log.info "------------------------------"
+
+          # now update the database
+          update_database
         end
       end
 
@@ -321,4 +332,6 @@ last_page = 3
 end
 
 make_requests
+
+#update_database
 
