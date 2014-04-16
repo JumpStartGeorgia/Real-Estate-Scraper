@@ -208,6 +208,11 @@ def json_template
   return json
 end
 
+def create_directory(file_path)
+	if !file_path.nil? && file_path != "."
+		FileUtils.mkpath(file_path)
+	end
+end
 
 
 def get_locale_key(locale_id)
@@ -292,7 +297,6 @@ def pull_out_ids(search_results, record_last_id_status=false)
         # if this is a new id, update the status
         # else, stop for we found the id of one that is already processed
         if @status['last_id_processed'].last == id
-          @log.info "Found the smae id as the last id processed, so stopping"
           @found_all_ids = true
           break
         elsif record_last_id_status

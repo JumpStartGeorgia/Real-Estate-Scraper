@@ -54,12 +54,10 @@ def process_response(response)
     return
   end
   
-=begin
   # get the name of the folder for this id
-  # - the name is the id minus it's last 2 digits
-  id_folder = id[0..id.length-3]
-  folder_path = @data_path + id_folder + "/" + id + "/" + locale + "/"
-=end
+  # - the name is the id minus it's last 3 digits
+  id_folder = id[0..id.length-4]
+  folder_path = @data_path + id_folder + "/" + id + "/" + locale_key.to_s + "/"
 
   # get the response body
   doc = Nokogiri::HTML(response.body)
@@ -69,13 +67,10 @@ def process_response(response)
     return
   end
 
-=begin
-  
-    # save the response body
-    file_path = folder_path + @response_file
-		create_directory(File.dirname(file_path))
-    File.open(file_path, 'w'){|f| f.write(doc)}
-=end    
+  # save the response body
+  file_path = folder_path + @response_file
+	create_directory(File.dirname(file_path))
+  File.open(file_path, 'w'){|f| f.write(doc)}
     
   # create the json
   json = json_template
@@ -214,14 +209,11 @@ def process_response(response)
   end
 
 
- puts json
-
-=begin
   # save the json
   file_path = folder_path + @json_file
-	create_directory(File.dirname(file_path))
+  create_directory(File.dirname(file_path))
   File.open(file_path, 'w'){|f| f.write(json.to_json)}
-=end  
+
 end
 
 ##########################
@@ -248,7 +240,7 @@ def make_requests
   end
   last_page = last_page.to_i if !last_page.nil?  
 
-
+last_page = 3
   # get all of the ids that are new since the last run
   i = 1
   while !@found_all_ids && i <= last_page
@@ -264,7 +256,7 @@ def make_requests
 
     # if the search results has either no response, stop
     if search_results.length == 0
-      @log.error "the response does not have any content to process"
+      @log.error "the response does not have any content to process for url #{url}"
       break
     end
     
@@ -275,40 +267,9 @@ def make_requests
     
     i+=1
   end
-=begin
-  i = last_page
-  while !@found_all_ids && i > 0
-    puts "i = #{i}"
-    # create the url
-    url = @serach_url + @lang_param + @locales[:ka][:id] + @page_param + i.to_s
   
-    # get the html
-    doc = Nokogiri::HTML(open(url))
-   
-    # pull out the links for this page
-    search_results = doc.css('td.table_content div.main_search div.ann_thmb a')
-
-    # if the search results has either no response, stop
-    if search_results.length == 0
-      @log.error "the response does not have any content to process"
-      break
-    end
-    
-    # get the ids for this page
-    # since this is the first time loading data, save the first id of every page
-    record_last_id_status = true
-    ids << pull_out_ids(search_results, record_last_id_status)
-    ids.flatten!
-    
-    i-=1
-  end
-=end
-  
-  puts ids
-
-=begin
   if ids.length == 0
-    @log.error "There are no search result IDs at this url to process (#{url})"
+    @log.warn "There are no IDs to process so stopping"
     return
   end
 
@@ -356,7 +317,7 @@ def make_requests
   end
 
   hydra.run
-=end    
+
 end
 
 make_requests
