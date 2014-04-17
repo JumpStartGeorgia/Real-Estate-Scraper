@@ -244,12 +244,12 @@ def make_requests
   end
   last_page = last_page.to_i if !last_page.nil?  
 
-last_page = 2
+last_page = 10
 
   # get all of the ids that are new since the last run
   i = 1
   while !@found_all_ids && i <= last_page
-    puts "i = #{i}"
+    puts "page #{i}"
     # create the url
     url = @serach_url + @lang_param + @locales[:ka][:id] + @page_param + i.to_s
   
