@@ -28,7 +28,7 @@ require_relative 'database'
 
 
 # starting url 
-@view_url = "http://makler.ge/?pg=ann&id="
+@posting_url = "http://makler.ge/?pg=ann&id="
 @serach_url = "http://makler.ge/?pg=search&cat=-1&tp=-1&city_id=-1&raion_id=0&price_f=&price_t=&valuta=2&sart_f=&sart_t=&rooms_f=&rooms_t=&ubani_id=0&street_id=0&parti_f=&parti_t=&mdgomareoba=0&remont=0&project=0&xedi=0&metro_id=0&is_detailed_search=2&sb=d"
 @page_param = "&p="
 @lang_param = "&lan="
@@ -244,7 +244,7 @@ def make_requests
   end
   last_page = last_page.to_i if !last_page.nil?  
 
-last_page = 4
+last_page = 2
 
   # get all of the ids that are new since the last run
   i = 1
@@ -272,58 +272,62 @@ last_page = 4
     
     i+=1
   end
+
+  # record the new ids
+  save_new_status_ids(ids)
   
-  if ids.length == 0
+  num_ids = num_json_ids_to_process
+  
+  if num_ids == 0
     @log.warn "There are no new IDs to process so stopping"
     return
   end
 
-  # update status
-  save_new_status_ids(ids)
-
   # record total number of records to process 
-  total_to_process = ids.length * @locales.keys.length
-  total_left_to_process = ids.length * @locales.keys.length
+  total_to_process = num_ids
+  total_left_to_process = num_ids
 
   #build hydra queue
-  ids.each do |id|
-    @locales.keys.each do |locale|
-      # build the url
-      url = @view_url + id + @lang_param + @locales[locale][:id]
-      request = Typhoeus::Request.new("#{url}", followlocation: true)
+  @locales.keys.each do |locale|
+    # if there are any ids for this locale, procss them
+    if @status['ids_to_process']['json'][locale.to_s].length > 0
+      ids = @status['ids_to_process']['json'][locale.to_s].dup
+      ids.each do |id|
+        # build the url
+        url = @posting_url + id + @lang_param + @locales[locale][:id]
+        request = Typhoeus::Request.new("#{url}", followlocation: true)
 
-      request.on_complete do |response|
-        if response.success?
-          # put success callback here
-          @log.info("#{response.request.url} - success")
+        request.on_complete do |response|
+          if response.success?
+            # put success callback here
+            @log.info("#{response.request.url} - success")
+            
+            # process the response        
+            process_response(response)
+          elsif response.timed_out?
+            # aw hell no
+            @log.warn("#{response.request.url} - got a time out")
+          elsif response.code == 0
+            # Could not get an http response, something's wrong.
+            @log.error("#{response.request.url} - no response: #{response.return_message}")
+          else
+            # Received a non-successful http response.
+            @log.error("#{response.request.url} - HTTP request failed: #{response.code.to_s}")
+          end
           
-          # process the response        
-          process_response(response)
-        elsif response.timed_out?
-          # aw hell no
-          @log.warn("#{response.request.url} - got a time out")
-        elsif response.code == 0
-          # Could not get an http response, something's wrong.
-          @log.error("#{response.request.url} - no response: #{response.return_message}")
-        else
-          # Received a non-successful http response.
-          @log.error("#{response.request.url} - HTTP request failed: #{response.code.to_s}")
-        end
-        
-        # decrease counter of items to process
-        total_left_to_process -= 1
-        if total_left_to_process == 0
-          @log.info "------------------------------"
-          @log.info "It took #{Time.now - @start} seconds to process #{total_to_process} items"
-          @log.info "------------------------------"
+          # decrease counter of items to process
+          total_left_to_process -= 1
+          if total_left_to_process == 0
+            @log.info "------------------------------"
+            @log.info "It took #{Time.now - @start} seconds to process #{total_to_process} items"
+            @log.info "------------------------------"
 
-          # now update the database
-          update_database
+            # now update the database
+            update_database
+          end
         end
+        hydra.queue(request)
       end
-
-
-      hydra.queue(request)
     end
   end
 

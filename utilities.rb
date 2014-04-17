@@ -294,14 +294,27 @@ def get_status
   return status
 end
 
-def save_new_status_ids(ids)
-  ['json', 'db'].each do |key|
-    @locales.keys.each do |locale|
-      @status['ids_to_process'][key][locale.to_s] << ids
-      @status['ids_to_process'][key][locale.to_s].flatten!
-    end
+# determine if ther eare any json ids to process
+def num_json_ids_to_process
+  count = 0
+  
+  @locales.keys.each do |locale|
+    count += @status['ids_to_process']['json'][locale.to_s].length
   end
-  update_status  
+  
+  return count
+end
+
+def save_new_status_ids(ids)
+  if !ids.nil? && ids.length > 0
+    ['json', 'db'].each do |key|
+      @locales.keys.each do |locale|
+        @status['ids_to_process'][key][locale.to_s] << ids
+        @status['ids_to_process'][key][locale.to_s].flatten!
+      end
+    end
+    update_status  
+  end
 end
 
 def remove_status_json_id(id, locale)
