@@ -82,7 +82,18 @@ def process_response(response)
   # get the type/date
   header_row = doc.css('.div_for_content > .page_title')
   if header_row.length > 0
-    type_text = header_row.css('span')[0].xpath('text()').text.strip
+    span = header_row.css('span')
+    if span.length == 0
+      # the title is not correct so assume this is 
+      # not a page that can be processed.
+      # remove the id from the status list to indicate it was processed
+      remove_status_json_id(id, locale_key.to_s)
+
+      @log.warn "the id #{id} with language #{locale} does not have any data"
+
+      return
+    end 
+    type_text = span[0].xpath('text()').text.strip
     json[:type] = get_page_type(type_text, locale).to_s
     json[:property_type] = get_property_type(type_text, locale).to_s
 
