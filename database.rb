@@ -81,9 +81,9 @@ def update_database
           `sale_price_currency` varchar(10) default null,\
           `sale_price_exchange_rate` numeric(15,5) default null,\
           `sale_price_sq_meter` numeric(15,2) default null,\
-          `space` smallint default null,\
+          `space` numeric(15,2) default null,\
           `space_measurement` varchar(20) default null,\
-          `land` smallint default null,\
+          `land` numeric(15,2) default null,\
           `land_measurement` varchar(20) default null,\
           `renovation` varchar(255) default null,\
           `view` varchar(255) default null,\
@@ -98,33 +98,33 @@ def update_database
           `address_number` varchar(255) default null,\
           `phone` varchar(255) default null,\
           `cadastral` varchar(255) default null,\
-          `all_floors` smallint default null,\
-          `floor` smallint default null,\
-          `rooms` smallint default null,\
-          `bedrooms` smallint default null,\
-          `conference_room` smallint default null,\
-          `suites` smallint default null,\
-          `wc` smallint default null,\
-          `bathroom` smallint default null,\
-          `shower` smallint default null,\
-          `fireplace` smallint default null,\
-          `air_conditioner` smallint default null,\
-          `balcony` smallint default null,\
-          `veranda` smallint default null,\
-          `loft` smallint default null,\
-          `bodrum` smallint default null,\
-          `mansard` smallint default null,\
-          `parking` smallint default null,\
-          `garage` smallint default null,\
-          `dist_from_tbilisi` smallint default null,\
-          `dist_from_cent_street` smallint default null,\
-          `box` smallint default null,\
-          `buildings` smallint default null,\
-          `administration_building` smallint default null,\
-          `workroom` smallint default null,\
-          `stockroom` smallint default null,\
-          `coefficient_k1` smallint default null,\
-          `coefficient_k2` smallint default null,\
+          `all_floors` numeric(8,2) default null,\
+          `floor` numeric(8,2) default null,\
+          `rooms` numeric(8,2) default null,\
+          `bedrooms` numeric(8,2) default null,\
+          `conference_room` numeric(8,2) default null,\
+          `suites` numeric(8,2) default null,\
+          `wc` numeric(8,2) default null,\
+          `bathroom` numeric(8,2) default null,\
+          `shower` numeric(8,2) default null,\
+          `fireplace` numeric(8,2) default null,\
+          `air_conditioner` numeric(8,2) default null,\
+          `balcony` numeric(8,2) default null,\
+          `veranda` numeric(8,2) default null,\
+          `loft` numeric(8,2) default null,\
+          `bodrum` numeric(8,2) default null,\
+          `mansard` numeric(8,2) default null,\
+          `parking` numeric(8,2) default null,\
+          `garage` numeric(8,2) default null,\
+          `dist_from_tbilisi` numeric(8,2) default null,\
+          `dist_from_cent_street` numeric(8,2) default null,\
+          `box` numeric(8,2) default null,\
+          `buildings` numeric(8,2) default null,\
+          `administration_building` numeric(8,2) default null,\
+          `workroom` numeric(8,2) default null,\
+          `stockroom` numeric(8,2) default null,\
+          `coefficient_k1` numeric(8,2) default null,\
+          `coefficient_k2` numeric(8,2) default null,\
           `created_at` datetime,\
           PRIMARY KEY `Index 1` (`id`),\
           KEY `Index 2` (`posting_id`),\
