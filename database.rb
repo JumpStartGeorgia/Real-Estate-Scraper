@@ -72,6 +72,7 @@ def update_database
           `for_rent` varchar(255) default null,\
           `for_sale` varchar(255) default null,\
           `for_lease` varchar(255) default null,\
+          `est_lease_price` varchar(255) default null,\
           `rent_price` numeric(15,2) default null,\
           `rent_price_currency` varchar(10) default null,\
           `rent_price_exchange_rate` numeric(15,5) default null,\
@@ -102,6 +103,7 @@ def update_database
           `rooms` smallint default null,\
           `bedrooms` smallint default null,\
           `conference_room` smallint default null,\
+          `suites` smallint default null,\
           `wc` smallint default null,\
           `bathroom` smallint default null,\
           `shower` smallint default null,\

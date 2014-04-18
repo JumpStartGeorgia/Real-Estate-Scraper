@@ -106,54 +106,55 @@ def process_response(response)
         # save the value
         json[:details][key] = details_values[title_index].text.strip    
         
-        # if this is a sale price, pull out the price and price per sq meter
-        if @sale_keys.include?(key)
-          prices = details_values[title_index].text.strip.split('/')
-          price_ary = prices[0].strip.split(' ')
-          
-          json[:details][:sale_price] = price_ary[0].strip
-          json[:details][:sale_price_currency] = price_ary[1].strip
+        if !json[:details][key].nil? && json[:details][key].length > 0
+          # if this is a sale price, pull out the price and price per sq meter
+          if @sale_keys.include?(key)
+            prices = json[:details][key].split('/')
+            price_ary = prices[0].strip.split(' ')
+            
+            json[:details][:sale_price] = price_ary[0].strip
+            json[:details][:sale_price_currency] = price_ary[1].strip if !price_ary[1].nil?
 
-          # if price per sq meter present, save it
-          if prices.length > 1
-            json[:details][:sale_price_sq_meter] = prices[1].strip.split(' ')[0].strip
-          end
-        # if this is a rent price, pull out the price and price per sq meter
-        elsif @rent_keys.include?(key)
-          prices = details_values[title_index].text.strip.split('/')
-          price_ary = prices[0].strip.split(' ')
-          
-          json[:details][:rent_price] = price_ary[0].strip
-          json[:details][:rent_price_currency] = price_ary[1].strip
+            # if price per sq meter present, save it
+            if prices.length > 1
+              json[:details][:sale_price_sq_meter] = prices[1].strip.split(' ')[0].strip
+            end
+          # if this is a rent price, pull out the price and price per sq meter
+          elsif @rent_keys.include?(key)
+            prices = json[:details][key].split('/')
+            price_ary = prices[0].strip.split(' ')
+            
+            json[:details][:rent_price] = price_ary[0].strip
+            json[:details][:rent_price_currency] = price_ary[1].strip if !price_ary[1].nil?
 
-          # if price per sq meter present, save it
-          if prices.length > 1
-            json[:details][:rent_price_sq_meter] = prices[1].strip.split(' ')[0].strip
-          end
-        # if this is a square meter key, split the number and measurement
-        elsif @sq_m_keys.include?(key)
-          values = details_values[title_index].text.strip.split(' ')
-          json[:details][key] = values[0].strip
-          new_key = key.to_s + '_measurement'
-          json[:details][new_key.to_sym] = values[1].strip
-
-        # if this is address, split it into its parts
-        elsif @address_key == key
-          address_parts = json[:details][key].split(',')
-          if !address_parts[0].nil?
-            json[:details][:address_city] = address_parts[0].strip
-          end
-          if !address_parts[1].nil?
-            json[:details][:address_area] = address_parts[1].strip
-          end
-          if !address_parts[2].nil?
-            json[:details][:address_district] = address_parts[2].strip
-          end
-          if !address_parts[3].nil?
-            json[:details][:address_street] = address_parts[3].strip
-          end
-          if !address_parts[4].nil?
-            json[:details][:address_number] = address_parts[4].strip
+            # if price per sq meter present, save it
+            if prices.length > 1
+              json[:details][:rent_price_sq_meter] = prices[1].strip.split(' ')[0].strip
+            end
+          # if this is a square meter key, split the number and measurement
+          elsif @sq_m_keys.include?(key)
+            values = json[:details][key].split(' ')
+            json[:details][key] = values[0].strip
+            new_key = key.to_s + '_measurement'
+            json[:details][new_key.to_sym] = values[1].strip if !values[1].nil?
+          # if this is address, split it into its parts
+          elsif @address_key == key
+            address_parts = json[:details][key].split(',')
+            if !address_parts[0].nil?
+              json[:details][:address_city] = address_parts[0].strip
+            end
+            if !address_parts[1].nil?
+              json[:details][:address_area] = address_parts[1].strip
+            end
+            if !address_parts[2].nil?
+              json[:details][:address_district] = address_parts[2].strip
+            end
+            if !address_parts[3].nil?
+              json[:details][:address_street] = address_parts[3].strip
+            end
+            if !address_parts[4].nil?
+              json[:details][:address_number] = address_parts[4].strip
+            end
           end
         end
       else
@@ -223,9 +224,6 @@ end
 ##########################
 
 def make_requests
-  # store id of url to call
-  ids = []
-
   #initiate hydra
   hydra = Typhoeus::Hydra.new(max_concurrency: 20)
   request = nil
@@ -237,14 +235,12 @@ def make_requests
 
   # get the number of pages of search results that exist
   # - get the p param out of the last page pagination link
-  last_page = nil
+  last_page = 50 # just give it a default value
   pagination_links = doc.css('.pagination a')
   if pagination_links.length > 0
     last_page = get_param_value(pagination_links[pagination_links.length-1]['href'], 'p')
   end
   last_page = last_page.to_i if !last_page.nil?  
-
-last_page = 10
 
   # get all of the ids that are new since the last run
   i = 1
@@ -266,16 +262,11 @@ last_page = 10
     end
     
     # get the ids for this page
-    record_last_id_status = i == 1
-    ids << pull_out_ids(search_results, record_last_id_status)
-    ids.flatten!
+    pull_out_ids(search_results, i == 1)
     
     i+=1
   end
 
-  # record the new ids
-  save_new_status_ids(ids)
-  
   num_ids = num_json_ids_to_process
   
   if num_ids == 0
@@ -323,7 +314,7 @@ last_page = 10
             @log.info "------------------------------"
 
             # now update the database
-            update_database
+#            update_database
           end
         end
         hydra.queue(request)

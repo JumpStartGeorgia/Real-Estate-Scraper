@@ -32,6 +32,7 @@
 @locales[:ka][:keys][:details][:for_sale] = 'იყიდება'
 @locales[:ka][:keys][:details][:for_rent] = 'ქირავდება'
 @locales[:ka][:keys][:details][:for_lease] = 'გირავდება'
+@locales[:ka][:keys][:details][:est_lease_price] = 'სავარ. გაქ. ფასი'
 @locales[:ka][:keys][:details][:space] = 'ფართობი'
 @locales[:ka][:keys][:details][:land] = 'მიწა'
 @locales[:ka][:keys][:details][:renovation] = 'რემონტი'
@@ -48,6 +49,7 @@
 @locales[:ka][:keys][:specs][:rooms] = 'ოთახები:'
 @locales[:ka][:keys][:specs][:bedrooms] = 'საძინებელი:'
 @locales[:ka][:keys][:specs][:conference_room] = 'საკონფერენციო:'
+@locales[:ka][:keys][:specs][:suites] = 'ლუქსი:'
 @locales[:ka][:keys][:specs][:wc] = 'სველი წერტილი:'
 @locales[:ka][:keys][:specs][:bathroom] = 'აბაზანა:'
 @locales[:ka][:keys][:specs][:shower] = 'საშხაპე:'
@@ -93,6 +95,7 @@
 @locales[:en][:keys][:details][:for_sale] = 'for sale'
 @locales[:en][:keys][:details][:for_rent] = 'for rent'
 @locales[:en][:keys][:details][:for_lease] = 'for lease'
+@locales[:en][:keys][:details][:est_lease_price] = 'est. lease price'
 @locales[:en][:keys][:details][:space] = 'space'
 @locales[:en][:keys][:details][:land] = 'land'
 @locales[:en][:keys][:details][:renovation] = 'renovation'
@@ -102,13 +105,14 @@
 @locales[:en][:keys][:details][:function] = 'function'
 @locales[:en][:keys][:details][:address] = 'address'
 @locales[:en][:keys][:details][:phone] = 'phone'
-@locales[:ka][:keys][:details][:cadastral] = 'cadastral'
+@locales[:en][:keys][:details][:cadastral] = 'cadastral'
 @locales[:en][:keys][:specs] = {}
 @locales[:en][:keys][:specs][:all_floors] = 'all floors:'
 @locales[:en][:keys][:specs][:floor] = 'floor:'
 @locales[:en][:keys][:specs][:rooms] = 'room(s):'
 @locales[:en][:keys][:specs][:bedrooms] = 'bedroom(s):'
 @locales[:en][:keys][:specs][:conference_room] = 'conference room:'
+@locales[:en][:keys][:specs][:suites] = 'suites:'
 @locales[:en][:keys][:specs][:wc] = 'wc:'
 @locales[:en][:keys][:specs][:bathroom] = 'bathroom:'
 @locales[:en][:keys][:specs][:shower] = 'shower:'
@@ -154,6 +158,7 @@ def json_template
   json[:details][:for_rent] = nil
   json[:details][:for_sale] = nil
   json[:details][:for_lease] = nil
+  json[:details][:est_lease_price] = nil
   json[:details][:rent_price] = nil
   json[:details][:rent_price_currency] = nil
   json[:details][:rent_price_exchange_rate] = 1
@@ -186,6 +191,7 @@ def json_template
   json[:specs][:rooms] = nil
   json[:specs][:bedrooms] = nil
   json[:specs][:conference_room] = nil
+  json[:specs][:suites] = nil
   json[:specs][:wc] = nil
   json[:specs][:bathroom] = nil
   json[:specs][:shower] = nil
@@ -365,7 +371,7 @@ def pull_out_ids(search_results, record_last_id_status=false)
     end
   end  
 
-  return ids
+  save_new_status_ids(ids) if ids.length > 0
 end
 
 
@@ -420,6 +426,10 @@ def create_sql_insert(mysql, json, source, locale)
   if !json["details"]["for_lease"].nil?
     fields << 'for_lease'
     values << json["details"]["for_lease"]
+  end
+  if !json["details"]["est_lease_price"].nil?
+    fields << 'est_lease_price'
+    values << json["details"]["est_lease_price"]
   end
   if !json["details"]["rent_price"].nil?
     fields << 'rent_price'
@@ -541,6 +551,10 @@ def create_sql_insert(mysql, json, source, locale)
   if !json["specs"]["conference_room"].nil?
     fields << 'conference_room'
     values << json["specs"]["conference_room"]
+  end
+  if !json["specs"]["suites"].nil?
+    fields << 'suites'
+    values << json["specs"]["suites"]
   end
   if !json["specs"]["wc"].nil?
     fields << 'wc'
