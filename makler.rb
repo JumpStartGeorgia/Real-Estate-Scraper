@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
+# gel example: http://makler.ge/?lan=2&pg=ann&id=10001182
+
 ##########################
 ## SCRAPER FOR makler.ge
 ##########################
