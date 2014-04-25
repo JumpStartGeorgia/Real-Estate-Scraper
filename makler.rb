@@ -53,7 +53,7 @@ def process_response(response)
   locale_key = get_locale_key(locale)
   
   if id.nil? || locale.nil? || locale_key.nil?
-    @log.error "response url is not in expected format: #{response.request.url}; expected url.split('/') to have length of 8 but has length of #{params.length}"
+    @log.error "response url is not in expected format: #{response.request.url}; expected url to have params of 'id' and 'lan'"
     return
   end
   
@@ -121,7 +121,7 @@ def process_response(response)
         
         if !json[:details][key].nil? && json[:details][key].length > 0
           # if this is a sale price, pull out the price and price per sq meter
-          if @sale_keys.include?(key)
+          if @sale_keys.include?(key) && !@non_number_price_text.include?(json[:details][key])
             prices = json[:details][key].split('/')
             price_ary = prices[0].strip.split(' ')
             
@@ -132,18 +132,66 @@ def process_response(response)
             if prices.length > 1
               json[:details][:sale_price_sq_meter] = prices[1].strip.split(' ')[0].strip
             end
+
+            # if the currency is known, convert to dollars
+            if !json[:details][:sale_price_currency].nil?
+              currency_index = @currencies.keys.index(json[:details][:sale_price_currency].downcase)
+              if !currency_index.nil?
+                # exchange rate
+                json[:details][:sale_price_exchange_rate_to_dollars] = @currencies.values[currency_index]
+                
+                # price
+                if !json[:details][:sale_price].nil?
+                  price = json[:details][:sale_price].to_f
+                  json[:details][:sale_price_dollars] = price * @currencies.values[currency_index]
+                end
+                # price per sq meter
+                if !json[:details][:sale_price_sq_meter].nil?
+                  price = json[:details][:sale_price_sq_meter].to_f
+                  json[:details][:sale_price_sq_meter_dollars] = price * @currencies.values[currency_index]
+                end
+              else
+                @missing_param_log.error "Missing currency exchange #{json[:details][:sale_price_currency]} in record #{id}"
+              end
+            end
+            
+
           # if this is a rent price, pull out the price and price per sq meter
-          elsif @rent_keys.include?(key)
+          elsif @rent_keys.include?(key) && !@non_number_price_text.include?(json[:details][key])
             prices = json[:details][key].split('/')
             price_ary = prices[0].strip.split(' ')
             
             json[:details][:rent_price] = price_ary[0].strip
             json[:details][:rent_price_currency] = price_ary[1].strip if !price_ary[1].nil?
-
+            
             # if price per sq meter present, save it
             if prices.length > 1
               json[:details][:rent_price_sq_meter] = prices[1].strip.split(' ')[0].strip
             end
+
+
+            # if the currency is known, convert to dollars
+            if !json[:details][:rent_price_currency].nil?
+              currency_index = @currencies.keys.index(json[:details][:rent_price_currency].downcase)
+              if !currency_index.nil?
+                # exchange rate
+                json[:details][:rent_price_exchange_rate_to_dollars] = @currencies.values[currency_index]
+
+                # price
+                if !json[:details][:rent_price].nil?
+                  price = json[:details][:rent_price].to_f
+                  json[:details][:rent_price_dollars] = price * @currencies.values[currency_index]
+                end
+                # price per sq meter
+                if !json[:details][:rent_price_sq_meter].nil?
+                  price = json[:details][:rent_price_sq_meter].to_f
+                  json[:details][:rent_price_sq_meter_dollars] = price * @currencies.values[currency_index]
+                end
+              else
+                @missing_param_log.error "Missing currency exchange #{json[:details][:sale_rent_currency]} in record #{id}"
+              end
+            end
+
           # if this is a square meter key, split the number and measurement
           elsif @sq_m_keys.include?(key)
             values = json[:details][key].split(' ')
@@ -224,12 +272,13 @@ def process_response(response)
     end
   end
 
-
-  # save the json
-  file_path = folder_path + @json_file
-  create_directory(File.dirname(file_path))
-  File.open(file_path, 'w'){|f| f.write(json.to_json)}
-
+  if !json[:posting_id].nil?
+    # save the json
+    file_path = folder_path + @json_file
+    create_directory(File.dirname(file_path))
+    File.open(file_path, 'w'){|f| f.write(json.to_json)}
+  end
+  
   # remove the id from the status list to indicate it was processed
   remove_status_json_id(id, locale_key.to_s)
 end
@@ -328,6 +377,8 @@ def make_requests
 
             # now update the database
 #            update_database
+          elsif total_left_to_process % 200 == 0
+            puts "There are #{total_left_to_process} files left to process; time so far = #{Time.now - @start} seconds"
           end
         end
         hydra.queue(request)

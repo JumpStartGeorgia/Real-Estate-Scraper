@@ -75,12 +75,16 @@ def update_database
           `est_lease_price` varchar(255) default null,\
           `rent_price` numeric(15,2) default null,\
           `rent_price_currency` varchar(10) default null,\
-          `rent_price_exchange_rate` numeric(15,5) default null,\
           `rent_price_sq_meter` numeric(15,2) default null,\
+          `rent_price_dollars` numeric(15,2) default null,\
+          `rent_price_sq_meter_dollars` numeric(15,2) default null,\
+          `rent_price_exchange_rate_to_dollars` numeric(15,5) default null,\
           `sale_price` numeric(15,2) default null,\
           `sale_price_currency` varchar(10) default null,\
-          `sale_price_exchange_rate` numeric(15,5) default null,\
           `sale_price_sq_meter` numeric(15,2) default null,\
+          `sale_price_dollars` numeric(15,2) default null,\
+          `sale_price_sq_meter_dollars` numeric(15,2) default null,\
+          `sale_price_exchange_rate_to_dollars` numeric(15,5) default null,\
           `space` numeric(15,2) default null,\
           `space_measurement` varchar(20) default null,\
           `land` numeric(15,2) default null,\
@@ -132,14 +136,16 @@ def update_database
           KEY `Index 4` (`source`),\
           KEY `Index 5` (`type`),\
           KEY `Index 6` (`property_type`),\
-          KEY `Index 7` (`rent_price`),\
-          KEY `Index 8` (`sale_price`),\
-          KEY `Index 9` (`space`),\
-          KEY `Index 10` (`land`),\
-          KEY `Index 11` (`address_city`),\
-          KEY `Index 12` (`address_area`),\
-          KEY `Index 13` (`address_district`),\
-          KEY `Index 14` (`address_street`),\
+          KEY `Index 7` (`rent_price_dollars`),\
+          KEY `Index 8` (`rent_price_sq_meter_dollars`),\
+          KEY `Index 9` (`sale_price_dollars`),\
+          KEY `Index 10` (`sale_price_sq_meter_dollars`),\
+          KEY `Index 11` (`space`),\
+          KEY `Index 12` (`land`),\
+          KEY `Index 13` (`address_city`),\
+          KEY `Index 14` (`address_area`),\
+          KEY `Index 15` (`address_district`),\
+          KEY `Index 16` (`address_street`),\
           CONSTRAINT uc_id_locale UNIQUE (posting_id, locale)\
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8"
     mysql.query(sql)

@@ -1,6 +1,21 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
+# currenct exchange rates to dollar
+@currencies = {}
+@currencies['$'] = 1.00
+@currencies['gel'] = 1.75
+@currencies['€'] = 0.72
+
+# the price for a place for rent and for sale include
+# the price and the price per square meter
+@sale_keys = [:for_sale, :for_lease]
+@rent_keys = [:for_rent, :daily_rent]
+@sq_m_keys = [:space, :land]
+@address_key = :address
+
+@non_number_price_text = ['Price Negotiable', 'ფასი შეთანხმებით']
+
 # file paths
 @data_path = 'data/makler.ge/'
 @response_file = 'response.html'
@@ -136,12 +151,6 @@
 @locales[:en][:keys][:specs][:coefficient_k2] = 'coefficient k2:'
 @locales[:en][:keys][:additional_info]  = 'additional information'
 
-# the price for a place for rent and for sale include
-# the price and the price per square meter
-@sale_keys = [:for_sale, :for_lease]
-@rent_keys = [:for_rent, :daily_rent]
-@sq_m_keys = [:space, :land]
-@address_key = :address
 
 
 def json_template
@@ -161,12 +170,16 @@ def json_template
   json[:details][:est_lease_price] = nil
   json[:details][:rent_price] = nil
   json[:details][:rent_price_currency] = nil
-  json[:details][:rent_price_exchange_rate] = 1
   json[:details][:rent_price_sq_meter] = nil
+  json[:details][:rent_price_dollars] = nil
+  json[:details][:rent_price_sq_meter_dollars] = nil
+  json[:details][:rent_price_exchange_rate_to_dollars] = nil
   json[:details][:sale_price] = nil
   json[:details][:sale_price_currency] = nil
-  json[:details][:sale_price_exchange_rate] = 1
   json[:details][:sale_price_sq_meter] = nil
+  json[:details][:sale_price_dollars] = nil
+  json[:details][:sale_price_sq_meter_dollars] = nil
+  json[:details][:sale_price_exchange_rate_to_dollars] = nil
   json[:details][:space] = nil
   json[:details][:space_measurement] = nil
   json[:details][:land] = nil
@@ -439,13 +452,21 @@ def create_sql_insert(mysql, json, source, locale)
     fields << 'rent_price_currency'
     values << json["details"]["rent_price_currency"]
   end
-  if !json["details"]["rent_price_exchange_rate"].nil?
-    fields << 'rent_price_exchange_rate'
-    values << json["details"]["rent_price_exchange_rate"]
+  if !json["details"]["rent_price_exchange_rate_to_dollars"].nil?
+    fields << 'rent_price_exchange_rate_to_dollars'
+    values << json["details"]["rent_price_exchange_rate_to_dollars"]
+  end
+  if !json["details"]["rent_price_dollars"].nil?
+    fields << 'rent_price_dollars'
+    values << json["details"]["rent_price_dollars"]
   end
   if !json["details"]["rent_price_sq_meter"].nil?
     fields << 'rent_price_sq_meter'
     values << json["details"]["rent_price_sq_meter"]
+  end
+  if !json["details"]["rent_price_sq_meter_dollars"].nil?
+    fields << 'rent_price_sq_meter_dollars'
+    values << json["details"]["rent_price_sq_meter_dollars"]
   end
   if !json["details"]["sale_price"].nil?
     fields << 'sale_price'
@@ -455,13 +476,21 @@ def create_sql_insert(mysql, json, source, locale)
     fields << 'sale_price_currency'
     values << json["details"]["sale_price_currency"]
   end
-  if !json["details"]["sale_price_exchange_rate"].nil?
-    fields << 'sale_price_exchange_rate'
-    values << json["details"]["sale_price_exchange_rate"]
+  if !json["details"]["sale_price_exchange_rate_to_dollars"].nil?
+    fields << 'sale_price_exchange_rate_to_dollars'
+    values << json["details"]["sale_price_exchange_rate_to_dollars"]
+  end
+  if !json["details"]["sale_price_dollars"].nil?
+    fields << 'sale_price_dollars'
+    values << json["details"]["sale_price_dollars"]
   end
   if !json["details"]["sale_price_sq_meter"].nil?
     fields << 'sale_price_sq_meter'
     values << json["details"]["sale_price_sq_meter"]
+  end
+  if !json["details"]["sale_price_sq_meter_dollars"].nil?
+    fields << 'sale_price_sq_meter_dollars'
+    values << json["details"]["sale_price_sq_meter_dollars"]
   end
   if !json["details"]["space"].nil?
     fields << 'space'
