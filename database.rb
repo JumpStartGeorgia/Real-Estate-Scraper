@@ -169,6 +169,10 @@ def update_database
             # pull in json
             json = JSON.parse(File.read(file_path))
             
+            # delete the record if it already exists
+            sql = delete_record_sql(mysql, id, locale)
+            mysql.query(sql)
+            
             # create sql statement
             sql = create_sql_insert(mysql, json, source, locale)
             if !sql.nil?

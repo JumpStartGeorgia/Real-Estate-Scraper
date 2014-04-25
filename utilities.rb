@@ -673,21 +673,25 @@ def create_sql_insert(mysql, json, source, locale)
   end
 
   if !fields.empty? && !values.empty?
-    # delete the record if it already exists
-    sql = "delete postings where posting_id = '"
-    sql << json['posting_id']
-    sql << "' and locale = '"
-    sql << locale 
-    sql << "';"
-    # add the record
-    sql << "insert into postings("
+    sql= "insert into postings("
     sql << fields.join(', ')
     sql << ") values("
     sql << values.map{|x| "\"#{mysql.escape(x.to_s)}\""}.join(', ')
-    sql << ");"
+    sql << ")"
   end
   
   return sql
+end
+
+# delete the record if it already exists
+def delete_record_sql(mysql, posting_id, locale)
+    sql = "delete from postings where posting_id = '"
+    sql << mysql.escape(posting_id.to_s)
+    sql << "' and locale = '"
+    sql << mysql.escape(locale.to_s)
+    sql << "'"
+
+    return sql
 end
 
 # dump the database
