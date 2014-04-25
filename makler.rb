@@ -376,7 +376,11 @@ def make_requests
             @log.info "------------------------------"
 
             # now update the database
-#            update_database
+            update_database
+
+            # now push to git
+            update_github
+
           elsif total_left_to_process % 200 == 0
             puts "There are #{total_left_to_process} files left to process; time so far = #{Time.now - @start} seconds"
           end
@@ -390,7 +394,6 @@ def make_requests
 
 end
 
-#make_requests
-
-update_database
+# run the script
+make_requests
 

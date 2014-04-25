@@ -189,45 +189,12 @@ def update_database
       end
     end
 
-=begin
-    # for each json file in this folder, load into table
-    Dir.glob(@data_path + "/**/*.json").sort.each do |json_file|      
-      # get the folder id
-      folder_id = json_file.split('/')[length+2].to_i
-
-      # get the locale
-      locale = json_file.split('/')[length+3]
-
-      ####################################################
-      # get data from json file and save to db
-      ####################################################
-      # pull in json
-      json = JSON.parse(File.read(json_file))
-      
-      # create sql statement
-      sql = create_sql_insert(mysql, json, source, locale)
-      if !sql.nil?
-        log.info sql
-        
-        # create job
-        mysql.query(sql)
-        
-        # remove the id from the status list to indicate it was processed
-        remove_status_db_id(folder_id, locale)
-
-        files_processed += 1
-
-        if files_processed % 100 == 0
-          puts "#{files_processed} json files processed so far"
-        end
-      end
-    end
-=end
-
-    
     log.info "------------------------------"
     log.info "It took #{Time.now - start} seconds to load #{files_processed} json files into the database"
     log.info "------------------------------"
+
+    # now dump the database
+    dump_database(db_config, log)
     
   rescue Mysql2::Error => e
     log.info "+++++++++++++++++++++++++++++++++"

@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
+require 'subexec'
+
 # currenct exchange rates to dollar
 @currencies = {}
 @currencies['$'] = 1.00
@@ -671,12 +673,38 @@ def create_sql_insert(mysql, json, source, locale)
   end
 
   if !fields.empty? && !values.empty?
-    sql = "insert into postings("
+    # delete the record if it already exists
+    sql = "delete postings where posting_id = '"
+    sql << json['posting_id']
+    sql << "' and locale = '"
+    sql << locale 
+    sql << "';"
+    # add the record
+    sql << "insert into postings("
     sql << fields.join(', ')
     sql << ") values("
     sql << values.map{|x| "\"#{mysql.escape(x.to_s)}\""}.join(', ')
-    sql << ")"
+    sql << ");"
   end
   
   return sql
+end
+
+# dump the database
+def dump_database(db_config, log)
+  log.info "------------------------------"
+  log.info "dumping database"
+  log.info "------------------------------"
+  Subexec.run "mysqldump -u#{db_config["username"]} -p#{db_config["password"]} #{db_config["database"]} | gzip > \"#{db_config["database"]}.sql.gz\" "
+end
+
+
+# update github with any changes
+def update_github
+  @log.info "------------------------------"
+  @log.info "updating git"
+  @log.info "------------------------------"
+  x = Subexec.run "git add -A"
+  x = Subexec.run "git commit -am 'Automated new jobs collected on #{Time.now.strftime('%F')}'"
+  x = Subexec.run "git push origin master"
 end
