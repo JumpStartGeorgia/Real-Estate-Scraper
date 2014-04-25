@@ -390,7 +390,7 @@ def make_requests
 
 end
 
-make_requests
+#make_requests
 
-#update_database
+update_database
 

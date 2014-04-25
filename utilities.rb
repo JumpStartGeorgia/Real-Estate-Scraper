@@ -4,8 +4,8 @@
 # currenct exchange rates to dollar
 @currencies = {}
 @currencies['$'] = 1.00
-@currencies['gel'] = 1.75
-@currencies['€'] = 0.72
+@currencies['gel'] = 0.57 #1.75
+@currencies['€'] = 1.38 #0.72
 
 # the price for a place for rent and for sale include
 # the price and the price per square meter
