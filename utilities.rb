@@ -699,7 +699,7 @@ def dump_database(db_config, log)
   log.info "------------------------------"
   log.info "dumping database"
   log.info "------------------------------"
-  Subexec.run "mysqldump -u#{db_config["username"]} -p#{db_config["password"]} #{db_config["database"]} | gzip > \"#{db_config["database"]}.sql.gz\" "
+  Subexec.run "mysqldump -u'#{db_config["username"]}' -p'#{db_config["password"]}' #{db_config["database"]} | gzip > \"#{db_config["database"]}.sql.gz\" "
 end
 
 
