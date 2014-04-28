@@ -57,6 +57,17 @@ group by property_type, address_city, address_area, address_district
 order by property_type, avg_floor desc, address_city, address_area, address_district
 ;
 
+select 
+property_type,
+dayofweek(date) as day_posted,
+count(*) num_postings
+from postings 
+where locale = 'en'
+and type = 'for sale'
+group by property_type, dayofweek(date)
+order by property_type, dayofweek(date);
+
+
 /* rent */
 select 
 property_type,
@@ -116,4 +127,14 @@ and type = 'for rent'
 group by property_type, address_city, address_area, address_district
 order by property_type, avg_floor desc, address_city, address_area, address_district
 ;
+
+select 
+property_type,
+dayofweek(date) as day_posted,
+count(*) num_postings
+from postings 
+where locale = 'en'
+and type = 'for rent'
+group by property_type, dayofweek(date)
+order by property_type, dayofweek(date);
 
