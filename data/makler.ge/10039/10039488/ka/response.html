@@ -6,7 +6,7 @@
 <meta content="index, follow" name="robots">
 <link href="https://plus.google.com/107236721681071105864" rel="publisher">
 <meta property="og:title" content="მაკლერ.გე - იყიდება ბინა თბილისში საბურთალოზე ნუცუბიძის ქუჩაზე 5 ოთახიანი - ID: 10039488">
-<meta property="og:image" content="http://www.makler.ge/mg/1411/10039488_212293.jpg">
+<meta property="og:image" content="http://www.makler.ge/mg/1411/10039488_306807.jpg">
 <meta property="og:url" content="http://www.makler.ge/?pg=ann&amp;id=10039488&amp;lan=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="google-site-verification" content="ezrv2stO-W54frvbm3D-irb8cpwZPAS8hYeTMDeCqUE">
@@ -36,6 +36,7 @@ img#bg { position:absolute; z-index:-1; }
 			gotourl=$(this).children("a").attr("href");  
 			location.href=gotourl;
 		});
+        
 
 		//$('.elementontop').click(function (e) {
        // $(this).hide();
@@ -312,6 +313,14 @@ $(document).ready(function(){
 	reorder_lis("div_street_id");
 	update_scrollbar();
 	
+    
+    toggle_danishnuleba();
+    
+    $("#tp").change(function(e) {
+       toggle_danishnuleba();
+    });
+
+    
 });
 
 </script><div class="search_div" id="srchfrm">
@@ -566,7 +575,7 @@ $(document).ready(function(){
     <td class="fge">პროექტი</td>
     <td class="fge">ხედი</td>
     <td colspan="2" class="fge">მეტრო</td>
-    <td class="fge"> </td>
+    <td id="danishnuleba_td" class="fge">დანიშნულება</td>
     <td class="fge"> </td>
   </tr>
 <tr class="search_more">
@@ -575,7 +584,8 @@ $(document).ready(function(){
       <div class="drop_down_arrow_new ">
       <select name="mdgomareoba" id="mdgomareoba" class="mdp fge is_detailed"><option value="0">ყველა</option>
 <option value="2">ახალი აშენებული</option>
-<option value="3">მშენებარე</option></select>
+<option value="3">მშენებარე</option>
+<option value="4">ძველი აშენებული</option></select>
 </div>
       </div>
    
@@ -664,7 +674,26 @@ $(document).ready(function(){
       </div>
    
     </td>
-    <td> </td>
+    <td>
+        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all " style="width:127% !important;">
+          <div class="drop_down_arrow_new ">
+              <select name="danishnuleba_id" id="danishnuleba_id" class="mdp fge is_detailed"><option value="0">ყველა</option>
+<option value="30">ავტო სერვისი</option>
+<option value="25">გასართობი ცენტრი</option>
+<option value="23">კაფე-ბარი</option>
+<option value="21">მაღაზია</option>
+<option value="22">რესტორანი</option>
+<option value="34">საგანმანათლებლო</option>
+<option value="33">სავაჭრო ცენტრი</option>
+<option value="24">სასტუმრო</option>
+<option value="26">საწარმო</option>
+<option value="28">საწყობი</option>
+<option value="29">ფერმა</option>
+<option value="27">ქარხანა</option></select>
+</div>
+        </div>
+    
+    </td>
     <td align="right"><input type="submit" class="my_button btn_red ui-corner-all fge caps_text" value="ძებნა"></td>
   </tr>
 <tr>
@@ -680,7 +709,7 @@ $(document).ready(function(){
     </td>
     </tr>
 </table>
-<input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="ყველა"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
+<input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="danishnuleba_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="ყველა"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
 </form>
 </div>
 
@@ -903,7 +932,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1433815278" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1435111288" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
 </div>
 </div>
 
@@ -937,7 +966,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="ისანი"> </li>
 <li class="transparent_class r_14" title="კრწანისი"> </li>
 <li class="transparent_class r_15" title="ჩუღურეთი"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1433815278" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
+<img src="images/charts/chart_21.png?t=1435111288" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1031,13 +1060,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7711)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7734)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6028)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (5977)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (1999)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2072)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (56)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (62)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=1&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>განცხადების დამატება</a></div>
@@ -1066,9 +1095,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10039488</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">393</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">453</span>
 		<span class="icons_li fen srch_icons_id float_right fge" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">ნანახია:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">08.06.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">23.06.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1079,8 +1108,8 @@ $(document).ready(function() {
 <tr>
 <td>
 			<div class="ann_thmb ann_thmb_main float_left" alt="1" name="1">
-				<div class="ann_thmb_main_indiv" id="middleshower" this_id="thmb_212293">
-<a class="fancy_opener thmb_212293" this_id="thmb_212293" href="javascript:;"><img src="mg/1411/10039488_m_212293.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_212298" this_id="thmb_212298" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_212298.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_212299" this_id="thmb_212299" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_212299.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_212295" this_id="thmb_212295" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_212295.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_212292" this_id="thmb_212292" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_212292.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_212294" this_id="thmb_212294" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_212294.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_212296" this_id="thmb_212296" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_212296.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_212297" this_id="thmb_212297" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_212297.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_212300" this_id="thmb_212300" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_212300.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a>
+				<div class="ann_thmb_main_indiv" id="middleshower" this_id="thmb_306807">
+<a class="fancy_opener thmb_306807" this_id="thmb_306807" href="javascript:;"><img src="mg/1411/10039488_m_306807.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306808" this_id="thmb_306808" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306808.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306809" this_id="thmb_306809" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306809.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306810" this_id="thmb_306810" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306810.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306811" this_id="thmb_306811" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306811.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306812" this_id="thmb_306812" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306812.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306813" this_id="thmb_306813" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306813.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306814" this_id="thmb_306814" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306814.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306815" this_id="thmb_306815" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306815.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_306816" this_id="thmb_306816" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306816.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306817" this_id="thmb_306817" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306817.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_306818" this_id="thmb_306818" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306818.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306819" this_id="thmb_306819" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306819.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306820" this_id="thmb_306820" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306820.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_306821" this_id="thmb_306821" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306821.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306822" this_id="thmb_306822" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306822.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_306823" this_id="thmb_306823" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306823.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306824" this_id="thmb_306824" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306824.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306825" this_id="thmb_306825" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306825.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306826" this_id="thmb_306826" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306826.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_306827" this_id="thmb_306827" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306827.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306828" this_id="thmb_306828" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306828.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306829" this_id="thmb_306829" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306829.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306830" this_id="thmb_306830" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306830.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306831" this_id="thmb_306831" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306831.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306832" this_id="thmb_306832" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306832.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_306833" this_id="thmb_306833" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306833.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_306834" this_id="thmb_306834" style="display:none;" href="javascript:;"><img src="mg/1411/10039488_m_306834.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a>
 </div>
 			</div>
 		</td>
@@ -1089,12 +1118,21 @@ $(document).ready(function() {
 <td>
 		<div class="thmb_viewer">
 			<div class="thmbs_arrow a_left" show="prev"></div>
-			<div class="thmbs_content" id="shownow" now="1" last="2">
+			<div class="thmbs_content" id="shownow" now="1" last="5">
 <div class="thumbs_6 show_1">
-<a id="thmb_212293" href="mg/1411/10039488_212293.jpg" alt="1" name="1" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212293.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_212298" href="mg/1411/10039488_212298.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212298.jpg" title="" width="80" height="60" alt="2"></a><a id="thmb_212299" href="mg/1411/10039488_212299.jpg" alt="3" name="3" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212299.jpg" title="" width="80" height="60" alt="3"></a><a id="thmb_212295" href="mg/1411/10039488_212295.jpg" alt="4" name="4" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212295.jpg" title="" width="80" height="60" alt="4"></a><a id="thmb_212292" href="mg/1411/10039488_212292.jpg" alt="5" name="5" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212292.jpg" title="" width="80" height="60" alt="5"></a><a id="thmb_212294" href="mg/1411/10039488_212294.jpg" alt="6" name="6" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212294.jpg" title="" width="80" height="60" alt="6"></a>
+<a id="thmb_306807" href="mg/1411/10039488_306807.jpg" alt="1" name="1" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306807.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_306808" href="mg/1411/10039488_306808.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306808.jpg" title="" width="80" height="60" alt="2"></a><a id="thmb_306809" href="mg/1411/10039488_306809.jpg" alt="3" name="3" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306809.jpg" title="" width="80" height="60" alt="3"></a><a id="thmb_306810" href="mg/1411/10039488_306810.jpg" alt="4" name="4" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306810.jpg" title="" width="80" height="60" alt="4"></a><a id="thmb_306811" href="mg/1411/10039488_306811.jpg" alt="5" name="5" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306811.jpg" title="" width="80" height="60" alt="5"></a><a id="thmb_306812" href="mg/1411/10039488_306812.jpg" alt="6" name="6" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306812.jpg" title="" width="80" height="60" alt="6"></a>
 </div>
 <div class="thumbs_6 show_2" style="display:none;">
-<a id="thmb_212296" href="mg/1411/10039488_212296.jpg" alt="7" name="7" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212296.jpg" title="" width="80" height="60" alt="7"></a><a id="thmb_212297" href="mg/1411/10039488_212297.jpg" alt="8" name="8" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212297.jpg" title="" width="80" height="60" alt="8"></a><a id="thmb_212300" href="mg/1411/10039488_212300.jpg" alt="9" name="9" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_212300.jpg" title="" width="80" height="60" alt="9"></a>
+<a id="thmb_306813" href="mg/1411/10039488_306813.jpg" alt="7" name="7" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306813.jpg" title="" width="80" height="60" alt="7"></a><a id="thmb_306814" href="mg/1411/10039488_306814.jpg" alt="8" name="8" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306814.jpg" title="" width="80" height="60" alt="8"></a><a id="thmb_306815" href="mg/1411/10039488_306815.jpg" alt="9" name="9" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306815.jpg" title="" width="80" height="60" alt="9"></a><a id="thmb_306816" href="mg/1411/10039488_306816.jpg" alt="10" name="10" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306816.jpg" title="" width="80" height="60" alt="10"></a><a id="thmb_306817" href="mg/1411/10039488_306817.jpg" alt="11" name="11" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306817.jpg" title="" width="80" height="60" alt="11"></a><a id="thmb_306818" href="mg/1411/10039488_306818.jpg" alt="12" name="12" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306818.jpg" title="" width="80" height="60" alt="12"></a>
+</div>
+<div class="thumbs_6 show_3" style="display:none;">
+<a id="thmb_306819" href="mg/1411/10039488_306819.jpg" alt="13" name="13" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306819.jpg" title="" width="80" height="60" alt="13"></a><a id="thmb_306820" href="mg/1411/10039488_306820.jpg" alt="14" name="14" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306820.jpg" title="" width="80" height="60" alt="14"></a><a id="thmb_306821" href="mg/1411/10039488_306821.jpg" alt="15" name="15" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306821.jpg" title="" width="80" height="60" alt="15"></a><a id="thmb_306822" href="mg/1411/10039488_306822.jpg" alt="16" name="16" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306822.jpg" title="" width="80" height="60" alt="16"></a><a id="thmb_306823" href="mg/1411/10039488_306823.jpg" alt="17" name="17" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306823.jpg" title="" width="80" height="60" alt="17"></a><a id="thmb_306824" href="mg/1411/10039488_306824.jpg" alt="18" name="18" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306824.jpg" title="" width="80" height="60" alt="18"></a>
+</div>
+<div class="thumbs_6 show_4" style="display:none;">
+<a id="thmb_306825" href="mg/1411/10039488_306825.jpg" alt="19" name="19" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306825.jpg" title="" width="80" height="60" alt="19"></a><a id="thmb_306826" href="mg/1411/10039488_306826.jpg" alt="20" name="20" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306826.jpg" title="" width="80" height="60" alt="20"></a><a id="thmb_306827" href="mg/1411/10039488_306827.jpg" alt="21" name="21" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306827.jpg" title="" width="80" height="60" alt="21"></a><a id="thmb_306828" href="mg/1411/10039488_306828.jpg" alt="22" name="22" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306828.jpg" title="" width="80" height="60" alt="22"></a><a id="thmb_306829" href="mg/1411/10039488_306829.jpg" alt="23" name="23" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306829.jpg" title="" width="80" height="60" alt="23"></a><a id="thmb_306830" href="mg/1411/10039488_306830.jpg" alt="24" name="24" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306830.jpg" title="" width="80" height="60" alt="24"></a>
+</div>
+<div class="thumbs_6 show_5" style="display:none;">
+<a id="thmb_306831" href="mg/1411/10039488_306831.jpg" alt="25" name="25" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306831.jpg" title="" width="80" height="60" alt="25"></a><a id="thmb_306832" href="mg/1411/10039488_306832.jpg" alt="26" name="26" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306832.jpg" title="" width="80" height="60" alt="26"></a><a id="thmb_306833" href="mg/1411/10039488_306833.jpg" alt="27" name="27" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306833.jpg" title="" width="80" height="60" alt="27"></a><a id="thmb_306834" href="mg/1411/10039488_306834.jpg" alt="28" name="28" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1411/thmb/10039488_t_306834.jpg" title="" width="80" height="60" alt="28"></a>
 </div>
 </div>
 			<div class="thmbs_arrow a_right thmbs_hoverer" show="next"></div>
@@ -1140,7 +1178,7 @@ $(document).ready(function() {
                   </tr>
 <tr>
 <td valign="top" class="mc_title">ტელეფონი</td>
-                    <td valign="top">2471020; 595925020; </td>
+                    <td valign="top">2471020; 599756363; </td>
                   </tr>
 <tr>
 <td colspan="2" valign="top"> </td>
@@ -1268,14 +1306,14 @@ $(document).ready(function() {
 					<div class="broker_info_title_div caps_text is_orange">საკონტაქტო პირი</div>
 					
 					
-				<ul class="broker_info_name_and" style="background-image:url('mg/brokers/47650801fe0c33c4ab6d622e30fcecb6.jpg')">
-<li class="caps_text is_blue">თეო შვანგირაძე</li>
-					<li>ოფის მენეჯერი</li>
+				<ul class="broker_info_name_and" style="background-image:url('mg/brokers/5908a0db9360bbdb7288bb0952145c87.jpg')">
+<li class="caps_text is_blue">ნათია ბარამაძე</li>
+					<li>გაყიდვების ბროკერი</li>
 					<li style="height:40px;"> </li>
-					<li class="is_orange fen">+995 595 92 50 20</li>
+					<li class="is_orange fen">+995 599 75 63 63</li>
 <li class="is_orange fen">+995 32 247 10 20</li>
-<li class="is_orange fen">t.shvangiradze@makler.ge</li>
-					<li><a class="caps_text" href="?lan=1&amp;pg=search&amp;broker=36575">ყველა განცხადება (825)</a></li>
+<li class="is_orange fen">n.baramadze@makler.ge</li>
+					<li><a class="caps_text" href="?lan=1&amp;pg=search&amp;broker=66710">ყველა განცხადება (425)</a></li>
 				</ul>
 <div class="broker_info_feedback_div" id="broker_info_div">
 					<form class="forms">
@@ -1292,7 +1330,7 @@ $(document).ready(function() {
 							<input type="button" id="submit_boroker_feedback" class="my_button btn_green ui-corner-all caps_text" value="შეტყობინების გაგზავნა">
 </li>
 						</ul>
-<input type="hidden" name="MM_broker_feedback" id="MM_broker_feedback" value="send" class="brfeed"><input type="hidden" name="action" id="action" value="b524078734ea2ab995bd5d1609b74e5c" class="brfeed"><input type="hidden" name="fmain_id" id="fmain_id" value="10039488" class="brfeed"><input type="hidden" name="lan" id="lan" value="1" class="brfeed"><input type="hidden" id="undeferror" value="შეტყობინების გამოგზავნისას დაფიქსირდა შეცდომა.
+<input type="hidden" name="MM_broker_feedback" id="MM_broker_feedback" value="send" class="brfeed"><input type="hidden" name="action" id="action" value="65085bbae6f707adec15c2d2199913a3" class="brfeed"><input type="hidden" name="fmain_id" id="fmain_id" value="10039488" class="brfeed"><input type="hidden" name="lan" id="lan" value="1" class="brfeed"><input type="hidden" id="undeferror" value="შეტყობინების გამოგზავნისას დაფიქსირდა შეცდომა.
 გთხოვთ სცადოთ მოგვიანებით">
 </form>
 				</div>
@@ -1314,88 +1352,77 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fge similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=383439"><img src="mg/1304/thmb/383439_t_1_o.jpg" width="114" height="70" alt="იყიდება 160 კვ.მ. ბინა პეკინის გამზირზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10014759"><img src="mg/1401/thmb/10014759_t_105685.jpg" width="114" height="70" alt="იყიდება 224 კვ.მ. ბინა ს.ჩიქოვანის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=383439">იყიდება 160 კვ.მ. ბინა პეკინის გამზირზე <span class="orange_num">220000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10014759">იყიდება 224 კვ.მ. ბინა ს.ჩიქოვანის ქუჩაზე <span class="orange_num">190000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=4be18ae48121caad17eb2fac473c173c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=0ba6b75fe385ab5a2157f2a30c44e55d')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=4010707"><img src="mg/1202/thmb/4010707_t_1_o.jpg" width="114" height="70" alt="იყიდება 250 კვ.მ. ბინა ალ. ყაზბეგის გამზირზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10041969"><img src="mg/1412/thmb/10041969_t_228651.jpg" width="114" height="70" alt="იყიდება 189 კვ.მ. ბინა ალ. ყაზბეგის გამზირზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=4010707">იყიდება 250 კვ.მ. ბინა ალ. ყაზბეგის გამზირზე <span class="orange_num">185000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10041969">იყიდება 189 კვ.მ. ბინა ალ. ყაზბეგის გამზირზე <span class="orange_num">190000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=25868aa20e1873d297b1dc8a1ba44c0c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=540c915ab8a74bf46a1b2e90339c7c85')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10020857"><img src="mg/1404/thmb/10020857_t_134367.jpg" width="114" height="70" alt="იყიდება 220 კვ.მ. ბინა ფანასკერტელ-ციციშვილის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10048333"><img src="mg/1503/thmb/10048333_t_259304.jpg" width="114" height="70" alt="იყიდება 141 კვ.მ. ბინა თამარაშვილის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10020857">იყიდება 220 კვ.მ. ბინა ფანასკერტელ-ციციშვილის ქუჩაზე <span class="orange_num">190000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10048333">იყიდება 141 კვ.მ. ბინა თამარაშვილის ქუჩაზე <span class="orange_num">200000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=a3288173685001ba76109307668a00e3')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=4f2f64847276c71888336652a20a24e5')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=1254317"><img src="mg/1303/thmb/1254317_t_263672.jpg" width="114" height="70" alt="იყიდება 180 კვ.მ. ბინა ნუცუბიძის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10049940"><img src="mg/1504/thmb/10049940_t_268668.jpg" width="114" height="70" alt="იყიდება 135 კვ.მ. ბინა ბუდაპეშტის I შესახვევში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=1254317">იყიდება 180 კვ.მ. ბინა ნუცუბიძის ქუჩაზე <span class="orange_num">210000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10049940">იყიდება 135 კვ.მ. ბინა ბუდაპეშტის I შესახვევში <span class="orange_num">180000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=c401433d0ac2af5d2794c624d2cfee9c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=4a17ccac9b4052457341c1573a919765')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=1931838"><img src="mg/1303/thmb/1931838_t_263684.jpg" width="114" height="70" alt="იყიდება 180 კვ.მ. ბინა ნუცუბიძის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10043153"><img src="mg/1501/thmb/10043153_t_256811.jpg" width="114" height="70" alt="იყიდება 247 კვ.მ. ბინა დელისის II ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=1931838">იყიდება 180 კვ.მ. ბინა ნუცუბიძის ქუჩაზე <span class="orange_num">210000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10043153">იყიდება 247 კვ.მ. ბინა დელისის II ქუჩაზე <span class="orange_num">200000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=4ce9c2c7133c195422f8991699a7f166')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=e4d56c1b6b1c60505b3f25795afe516e')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10001320"><img src="mg/1306/thmb/10001320_t_265146.jpg" width="114" height="70" alt="იყიდება 260 კვ.მ. ბინა ფანასკერტელ-ციციშვილის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10053312"><img src="mg/1505/thmb/10053312_t_288874.jpg" width="114" height="70" alt="იყიდება 250 კვ.მ. ბინა დელისის II ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10001320">იყიდება 260 კვ.მ. ბინა ფანასკერტელ-ციციშვილის ქუჩაზე <span class="orange_num">200000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10053312">იყიდება 250 კვ.მ. ბინა დელისის II ქუჩაზე <span class="orange_num">200000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=9a4107a46a2fe03e5d203f3850fb2309')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b0b8ec32ce363fc4ebdda144dc1bd2b3')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10042056"><img src="mg/1412/thmb/10042056_t_229781.jpg" width="114" height="70" alt="იყიდება 153 კვ.მ. ბინა ალ. ყაზბეგის გამზირზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=4437581"><img src="mg/1305/thmb/4437581_t_252136.jpg" width="114" height="70" alt="იყიდება 237 კვ.მ. ბინა ბერბუკის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10042056">იყიდება 153 კვ.მ. ბინა ალ. ყაზბეგის გამზირზე <span class="orange_num">198900 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=4437581">იყიდება 237 კვ.მ. ბინა ბერბუკის ქუჩაზე <span class="orange_num">245000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=ddd1c5e0ad1405476fd990af9775334c')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10009846"><img src="mg/1310/thmb/10009846_t_76835.jpg" width="114" height="70" alt="რედიქსის კორპუსში. რჩება ჩაშენებული სამზარეულო."></a></div>
-					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10009846">რედიქსის კორპუსში. რჩება ჩაშენებული სამზარეულო. </a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=d626e472d389dea191b02c2508102353')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=4a183c5dfe35dc949368745b018b5c1d')">
 </div>
 					
 				</li>
@@ -1404,7 +1431,7 @@ $(document).ready(function() {
 				<li>
 					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10037863"><img src="mg/1411/thmb/10037863_t_202309.jpg" width="114" height="70" alt="იყიდება 180 კვ.მ. ბინა სულხან ცინცაძის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10037863">იყიდება 180 კვ.მ. ბინა სულხან ცინცაძის ქუჩაზე <span class="orange_num">243000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10037863">იყიდება 180 კვ.მ. ბინა სულხან ცინცაძის ქუჩაზე <span class="orange_num">235000 $</span></a>
 					 
 					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=67bd81bd6aabe4d1638c87a84bf0bae2')">
 </div>
@@ -1413,11 +1440,22 @@ $(document).ready(function() {
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=3745390"><img src="mg/1203/thmb/3745390_t_9_o.jpg" width="114" height="70" alt="იყიდება 190 კვ.მ. ბინა შარტავას ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10043438"><img src="mg/1501/thmb/10043438_t_233725.jpg" width="114" height="70" alt="იყიდება 300 კვ.მ. ბინა კანდელაკის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=3745390">იყიდება 190 კვ.მ. ბინა შარტავას ქუჩაზე <span class="orange_num">195000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10043438">იყიდება 300 კვ.მ. ბინა კანდელაკის ქუჩაზე <span class="orange_num">190000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=57dfba555cfad50d6042e397820355ff')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=de893c14393b760d6e277e8f6d3592a3')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=3130491"><img src="mg/1103/thmb/3130491_t_238200.jpg" width="114" height="70" alt="იყიდება 160 კვ.მ. ბინა კანდელაკის ქუჩაზე"></a></div>
+					<div class="ann_text fge">
+					<a href="?lan=1&amp;pg=ann&amp;id=3130491">იყიდება 160 კვ.მ. ბინა კანდელაკის ქუჩაზე <span class="orange_num">206000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=828690891bf8c03991e191424d9b6065')">
 </div>
 					
 				</li>
