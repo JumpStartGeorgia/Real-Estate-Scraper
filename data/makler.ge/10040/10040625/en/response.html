@@ -36,6 +36,7 @@ img#bg { position:absolute; z-index:-1; }
 			gotourl=$(this).children("a").attr("href");  
 			location.href=gotourl;
 		});
+        
 
 		//$('.elementontop').click(function (e) {
        // $(this).hide();
@@ -312,6 +313,14 @@ $(document).ready(function(){
 	reorder_lis("div_street_id");
 	update_scrollbar();
 	
+    
+    toggle_danishnuleba();
+    
+    $("#tp").change(function(e) {
+       toggle_danishnuleba();
+    });
+
+    
 });
 
 </script><div class="search_div" id="srchfrm">
@@ -566,7 +575,7 @@ $(document).ready(function(){
     <td class="fen">Project</td>
     <td class="fen">View</td>
     <td colspan="2" class="fen">Subway</td>
-    <td class="fen"> </td>
+    <td id="danishnuleba_td" class="fen">Purpose</td>
     <td class="fen"> </td>
   </tr>
 <tr class="search_more">
@@ -575,6 +584,7 @@ $(document).ready(function(){
       <div class="drop_down_arrow_new ">
       <select name="mdgomareoba" id="mdgomareoba" class="mdp fen is_detailed"><option value="0">All</option>
 <option value="2">New building</option>
+<option value="4">Old Building</option>
 <option value="3">Under construction</option></select>
 </div>
       </div>
@@ -664,7 +674,26 @@ $(document).ready(function(){
       </div>
    
     </td>
-    <td> </td>
+    <td>
+        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all " style="width:127% !important;">
+          <div class="drop_down_arrow_new ">
+              <select name="danishnuleba_id" id="danishnuleba_id" class="mdp fen is_detailed"><option value="0">All</option>
+<option value="30">Auto Service</option>
+<option value="23">Cafe-bar</option>
+<option value="34">Educational</option>
+<option value="25">Enterteinment Center</option>
+<option value="27">Factory</option>
+<option value="29">Farm</option>
+<option value="24">Hotel</option>
+<option value="22">Restaraunt</option>
+<option value="21">Shop</option>
+<option value="33">Shopping center</option>
+<option value="28">Store</option>
+<option value="26">Workroom</option></select>
+</div>
+        </div>
+    
+    </td>
     <td align="right"><input type="submit" class="my_button btn_red ui-corner-all fen caps_text" value="Search"></td>
   </tr>
 <tr>
@@ -680,7 +709,7 @@ $(document).ready(function(){
     </td>
     </tr>
 </table>
-<input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="All"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
+<input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="danishnuleba_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="All"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
 </form>
 </div>
 
@@ -903,7 +932,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1434333633" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1435459144" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -937,7 +966,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1434333633" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1435459144" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1032,13 +1061,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7732)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7757)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6023)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (5973)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2024)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2104)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (60)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1067,9 +1096,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10040625</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">175</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">224</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">14.06.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">23.06.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1081,7 +1110,7 @@ $(document).ready(function() {
 <td>
 			<div class="ann_thmb ann_thmb_main float_left" alt="1" name="1">
 				<div class="ann_thmb_main_indiv" id="middleshower" this_id="thmb_0">
-<a class="fancy_opener thmb_0" this_id="thmb_0" href="javascript:;"><img src="mg/lands/land_10040625.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_302264" this_id="thmb_302264" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_302264.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_302265" this_id="thmb_302265" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_302265.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_302266" this_id="thmb_302266" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_302266.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_302267" this_id="thmb_302267" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_302267.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_302268" this_id="thmb_302268" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_302268.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_302269" this_id="thmb_302269" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_302269.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a>
+<a class="fancy_opener thmb_0" this_id="thmb_0" href="javascript:;"><img src="mg/lands/land_10040625.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306497" this_id="thmb_306497" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_306497.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306498" this_id="thmb_306498" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_306498.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306499" this_id="thmb_306499" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_306499.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306500" this_id="thmb_306500" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_306500.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306501" this_id="thmb_306501" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_306501.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306502" this_id="thmb_306502" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_306502.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306503" this_id="thmb_306503" style="display:none;" href="javascript:;"><img src="mg/1412/10040625_m_306503.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a>
 </div>
 			</div>
 		</td>
@@ -1092,9 +1121,11 @@ $(document).ready(function() {
 			<div class="thmbs_arrow a_left" show="prev"></div>
 			<div class="thmbs_content" id="shownow" now="1" last="2">
 <div class="thumbs_6 show_1">
-<a id="thmb_0" href="javascript:;" alt="1" name="1" class="thmbswitcher"><img src="mg/lands/land_t_10040625.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_302264" href="mg/1412/10040625_302264.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_302264.jpg" title="" width="80" height="60" alt="2"></a><a id="thmb_302265" href="mg/1412/10040625_302265.jpg" alt="3" name="3" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_302265.jpg" title="" width="80" height="60" alt="3"></a><a id="thmb_302266" href="mg/1412/10040625_302266.jpg" alt="4" name="4" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_302266.jpg" title="" width="80" height="60" alt="4"></a><a id="thmb_302267" href="mg/1412/10040625_302267.jpg" alt="5" name="5" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_302267.jpg" title="" width="80" height="60" alt="5"></a><a id="thmb_302268" href="mg/1412/10040625_302268.jpg" alt="6" name="6" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_302268.jpg" title="" width="80" height="60" alt="6"></a>
+<a id="thmb_0" href="javascript:;" alt="1" name="1" class="thmbswitcher"><img src="mg/lands/land_t_10040625.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_306497" href="mg/1412/10040625_306497.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_306497.jpg" title="" width="80" height="60" alt="2"></a><a id="thmb_306498" href="mg/1412/10040625_306498.jpg" alt="3" name="3" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_306498.jpg" title="" width="80" height="60" alt="3"></a><a id="thmb_306499" href="mg/1412/10040625_306499.jpg" alt="4" name="4" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_306499.jpg" title="" width="80" height="60" alt="4"></a><a id="thmb_306500" href="mg/1412/10040625_306500.jpg" alt="5" name="5" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_306500.jpg" title="" width="80" height="60" alt="5"></a><a id="thmb_306501" href="mg/1412/10040625_306501.jpg" alt="6" name="6" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_306501.jpg" title="" width="80" height="60" alt="6"></a>
 </div>
-<div class="thumbs_6 show_3" style="display:none;"><a id="thmb_302269" href="mg/1412/10040625_302269.jpg" alt="7" name="7" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_302269.jpg" title="" width="80" height="60" alt="7"></a></div>
+<div class="thumbs_6 show_3" style="display:none;">
+<a id="thmb_306502" href="mg/1412/10040625_306502.jpg" alt="7" name="7" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_306502.jpg" title="" width="80" height="60" alt="7"></a><a id="thmb_306503" href="mg/1412/10040625_306503.jpg" alt="8" name="8" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1412/thmb/10040625_t_306503.jpg" title="" width="80" height="60" alt="8"></a>
+</div>
 </div>
 			<div class="thmbs_arrow a_right thmbs_hoverer" show="next"></div>
 		</div>
@@ -1110,7 +1141,7 @@ $(document).ready(function() {
                   </tr>
 <tr>
 <td width="100" class="mc_title" valign="top">For Sale</td>
-			<td class="orange_num" valign="top"><a href="javascript:;" class="orange_num" title="9500 $ Â» 10800 $"><img src="img/arr_up.gif" align="left" alt="arrow">10800 $ / 18.00 $ m² </a></td>
+			<td class="orange_num" valign="top"><a href="javascript:;" class="orange_num" title="10800 $ Â» 15000 $"><img src="img/arr_up.gif" align="left" alt="arrow">15000 $ / 25.00 $ m² </a></td>
 		  </tr>
 <tr>
 <td class="mc_title">Space</td>
@@ -1126,7 +1157,7 @@ $(document).ready(function() {
                   </tr>
 <tr>
 <td valign="top" class="mc_title">Phone</td>
-                    <td valign="top">2671030; 599702044; </td>
+                    <td valign="top">2671030; 599069912; </td>
                   </tr>
 <tr>
 <td colspan="2" valign="top"> </td>
@@ -1204,20 +1235,75 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fen similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10054888"><img src="mg/lands/land_t_10054888.jpg" width="114" height="70" alt="For Sale 1000 sq.m. Land in Mukhattskaro"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=9425725"><img src="mg/lands/land_t_9425725.jpg" width="114" height="70" alt="For Sale 1250 sq.m. Land in Mukhattskaro"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10054888">For Sale 1000 sq.m. Land in Mukhattskaro <span class="orange_num">12000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=9425725">For Sale 1250 sq.m. Land in Mukhattskaro <span class="orange_num">15000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=0f3a9dac10e6fe522cc1ae6f6a0ec6b2')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=be72c4a9628e3b569f70868521449d3c')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10027853"><img src="mg/lands/land_t_10027853.jpg" width="114" height="70" alt="For Sale 500 sq.m. Land  in Shindisi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10050064"><img src="mg/lands/land_t_10050064.jpg" width="114" height="70" alt="For Sale 1500 sq.m. Land  in Dusheti"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10027853">For Sale 500 sq.m. Land  in Shindisi <span class="orange_num">12500 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10050064">For Sale 1500 sq.m. Land  in Dusheti <span class="orange_num">16500 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=6fd8d321f6812336546d01163b1f93bb')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10025796"><img src="mg/lands/land_t_10025796.jpg" width="114" height="70" alt="For Sale 700 sq.m. Land  in Manglisi"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10025796">For Sale 700 sq.m. Land  in Manglisi <span class="orange_num">15000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=025af10609385dcf2bad3ea9a92b907b')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10055508"><img src="mg/lands/land_t_10055508.jpg" width="114" height="70" alt="For Sale 1500 sq.m. Land  in Misaktsieli"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10055508">For Sale 1500 sq.m. Land  in Misaktsieli <span class="orange_num">18000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=8f01388fc083a533b3e7ab6eaded67ae')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10016673"><img src="mg/lands/land_t_10016673.jpg" width="114" height="70" alt="For Sale 600 sq.m. Land  in Betania"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10016673">For Sale 600 sq.m. Land  in Betania <span class="orange_num">14000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c298f812dc54d483bc54c16461f5ec7c')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10027211"><img src="mg/lands/land_t_10027211.jpg" width="114" height="70" alt="For Sale 600 sq.m. Land  in Tabakhmela"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10027211">For Sale 600 sq.m. Land  in Tabakhmela <span class="orange_num">16000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e270c56c1c407b92246173068454a0b6')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10027853"><img src="mg/lands/land_t_10027853.jpg" width="114" height="70" alt="For Sale 500 sq.m. Land  in Tabakhmela"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10027853">For Sale 500 sq.m. Land  in Tabakhmela <span class="orange_num">12500 $</span></a>
 					 
 					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=953e5b822d4689fc17cbb4a1bf600ce3')">
 </div>
@@ -1226,88 +1312,33 @@ $(document).ready(function() {
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10054793"><img src="mg/lands/land_t_10054793.jpg" width="114" height="70" alt="For Sale 3500 sq.m. Land  in Natakhtari"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10052479"><img src="mg/lands/land_t_10052479.jpg" width="114" height="70" alt="For Sale 600 sq.m. Land  in Bakuriani"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10054793">For Sale 3500 sq.m. Land  in Natakhtari <span class="orange_num">10500 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10052479">For Sale 600 sq.m. Land  in Bakuriani <span class="orange_num">15000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=b6322da2bdd370dad62b6676f448527b')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=3d7e4b451873988b258bb3df64feaf74')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10014384"><img src="mg/lands/land_t_10014384.jpg" width="114" height="70" alt="For Sale 500 sq.m. Land  in Digomi village"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10053250"><img src="mg/lands/land_t_10053250.jpg" width="114" height="70" alt="For Sale 5216 sq.m. Land in Bazaleti"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10014384">For Sale 500 sq.m. Land  in Digomi village <span class="orange_num">12500 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10053250">For Sale 5216 sq.m. Land in Bazaleti <span class="orange_num">15000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=06358f6ed9e28e9ec4a76b83fc454eb6')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=9603c38209ab4f4769c44e06cd333020')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=7173884"><img src="mg/lands/land_t_7173884.jpg" width="114" height="70" alt="For Sale 401 sq.m. Land  in Khelvachauri"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10053261"><img src="mg/lands/land_t_10053261.jpg" width="114" height="70" alt="For Sale 40000 sq.m. Land  in Bolnisi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=7173884">For Sale 401 sq.m. Land  in Khelvachauri <span class="orange_num">15000 gel</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10053261">For Sale 40000 sq.m. Land  in Bolnisi <span class="orange_num">15000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=49b910fad4f2863679aa06e3044a44ae')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10053945"><img src="mg/lands/land_t_10053945.jpg" width="114" height="70" alt="For Sale 540 sq.m. Land  in Telavi"></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10053945">For Sale 540 sq.m. Land  in Telavi <span class="orange_num">25000 gel</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=67a9b9f31d241b63059fb3ec823556c1')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10053971"><img src="mg/lands/land_t_10053971.jpg" width="114" height="70" alt="For Sale 5360 sq.m. Land  in Tskaltubo"></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10053971">For Sale 5360 sq.m. Land  in Tskaltubo <span class="orange_num">20000 gel</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d0086c3da6aeb7d30974410498f73fb3')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10053948"><img src="mg/lands/land_t_10053948.jpg" width="114" height="70" alt="For Sale 1501 sq.m. Land  in Mtskheta"></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10053948">For Sale 1501 sq.m. Land  in Mtskheta <span class="orange_num">20000 gel</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=6ab9bcb42353a5392a3dc0dd58397379')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10002025"><img src="mg/lands/land_t_10002025.jpg" width="114" height="70" alt="For Sale 1100 sq.m. Land  in Dusheti"></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10002025">For Sale 1100 sq.m. Land  in Dusheti <span class="orange_num">12000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=30440b7ec97d631ce5ef3fa1f62fff38')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10033101"><img src="mg/lands/land_t_10033101.jpg" width="114" height="70" alt="For Sale 600 sq.m. Land  in Poti"></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10033101">For Sale 600 sq.m. Land  in Poti <span class="orange_num">10000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=1aea27a1fa3228a2291f9150b8a43538')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=0107cf5d339c202c4eee077305264d00')">
 </div>
 					
 				</li>
@@ -1327,7 +1358,7 @@ $(document).ready(function() {
 	$(document).ready(function(){
 		
    		
-					$(".tbc_ipo_price_fld").val(10800.00);
+					$(".tbc_ipo_price_fld").val(15000.00);
 					calc_go();
 				
 			

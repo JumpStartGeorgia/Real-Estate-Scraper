@@ -36,6 +36,7 @@ img#bg { position:absolute; z-index:-1; }
 			gotourl=$(this).children("a").attr("href");  
 			location.href=gotourl;
 		});
+        
 
 		//$('.elementontop').click(function (e) {
        // $(this).hide();
@@ -312,6 +313,14 @@ $(document).ready(function(){
 	reorder_lis("div_street_id");
 	update_scrollbar();
 	
+    
+    toggle_danishnuleba();
+    
+    $("#tp").change(function(e) {
+       toggle_danishnuleba();
+    });
+
+    
 });
 
 </script><div class="search_div" id="srchfrm">
@@ -566,7 +575,7 @@ $(document).ready(function(){
     <td class="fge">პროექტი</td>
     <td class="fge">ხედი</td>
     <td colspan="2" class="fge">მეტრო</td>
-    <td class="fge"> </td>
+    <td id="danishnuleba_td" class="fge">დანიშნულება</td>
     <td class="fge"> </td>
   </tr>
 <tr class="search_more">
@@ -575,7 +584,8 @@ $(document).ready(function(){
       <div class="drop_down_arrow_new ">
       <select name="mdgomareoba" id="mdgomareoba" class="mdp fge is_detailed"><option value="0">ყველა</option>
 <option value="2">ახალი აშენებული</option>
-<option value="3">მშენებარე</option></select>
+<option value="3">მშენებარე</option>
+<option value="4">ძველი აშენებული</option></select>
 </div>
       </div>
    
@@ -664,7 +674,26 @@ $(document).ready(function(){
       </div>
    
     </td>
-    <td> </td>
+    <td>
+        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all " style="width:127% !important;">
+          <div class="drop_down_arrow_new ">
+              <select name="danishnuleba_id" id="danishnuleba_id" class="mdp fge is_detailed"><option value="0">ყველა</option>
+<option value="30">ავტო სერვისი</option>
+<option value="25">გასართობი ცენტრი</option>
+<option value="23">კაფე-ბარი</option>
+<option value="21">მაღაზია</option>
+<option value="22">რესტორანი</option>
+<option value="34">საგანმანათლებლო</option>
+<option value="33">სავაჭრო ცენტრი</option>
+<option value="24">სასტუმრო</option>
+<option value="26">საწარმო</option>
+<option value="28">საწყობი</option>
+<option value="29">ფერმა</option>
+<option value="27">ქარხანა</option></select>
+</div>
+        </div>
+    
+    </td>
     <td align="right"><input type="submit" class="my_button btn_red ui-corner-all fge caps_text" value="ძებნა"></td>
   </tr>
 <tr>
@@ -680,7 +709,7 @@ $(document).ready(function(){
     </td>
     </tr>
 </table>
-<input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="ყველა"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
+<input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="danishnuleba_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="ყველა"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
 </form>
 </div>
 
@@ -903,7 +932,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1434074488" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1435457963" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
 </div>
 </div>
 
@@ -937,7 +966,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="ისანი"> </li>
 <li class="transparent_class r_14" title="კრწანისი"> </li>
 <li class="transparent_class r_15" title="ჩუღურეთი"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1434074488" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
+<img src="images/charts/chart_21.png?t=1435457963" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1031,13 +1060,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7760)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7757)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6041)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (5973)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2040)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2104)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (60)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=1&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>განცხადების დამატება</a></div>
@@ -1066,7 +1095,7 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10023306</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">1107</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">1190</span>
 		<span class="icons_li fen srch_icons_id float_right fge" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">ნანახია:</span>
 		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">11.06.2015</span>
 	</div>
@@ -1271,110 +1300,110 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fge similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=4443301"><img src="mg/1003/thmb/4443301_t_1_o.jpg" width="114" height="70" alt="იყიდება 530 კვ.მ. საკუთარი სახლი წყნეთში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10018889"><img src="mg/1403/thmb/10018889_t_123501.jpg" width="114" height="70" alt="იყიდება 500 კვ.მ. საკუთარი სახლი წავკისში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=4443301">იყიდება 530 კვ.მ. საკუთარი სახლი წყნეთში <span class="orange_num">600000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10018889">იყიდება 500 კვ.მ. საკუთარი სახლი წავკისში <span class="orange_num">750000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=bb2eeab1d050b03717f67f1ff498cbd6')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b3bdce36e66c0178e4ffd5abf0d42100')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10031984"><img src="mg/1408/thmb/10031984_t_176923.jpg" width="114" height="70" alt="იყიდება 370 კვ.მ. საკუთარი სახლი ქობულეთის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10029582"><img src="images/no_image.gif" width="114" height="70" alt="იყიდება 450 კვ.მ. საკუთარი სახლი გრიბოედოვის შესახვევში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10031984">იყიდება 370 კვ.მ. საკუთარი სახლი ქობულეთის ქუჩაზე <span class="orange_num">750000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10029582">იყიდება 450 კვ.მ. საკუთარი სახლი გრიბოედოვის შესახვევში <span class="orange_num">600000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=be5c0dbdf5a8c2cb3ef2486dea12695a')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b668e9044329894fbedc34a727806731')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10055012"><img src="images/no_image.gif" width="114" height="70" alt="იყიდება 200 კვ.მ. საკუთარი სახლი მცხეთაში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=2968957"><img src="mg/1303/thmb/2968957_t_271895.jpg" width="114" height="70" alt="იყიდება 750 კვ.მ. საკუთარი სახლი ლუბლიანის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10055012">იყიდება 200 კვ.მ. საკუთარი სახლი მცხეთაში <span class="orange_num">700000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=2968957">იყიდება 750 კვ.მ. საკუთარი სახლი ლუბლიანის ქუჩაზე <span class="orange_num">900000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=f0bad5d39ae190280baf7b138b44a742')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=1368644daae73491550df62c40c60382')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=1377574"><img src="mg/1206/thmb/1377574_t_1_o.jpg" width="114" height="70" alt="იყიდება 270 კვ.მ. საკუთარი სახლი ქობულეთის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10035199"><img src="mg/1409/thmb/10035199_t_186466.jpg" width="114" height="70" alt="იყიდება 786 კვ.მ. საკუთარი სახლი აღმაშენებლის ხეივანში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=1377574">იყიდება 270 კვ.მ. საკუთარი სახლი ქობულეთის ქუჩაზე <span class="orange_num">600000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10035199">იყიდება 786 კვ.მ. საკუთარი სახლი აღმაშენებლის ხეივანში <span class="orange_num">600000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=0b869180ed79ea228bbdee90be5f4dcd')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=a2db1410c84992c3ee6459ea12527b4a')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=6944268"><img src="mg/1211/thmb/6944268_t_4_o.jpg" width="114" height="70" alt="იყიდება 700 კვ.მ. საკუთარი სახლი დიღომი 8-ში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10052541"><img src="mg/1505/thmb/10052541_t_282890.jpg" width="114" height="70" alt="იყიდება 750 კვ.მ. საკუთარი სახლი მ. ბალანჩივაძის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=6944268">იყიდება 700 კვ.მ. საკუთარი სახლი დიღომი 8-ში <span class="orange_num">770000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10052541">იყიდება 750 კვ.მ. საკუთარი სახლი მ. ბალანჩივაძის ქუჩაზე <span class="orange_num">650000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=95dbd3fe13c92b6c1f2a32cb2da685d0')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=da05d2d656d14482fed82e8e9342ace3')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=681422"><img src="mg/1304/thmb/681422_t_39692.jpg" width="114" height="70" alt="იყიდება 580 კვ.მ. საკუთარი სახლი სოფ. დიღომში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10000746"><img src="mg/1305/thmb/10000746_t_271753.jpg" width="114" height="70" alt="იყიდება 600 კვ.მ. საკუთარი სახლი ლუბლიანის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=681422">იყიდება 580 კვ.მ. საკუთარი სახლი სოფ. დიღომში <span class="orange_num">800000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10000746">იყიდება 600 კვ.მ. საკუთარი სახლი ლუბლიანის ქუჩაზე <span class="orange_num">800000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b2de5582d3757690f562b84e0f5f52c9')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=4e97334515b0a12ebb855fbd2480b905')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10037080"><img src="mg/1410/thmb/10037080_t_297989.jpg" width="114" height="70" alt="იყიდება 657 კვ.მ. საკუთარი სახლი უჩანეიშვილის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10013401"><img src="mg/1312/thmb/10013401_t_104509.jpg" width="114" height="70" alt="იყიდება 330 კვ.მ. საკუთარი სახლი ს.მესხის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10037080">იყიდება 657 კვ.მ. საკუთარი სახლი უჩანეიშვილის ქუჩაზე <span class="orange_num">690000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10013401">იყიდება 330 კვ.მ. საკუთარი სახლი ს.მესხის ქუჩაზე <span class="orange_num">600000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=ef49f40766d7ad388567b435f68ba5b4')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=adb877f7e4cc3513fcb744fee3dabc54')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=5712763"><img src="mg/1202/thmb/5712763_t_1_o.jpg" width="114" height="70" alt="იყიდება 280.09 კვ.მ. საკუთარი სახლი წყნეთის გზატკეცილზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10050953"><img src="mg/1504/thmb/10050953_t_278368.jpg" width="114" height="70" alt="იყიდება 300 კვ.მ. საკუთარი სახლი ჯორბენაძის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=5712763">იყიდება 280.09 კვ.მ. საკუთარი სახლი წყნეთის გზატკეცილზე <span class="orange_num">700000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10050953">იყიდება 300 კვ.მ. საკუთარი სახლი ჯორბენაძის ქუჩაზე <span class="orange_num">750000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=4e692275fda5e4e1f20d00cdb6b6a2db')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=9761d31dda56438d5c0d7a42bc4d2ad8')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10054292"><img src="mg/1506/thmb/10054292_t_295811.jpg" width="114" height="70" alt="იყიდება ახალ აშენებული საკუთარი სახლი ზედა წყნეთში მონადირე რესტორანთან საუკთესო ადგილას ."></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=7708640"><img src="mg/1206/thmb/7708640_t_1_o.jpg" width="114" height="70" alt="იყიდება 1000 კვ.მ. საკუთარი სახლი საირმის გორაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10054292">იყიდება ახალ აშენებული საკუთარი სახლი ზედა წყნეთში მონადირე რესტორანთან საუკთესო ადგილას . </a>
+					<a href="?lan=1&amp;pg=ann&amp;id=7708640">იყიდება 1000 კვ.მ. საკუთარი სახლი საირმის გორაზე <span class="orange_num">777000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=2b596235eaebc633a699877319ff20e0')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=7a4d60c4de6cc2d6d57108871d85da5f')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10054402"><img src="mg/1506/thmb/10054402_t_296105.jpg" width="114" height="70" alt="იყიდება 650 კვ.მ. საკუთარი სახლი კრწანისის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10055490"><img src="mg/1506/thmb/10055490_t_303265.jpg" width="114" height="70" alt="იყიდება 600 კვ.მ. საკუთარი სახლი არდაზიანის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10054402">იყიდება 650 კვ.მ. საკუთარი სახლი კრწანისის ქუჩაზე <span class="orange_num">620000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10055490">იყიდება 600 კვ.მ. საკუთარი სახლი არდაზიანის ქუჩაზე <span class="orange_num">650000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=2ca0c45e17b88515df283b9d54758990')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=a7bfba4a44418561684dc75b74417d55')">
 </div>
 					
 				</li>
