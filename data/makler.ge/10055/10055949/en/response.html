@@ -315,6 +315,7 @@ $(document).ready(function(){
 	
     
     toggle_danishnuleba();
+   // dropdown_change();
     
     $("#tp").change(function(e) {
        toggle_danishnuleba();
@@ -376,7 +377,7 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('');"><option value="-1">All</option>
+      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('');dropdown_change();"><option value="-1">All</option>
 <option value="1" selected>Tbilisi</option>
 <optgroup label="  Abkhazia">
 <option value="26">Gagra</option>
@@ -537,12 +538,14 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('');"></select>
+      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('');dropdown_change();"></select>
 </div>
       </div>
     </td>
-    <td valign="middle"><input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
-    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
+    <td valign="middle">
+    <input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()">
+</td>
+    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()"></td>
     <td valign="middle">
     <div class="search_input my_dropdown_div fge ui-corner-all " style="width:80% !important">
       <div class="drop_down_arrow_new ">
@@ -967,7 +970,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1436320888" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1436407278" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -1001,7 +1004,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1436320888" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1436407278" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1096,13 +1099,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7860)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7855)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6030)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6026)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2156)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2155)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (63)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (64)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1131,9 +1134,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10055949</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">177</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">210</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">07.07.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">08.07.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1145,7 +1148,7 @@ $(document).ready(function() {
 <td>
 			<div class="ann_thmb ann_thmb_main float_left" alt="1" name="1">
 				<div class="ann_thmb_main_indiv" id="middleshower" this_id="thmb_306170">
-<a class="fancy_opener thmb_306170" this_id="thmb_306170" href="javascript:;"><img src="mg/1506/10055949_m_306170.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306175" this_id="thmb_306175" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306175.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306167" this_id="thmb_306167" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306167.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306168" this_id="thmb_306168" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306168.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306169" this_id="thmb_306169" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306169.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306176" this_id="thmb_306176" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306176.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306177" this_id="thmb_306177" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306177.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306178" this_id="thmb_306178" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306178.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306171" this_id="thmb_306171" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306171.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306172" this_id="thmb_306172" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306172.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306173" this_id="thmb_306173" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306173.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306174" this_id="thmb_306174" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306174.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a>
+<a class="fancy_opener thmb_306170" this_id="thmb_306170" href="javascript:;"><img src="mg/1506/10055949_m_306170.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306175" this_id="thmb_306175" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306175.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306167" this_id="thmb_306167" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306167.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306168" this_id="thmb_306168" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306168.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306169" this_id="thmb_306169" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306169.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306176" this_id="thmb_306176" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306176.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306177" this_id="thmb_306177" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306177.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306178" this_id="thmb_306178" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306178.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306171" this_id="thmb_306171" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306171.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306172" this_id="thmb_306172" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306172.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306173" this_id="thmb_306173" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306173.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_306174" this_id="thmb_306174" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_306174.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315179" this_id="thmb_315179" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315179.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315180" this_id="thmb_315180" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315180.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315181" this_id="thmb_315181" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315181.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315182" this_id="thmb_315182" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315182.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315183" this_id="thmb_315183" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315183.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315184" this_id="thmb_315184" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315184.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315185" this_id="thmb_315185" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315185.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315186" this_id="thmb_315186" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315186.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315187" this_id="thmb_315187" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315187.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315188" this_id="thmb_315188" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315188.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315189" this_id="thmb_315189" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315189.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315190" this_id="thmb_315190" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315190.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315191" this_id="thmb_315191" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315191.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315192" this_id="thmb_315192" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315192.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_315193" this_id="thmb_315193" style="display:none;" href="javascript:;"><img src="mg/1506/10055949_m_315193.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a>
 </div>
 			</div>
 		</td>
@@ -1154,14 +1157,22 @@ $(document).ready(function() {
 <td>
 		<div class="thmb_viewer">
 			<div class="thmbs_arrow a_left" show="prev"></div>
-			<div class="thmbs_content" id="shownow" now="1" last="2">
+			<div class="thmbs_content" id="shownow" now="1" last="5">
 <div class="thumbs_6 show_1">
 <a id="thmb_306170" href="mg/1506/10055949_306170.jpg" alt="1" name="1" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306170.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_306175" href="mg/1506/10055949_306175.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306175.jpg" title="" width="80" height="60" alt="2"></a><a id="thmb_306167" href="mg/1506/10055949_306167.jpg" alt="3" name="3" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306167.jpg" title="" width="80" height="60" alt="3"></a><a id="thmb_306168" href="mg/1506/10055949_306168.jpg" alt="4" name="4" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306168.jpg" title="" width="80" height="60" alt="4"></a><a id="thmb_306169" href="mg/1506/10055949_306169.jpg" alt="5" name="5" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306169.jpg" title="" width="80" height="60" alt="5"></a><a id="thmb_306176" href="mg/1506/10055949_306176.jpg" alt="6" name="6" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306176.jpg" title="" width="80" height="60" alt="6"></a>
 </div>
 <div class="thumbs_6 show_2" style="display:none;">
 <a id="thmb_306177" href="mg/1506/10055949_306177.jpg" alt="7" name="7" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306177.jpg" title="" width="80" height="60" alt="7"></a><a id="thmb_306178" href="mg/1506/10055949_306178.jpg" alt="8" name="8" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306178.jpg" title="" width="80" height="60" alt="8"></a><a id="thmb_306171" href="mg/1506/10055949_306171.jpg" alt="9" name="9" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306171.jpg" title="" width="80" height="60" alt="9"></a><a id="thmb_306172" href="mg/1506/10055949_306172.jpg" alt="10" name="10" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306172.jpg" title="" width="80" height="60" alt="10"></a><a id="thmb_306173" href="mg/1506/10055949_306173.jpg" alt="11" name="11" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306173.jpg" title="" width="80" height="60" alt="11"></a><a id="thmb_306174" href="mg/1506/10055949_306174.jpg" alt="12" name="12" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_306174.jpg" title="" width="80" height="60" alt="12"></a>
 </div>
-<div class="thumbs_6 show_3" style="display:none;"></div>
+<div class="thumbs_6 show_3" style="display:none;">
+<a id="thmb_315179" href="mg/1506/10055949_315179.jpg" alt="13" name="13" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315179.jpg" title="" width="80" height="60" alt="13"></a><a id="thmb_315180" href="mg/1506/10055949_315180.jpg" alt="14" name="14" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315180.jpg" title="" width="80" height="60" alt="14"></a><a id="thmb_315181" href="mg/1506/10055949_315181.jpg" alt="15" name="15" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315181.jpg" title="" width="80" height="60" alt="15"></a><a id="thmb_315182" href="mg/1506/10055949_315182.jpg" alt="16" name="16" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315182.jpg" title="" width="80" height="60" alt="16"></a><a id="thmb_315183" href="mg/1506/10055949_315183.jpg" alt="17" name="17" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315183.jpg" title="" width="80" height="60" alt="17"></a><a id="thmb_315184" href="mg/1506/10055949_315184.jpg" alt="18" name="18" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315184.jpg" title="" width="80" height="60" alt="18"></a>
+</div>
+<div class="thumbs_6 show_4" style="display:none;">
+<a id="thmb_315185" href="mg/1506/10055949_315185.jpg" alt="19" name="19" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315185.jpg" title="" width="80" height="60" alt="19"></a><a id="thmb_315186" href="mg/1506/10055949_315186.jpg" alt="20" name="20" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315186.jpg" title="" width="80" height="60" alt="20"></a><a id="thmb_315187" href="mg/1506/10055949_315187.jpg" alt="21" name="21" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315187.jpg" title="" width="80" height="60" alt="21"></a><a id="thmb_315188" href="mg/1506/10055949_315188.jpg" alt="22" name="22" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315188.jpg" title="" width="80" height="60" alt="22"></a><a id="thmb_315189" href="mg/1506/10055949_315189.jpg" alt="23" name="23" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315189.jpg" title="" width="80" height="60" alt="23"></a><a id="thmb_315190" href="mg/1506/10055949_315190.jpg" alt="24" name="24" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315190.jpg" title="" width="80" height="60" alt="24"></a>
+</div>
+<div class="thumbs_6 show_5" style="display:none;">
+<a id="thmb_315191" href="mg/1506/10055949_315191.jpg" alt="25" name="25" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315191.jpg" title="" width="80" height="60" alt="25"></a><a id="thmb_315192" href="mg/1506/10055949_315192.jpg" alt="26" name="26" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315192.jpg" title="" width="80" height="60" alt="26"></a><a id="thmb_315193" href="mg/1506/10055949_315193.jpg" alt="27" name="27" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1506/thmb/10055949_t_315193.jpg" title="" width="80" height="60" alt="27"></a>
+</div>
 </div>
 			<div class="thmbs_arrow a_right thmbs_hoverer" show="next"></div>
 		</div>
@@ -1297,22 +1308,33 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fen similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10014824"><img src="mg/1401/thmb/10014824_t_105964.jpg" width="114" height="70" alt="For Sale 310 sq.m. Private house on Tamarashvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10020976"><img src="mg/1404/thmb/10020976_t_142236.jpg" width="114" height="70" alt="For Sale 350 sq.m. Private house  in Tsavkisi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10014824">For Sale 310 sq.m. Private house on Tamarashvili st. <span class="orange_num">350000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10020976">For Sale 350 sq.m. Private house  in Tsavkisi <span class="orange_num">250000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=9546911e23c64674b724c9e993ef94ff')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=dae98d08c1605dacb479939622a71f84')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10042106"><img src="mg/1412/thmb/10042106_t_227911.jpg" width="114" height="70" alt="For Sale 350 sq.m. Private house in Doesi st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10046780"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 1100 sq.m. Private house in Batumi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10042106">For Sale 350 sq.m. Private house in Doesi st. <span class="orange_num">340000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10046780">For Sale 1100 sq.m. Private house in Batumi <span class="orange_num">300000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=2a9868d3623f778ee891ca728b1ed508')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=1ecc327cd2197fcb2ceb424e45e2b0ba')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10014824"><img src="mg/1401/thmb/10014824_t_105964.jpg" width="114" height="70" alt="For Sale 310 sq.m. Private house on Tamarashvili st."></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10014824">For Sale 310 sq.m. Private house on Tamarashvili st. <span class="orange_num">350000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=9546911e23c64674b724c9e993ef94ff')">
 </div>
 					
 				</li>
@@ -1390,17 +1412,6 @@ $(document).ready(function() {
 					<a href="?lan=2&amp;pg=ann&amp;id=10051589">For Sale 250 sq.m. Private house in Kareli st. <span class="orange_num">360000 $</span></a>
 					 
 					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=5cf9fa00f2a506993c77753486100b46')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10019153"><img src="mg/1403/thmb/10019153_t_190288.jpg" width="114" height="70" alt="For Sale 200 sq.m. Private house  in Saburtalo dist."></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10019153">For Sale 200 sq.m. Private house  in Saburtalo dist. <span class="orange_num">350000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=acff2a2132ea5427925a4beb8e8a1dab')">
 </div>
 					
 				</li>

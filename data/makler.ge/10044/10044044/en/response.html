@@ -315,6 +315,7 @@ $(document).ready(function(){
 	
     
     toggle_danishnuleba();
+   // dropdown_change();
     
     $("#tp").change(function(e) {
        toggle_danishnuleba();
@@ -352,7 +353,7 @@ $(document).ready(function(){
 <td colspan="2" valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="cat" id="cat" class="mdp fen"><option value="-1">All</option>
+      <select name="cat" id="cat" class="mdp fen" onchange="dropdown_change();"><option value="-1">All</option>
 <option value="1" selected>For Sale</option>
 <option value="2">For Rent</option>
 <option value="3">For lease</option>
@@ -363,7 +364,7 @@ $(document).ready(function(){
     <td colspan="2" valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="tp" id="tp" class="mdp fen"><option value="-1">All</option>
+      <select name="tp" id="tp" class="mdp fen" onchange="dropdown_change();"><option value="-1">All</option>
 <option value="12" selected>Apartment</option>
 <option value="11">Private house</option>
 <option value="13">Office</option>
@@ -376,7 +377,7 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('')"><option value="-1">All</option>
+      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('');dropdown_change();"><option value="-1">All</option>
 <option value="1" selected>Tbilisi</option>
 <optgroup label="  Abkhazia">
 <option value="26">Gagra</option>
@@ -537,14 +538,16 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('')"></select>
+      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('');dropdown_change();"></select>
 </div>
       </div>
     </td>
-    <td valign="middle"><input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
-    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
     <td valign="middle">
-    <div class="search_input my_dropdown_div fge ui-corner-all ">
+    <input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()">
+</td>
+    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()"></td>
+    <td valign="middle">
+    <div class="search_input my_dropdown_div fge ui-corner-all " style="width:80% !important">
       <div class="drop_down_arrow_new ">
       <select name="valuta" id="valuta" class="mdp fen"><option value="1">GEL</option>
 <option value="2" selected>USD</option>
@@ -553,8 +556,8 @@ $(document).ready(function(){
       </div>
     </td>
     <td align="right" valign="middle">
-<input type="submit" class="my_button btn_red ui-corner-all fen caps_text btntohide" value="Search"><div class="search_more fen">
-<input name="price_kv" type="checkbox" id="price_kv" value="2" class="float_left is_detailed">Price sq.m.</div>
+        <input id="btn1" type="submit" class="my_button btn_red ui-corner-all fen caps_text btntohide" value="Search"><div class="search_more fen">
+    <input name="price_kv" type="checkbox" id="price_kv" value="2" class="float_left is_detailed">Price sq.m.</div>
 </td>
   </tr>
 <tr class="search_more">
@@ -698,8 +701,8 @@ $(document).ready(function(){
       </div>
    
     </td>
-    <td>
-        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all " style="width:127% !important;">
+    <td colspan="2">
+        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all ">
           <div class="drop_down_arrow_new ">
               <select name="danishnuleba_id" id="danishnuleba_id" class="mdp fen is_detailed"><option value="0">All</option>
 <option value="30">Auto Service</option>
@@ -718,7 +721,7 @@ $(document).ready(function(){
         </div>
     
     </td>
-    <td align="right"><input type="submit" class="my_button btn_red ui-corner-all fen caps_text" value="Search"></td>
+
   </tr>
 <tr>
 <td colspan="2" class="fen"> </td>
@@ -731,6 +734,17 @@ $(document).ready(function(){
     <div id="detailed_search_btn" class="detailed_search fen" is_open="1">Detailed Search<div class="detailed_search_arr dsa_down"></div>
 </div>
     </td>
+    </tr>
+<tr class="search_more">
+<td colspan="2" class="fen"> </td>
+        <td colspan="2"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td align="right" colspan="2">
+            <input id="btn2" type="submit" class="my_button btn_red ui-corner-all fen caps_text" value="Search">
+</td>
     </tr>
 </table>
 <input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="danishnuleba_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="All"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
@@ -956,7 +970,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1436061661" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1436407300" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -990,7 +1004,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1436061661" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1436407300" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1085,13 +1099,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7839)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7855)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6022)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6026)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2144)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2155)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (61)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (64)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1120,9 +1134,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10044044</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">301</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">318</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">04.07.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">08.07.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1285,99 +1299,99 @@ $(document).ready(function() {
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10000999"><img src="mg/lands/land_t_10000999.jpg" width="114" height="70" alt="For Sale 2200 sq.m. Land  in Tsavkisi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=4768361"><img src="mg/lands/land_t_4768361.jpg" width="114" height="70" alt="For Sale 1500 sq.m. Land  in Natakhtari"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10000999">For Sale 2200 sq.m. Land  in Tsavkisi <span class="orange_num">39600 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=4768361">For Sale 1500 sq.m. Land  in Natakhtari <span class="orange_num">45000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=2c78df1d9b37fc909b8c68070d561c8c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=0d82d8ea9ebed7d77f7d29081a6da200')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10019120"><img src="mg/1403/thmb/10019120_t_124580.jpg" width="114" height="70" alt="For Sale 1000 sq.m. Land  in Didi digomi dist."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=7342792"><img src="mg/lands/land_t_7342792.jpg" width="114" height="70" alt="For Sale 600 sq.m. Land  in Mtskheta"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10019120">For Sale 1000 sq.m. Land  in Didi digomi dist. <span class="orange_num">40000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=7342792">For Sale 600 sq.m. Land  in Mtskheta <span class="orange_num">40000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=38a9509e82c60cadea62a568441503ff')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=4f72265b10dcd6ca0be699dc76659666')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10004863"><img src="mg/lands/land_t_10004863.jpg" width="114" height="70" alt="For Sale 2402 sq.m. Land  in Gardabani"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=9810751"><img src="mg/lands/land_t_9810751.jpg" width="114" height="70" alt="For Sale 2000 sq.m. Land  in Mtskheta"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10004863">For Sale 2402 sq.m. Land  in Gardabani <span class="orange_num">43236 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=9810751">For Sale 2000 sq.m. Land  in Mtskheta <span class="orange_num">40000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=185d3f4d069ffca267ab22ed70ee7e2a')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e324f9cfc216acfadc2a7b423c2a0415')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10007733"><img src="mg/lands/land_t_10007733.jpg" width="114" height="70" alt="For Sale 930 sq.m. Land  near the Tbilisi sea"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10057303"><img src="mg/lands/land_t_10057303.jpg" width="114" height="70" alt="For Sale 1000 sq.m. Land  in Tsavkisi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10007733">For Sale 930 sq.m. Land  near the Tbilisi sea <span class="orange_num">43000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10057303">For Sale 1000 sq.m. Land  in Tsavkisi <span class="orange_num">40000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=6d29d18bfa030fbbbf8cd40720247383')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=4da3aac3263df5e44bcf5a899a1cfa89')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=7489116"><img src="mg/lands/land_t_7489116.jpg" width="114" height="70" alt="For Sale 1880 sq.m. Land  near the Lisi lake"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10005001"><img src="mg/lands/land_t_10005001.jpg" width="114" height="70" alt="For Sale 1500 sq.m. Land  in Tabakhmela"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=7489116">For Sale 1880 sq.m. Land  near the Lisi lake <span class="orange_num">75200 gel</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10005001">For Sale 1500 sq.m. Land  in Tabakhmela <span class="orange_num">45000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=fb44da4bc4eecc039c9c98f109699d15')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d9a8c4aeb94dd74728f18cb271ba5983')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=8132411"><img src="mg/lands/land_t_8132411.jpg" width="114" height="70" alt="For Sale 1500 sq.m. Land  in Saguramo"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=7196437"><img src="mg/lands/land_t_7196437.jpg" width="114" height="70" alt="For Sale 800 sq.m. Land  in Saguramo"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=8132411">For Sale 1500 sq.m. Land  in Saguramo <span class="orange_num">70000 gel</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=7196437">For Sale 800 sq.m. Land  in Saguramo <span class="orange_num">48000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=b8b0aea9cd892053f40e3888a475b25d')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=b3aa85d5caf7e103e5187caf72e23d43')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056745"><img src="mg/lands/land_t_10056745.jpg" width="114" height="70" alt="For Sale 600 sq.m. Land  in Gudauri"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=2646503"><img src="mg/lands/land_t_2646503.jpg" width="114" height="70" alt="For Sale 1200 sq.m. Land  in Bakuriani"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10056745">For Sale 600 sq.m. Land  in Gudauri <span class="orange_num">45000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=2646503">For Sale 1200 sq.m. Land  in Bakuriani <span class="orange_num">45000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c85f13831873aaf3aa3cc9eee5166e37')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=96df1537a4469670b791d65dc64a7e8a')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=4026009"><img src="mg/lands/land_t_4026009.jpg" width="114" height="70" alt="For Sale 3000 sq.m. Land  near the Tbilisi sea"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=417740"><img src="mg/lands/land_t_417740.jpg" width="114" height="70" alt="For Sale 1200 sq.m. Land  in Saguramo"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=4026009">For Sale 3000 sq.m. Land  near the Tbilisi sea <span class="orange_num">45000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=417740">For Sale 1200 sq.m. Land  in Saguramo <span class="orange_num">48000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=3b504ffb4b7c94e0fbb21fb8bba3c68b')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=62ef4829227f31075ccb65056771d590')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=5133395"><img src="mg/lands/land_t_5133395.jpg" width="114" height="70" alt="For Sale 500 sq.m. Land  near the Tbilisi sea"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=9274459"><img src="mg/lands/land_t_9274459.jpg" width="114" height="70" alt="For Sale 1000 sq.m. Land  in Kojori"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=5133395">For Sale 500 sq.m. Land  near the Tbilisi sea <span class="orange_num">42000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=9274459">For Sale 1000 sq.m. Land  in Kojori <span class="orange_num">35000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=2c544c0df91033b63403bcab125a15e4')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=a976dba2c5410cce7bb2a9cad601ec6f')">
 </div>
 					
 				</li>

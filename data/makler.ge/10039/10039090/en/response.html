@@ -315,6 +315,7 @@ $(document).ready(function(){
 	
     
     toggle_danishnuleba();
+   // dropdown_change();
     
     $("#tp").change(function(e) {
        toggle_danishnuleba();
@@ -352,7 +353,7 @@ $(document).ready(function(){
 <td colspan="2" valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="cat" id="cat" class="mdp fen"><option value="-1">All</option>
+      <select name="cat" id="cat" class="mdp fen" onchange="dropdown_change();"><option value="-1">All</option>
 <option value="1" selected>For Sale</option>
 <option value="2">For Rent</option>
 <option value="3">For lease</option>
@@ -363,7 +364,7 @@ $(document).ready(function(){
     <td colspan="2" valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="tp" id="tp" class="mdp fen"><option value="-1">All</option>
+      <select name="tp" id="tp" class="mdp fen" onchange="dropdown_change();"><option value="-1">All</option>
 <option value="12" selected>Apartment</option>
 <option value="11">Private house</option>
 <option value="13">Office</option>
@@ -376,7 +377,7 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('')"><option value="-1">All</option>
+      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('');dropdown_change();"><option value="-1">All</option>
 <option value="1" selected>Tbilisi</option>
 <optgroup label="  Abkhazia">
 <option value="26">Gagra</option>
@@ -537,14 +538,16 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('')"></select>
+      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('');dropdown_change();"></select>
 </div>
       </div>
     </td>
-    <td valign="middle"><input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
-    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
     <td valign="middle">
-    <div class="search_input my_dropdown_div fge ui-corner-all ">
+    <input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()">
+</td>
+    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()"></td>
+    <td valign="middle">
+    <div class="search_input my_dropdown_div fge ui-corner-all " style="width:80% !important">
       <div class="drop_down_arrow_new ">
       <select name="valuta" id="valuta" class="mdp fen"><option value="1">GEL</option>
 <option value="2" selected>USD</option>
@@ -553,8 +556,8 @@ $(document).ready(function(){
       </div>
     </td>
     <td align="right" valign="middle">
-<input type="submit" class="my_button btn_red ui-corner-all fen caps_text btntohide" value="Search"><div class="search_more fen">
-<input name="price_kv" type="checkbox" id="price_kv" value="2" class="float_left is_detailed">Price sq.m.</div>
+        <input id="btn1" type="submit" class="my_button btn_red ui-corner-all fen caps_text btntohide" value="Search"><div class="search_more fen">
+    <input name="price_kv" type="checkbox" id="price_kv" value="2" class="float_left is_detailed">Price sq.m.</div>
 </td>
   </tr>
 <tr class="search_more">
@@ -698,8 +701,8 @@ $(document).ready(function(){
       </div>
    
     </td>
-    <td>
-        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all " style="width:127% !important;">
+    <td colspan="2">
+        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all ">
           <div class="drop_down_arrow_new ">
               <select name="danishnuleba_id" id="danishnuleba_id" class="mdp fen is_detailed"><option value="0">All</option>
 <option value="30">Auto Service</option>
@@ -718,7 +721,7 @@ $(document).ready(function(){
         </div>
     
     </td>
-    <td align="right"><input type="submit" class="my_button btn_red ui-corner-all fen caps_text" value="Search"></td>
+
   </tr>
 <tr>
 <td colspan="2" class="fen"> </td>
@@ -731,6 +734,17 @@ $(document).ready(function(){
     <div id="detailed_search_btn" class="detailed_search fen" is_open="1">Detailed Search<div class="detailed_search_arr dsa_down"></div>
 </div>
     </td>
+    </tr>
+<tr class="search_more">
+<td colspan="2" class="fen"> </td>
+        <td colspan="2"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td align="right" colspan="2">
+            <input id="btn2" type="submit" class="my_button btn_red ui-corner-all fen caps_text" value="Search">
+</td>
     </tr>
 </table>
 <input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="danishnuleba_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="All"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
@@ -956,7 +970,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1435975283" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1436407300" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -990,7 +1004,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1435975283" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1436407300" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1085,13 +1099,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7844)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7855)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6021)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6026)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2152)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2155)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (60)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (64)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1120,9 +1134,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10039090</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">540</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">581</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">03.07.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">08.07.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1166,11 +1180,11 @@ $(document).ready(function() {
 <tr>
 <td width="100" valign="top"><a href="http://tbc.ge/en" target="_blank"><img src="images/logo-tbc.png" border="0" title="http://tbc.ge/en" alt="http://tbc.ge/en" width="100"></a></td>
 						<td class="ann_tbc caps_text">
-<a href="http://tbcbank.ge/en/online_forms/order_loan/" target="_blank">Get a loan</a>  2470$ per month</td>
+<a href="http://tbcbank.ge/en/online_forms/order_loan/" target="_blank">Get a loan</a>  2153$ per month</td>
 					  </tr>
 <tr>
 <td width="100" class="mc_title" valign="top">For Sale</td>
-			<td class="orange_num" valign="top"><span class="orange_num">195000 $ / 716.91 $ m² </span></td>
+			<td class="orange_num" valign="top"><a href="javascript:;" class="orange_num" title="195000 $ Â» 170000 $"><img src="img/arr_down.gif" align="left" alt="arrow">170000 $ / 425.00 $ m² </a></td>
 		  </tr>
 <tr>
 <td class="mc_title">Space</td>
@@ -1319,7 +1333,7 @@ $(document).ready(function() {
 					<li class="is_orange fen">+995 595 10 10 22</li>
 <li class="is_orange fen">+995 32 247 10 20 </li>
 <li class="is_orange fen">lika.j@makler.ge</li>
-					<li><a class="caps_text" href="?lan=2&amp;pg=search&amp;broker=55884">All Announcements (469)</a></li>
+					<li><a class="caps_text" href="?lan=2&amp;pg=search&amp;broker=55884">All Announcements (463)</a></li>
 				</ul>
 <div class="broker_info_feedback_div" id="broker_info_div">
 					<form class="forms">
@@ -1357,6 +1371,17 @@ Please, try again later">
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fen similars">
 <li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10057357"><img src="mg/1507/thmb/10057357_t_314613.jpg" width="114" height="70" alt="For Sale 400 sq.m. Private house  in Nutsubidze plateau"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10057357">For Sale 400 sq.m. Private house  in Nutsubidze plateau <span class="orange_num">175000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=61a490fa4455c07694d6d92fdb347c0f')">
+</div>
+					
+				</li>
+				
+			
+				<li>
 					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=1548134"><img src="mg/1301/thmb/1548134_t_1_o.jpg" width="114" height="70" alt="For Sale 227 sq.m. Private house in G.Zhgenti st."></a></div>
 					<div class="ann_text fen">
 					<a href="?lan=2&amp;pg=ann&amp;id=1548134">For Sale 227 sq.m. Private house in G.Zhgenti st. <span class="orange_num">175000 $</span></a>
@@ -1379,6 +1404,17 @@ Please, try again later">
 				
 			
 				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10050203"><img src="mg/1504/thmb/10050203_t_269638.jpg" width="114" height="70" alt="For Sale 270 sq.m. Private house  in Nutsubidze plateau"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10050203">For Sale 270 sq.m. Private house  in Nutsubidze plateau <span class="orange_num">155000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=b4a23a61b2ecfa171eb7680f2b3ae22a')">
+</div>
+					
+				</li>
+				
+			
+				<li>
 					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=84762"><img src="mg/1305/thmb/84762_t_1_o.jpg" width="114" height="70" alt="For Sale 200 sq.m. Private house  in Nutsubidze plateau"></a></div>
 					<div class="ann_text fen">
 					<a href="?lan=2&amp;pg=ann&amp;id=84762">For Sale 200 sq.m. Private house  in Nutsubidze plateau <span class="orange_num">200000 $</span></a>
@@ -1390,77 +1426,55 @@ Please, try again later">
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=6996371"><img src="mg/1111/thmb/6996371_t_1_o.jpg" width="114" height="70" alt="For Sale 310 sq.m. Private house in Gogchi st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10047975"><img src="mg/1503/thmb/10047975_t_256066.jpg" width="114" height="70" alt="For Sale 180 sq.m. Private house in Batumi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=6996371">For Sale 310 sq.m. Private house in Gogchi st. <span class="orange_num">190000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10047975">For Sale 180 sq.m. Private house in Batumi <span class="orange_num">180000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=11c14cf6771100af56bf0118ea1fdcf1')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=f60bb66030df6fc34bd4ab97824f85d5')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10017225"><img src="mg/1402/thmb/10017225_t_116898.jpg" width="114" height="70" alt="For Sale 164 sq.m. Private house in Batumi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056609"><img src="mg/1506/thmb/10056609_t_310205.jpg" width="114" height="70" alt="For Sale 230 sq.m. Private house in Guramishvili avenue"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10017225">For Sale 164 sq.m. Private house in Batumi <span class="orange_num">180000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10056609">For Sale 230 sq.m. Private house in Guramishvili avenue <span class="orange_num">165000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=7748d3bb4a7a31ae47a511ba7fe2c6b3')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=41181597a35e8c94358be964226fc73f')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10022203"><img src="mg/1404/thmb/10022203_t_139510.jpg" width="114" height="70" alt="For Sale 220 sq.m. Private house in K.Meskhi st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=6851147"><img src="mg/1304/thmb/6851147_t_93573.jpg" width="114" height="70" alt="For Sale 180 sq.m. Private house in Amagleba st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10022203">For Sale 220 sq.m. Private house in K.Meskhi st. <span class="orange_num">225000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=6851147">For Sale 180 sq.m. Private house in Amagleba st. <span class="orange_num">150000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=b18802db7c507ad0931a0fd54a78fa8f')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=30d4e13184287a47f903b6dae3bca5d3')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10040111"><img src="mg/1411/thmb/10040111_t_215780.jpg" width="114" height="70" alt="For Sale 390 sq.m. Private house  in Tsavkisi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10025524"><img src="mg/1405/thmb/10025524_t_150555.jpg" width="114" height="70" alt="For Sale 530 sq.m. Private house in II Kheivani st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10040111">For Sale 390 sq.m. Private house  in Tsavkisi <span class="orange_num">175000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10025524">For Sale 530 sq.m. Private house in II Kheivani st. <span class="orange_num">180000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=ca6f27a3fadf0dc9ed77280a7a0a5a01')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=721383a42542211768dbca0a7b12d5f0')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=8917057"><img src="mg/1208/thmb/8917057_t_1_o.jpg" width="114" height="70" alt="For Sale 360 sq.m. Private house in Delisi st. II"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=7664684"><img src="mg/1204/thmb/7664684_t_3_o.jpg" width="114" height="70" alt="For Sale 420 sq.m. Private house in Delisi st. II"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=8917057">For Sale 360 sq.m. Private house in Delisi st. II <span class="orange_num">230000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=7664684">For Sale 420 sq.m. Private house in Delisi st. II <span class="orange_num">200000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=5a88be1e6608958ccfef1940b558923b')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=1860411"><img src="mg/1210/thmb/1860411_t_1_o.jpg" width="114" height="70" alt="For Sale 200 sq.m. Private house  in Oqrokana"></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=1860411">For Sale 200 sq.m. Private house  in Oqrokana <span class="orange_num">180000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=80dfe8ab5efa8d376df7833421d5f9fe')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10011244"><img src="mg/1311/thmb/10011244_t_133536.jpg" width="114" height="70" alt="For Sale 280 sq.m. Private house in Batumi"></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10011244">For Sale 280 sq.m. Private house in Batumi <span class="orange_num">190000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e551f7bcb90bcf79084cb94fd78bfaea')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=89cb07f17ec32a38e02a1c2e2e963112')">
 </div>
 					
 				</li>
@@ -1480,7 +1494,7 @@ Please, try again later">
 	$(document).ready(function(){
 		
    		
-					$(".tbc_ipo_price_fld").val(195000.00);
+					$(".tbc_ipo_price_fld").val(170000.00);
 					calc_go();
 				
 			
