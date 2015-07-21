@@ -296,7 +296,7 @@ $(document).mouseup(function (e)
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
-								var fo = new SWFObject("bnrs/4442181c46116ff13b44c85baa7bf253.swf", "testflash", "468", "60", "8.0.0", "#FFFFFF");
+								var fo = new SWFObject("bnrs/b1c524120b685398db1487d6ed485900.swf", "testflash", "468", "60", "8.0.0", "#FFFFFF");
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
@@ -315,6 +315,7 @@ $(document).ready(function(){
 	
     
     toggle_danishnuleba();
+   // dropdown_change();
     
     $("#tp").change(function(e) {
        toggle_danishnuleba();
@@ -352,7 +353,7 @@ $(document).ready(function(){
 <td colspan="2" valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="cat" id="cat" class="mdp fge"><option value="-1">ყველა</option>
+      <select name="cat" id="cat" class="mdp fge" onchange="dropdown_change();"><option value="-1">ყველა</option>
 <option value="1" selected>იყიდება</option>
 <option value="2">ქირავდება</option>
 <option value="3">გირავდება</option>
@@ -363,7 +364,7 @@ $(document).ready(function(){
     <td colspan="2" valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="tp" id="tp" class="mdp fge"><option value="-1">ყველა</option>
+      <select name="tp" id="tp" class="mdp fge" onchange="dropdown_change();"><option value="-1">ყველა</option>
 <option value="12" selected>ბინა</option>
 <option value="11">საკუთარი სახლი</option>
 <option value="13">ოფისი</option>
@@ -376,9 +377,19 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="city_id" id="city_id" class="mdp fge" onchange="get_raion('')"><option value="-1">ყველა</option>
+      <select name="city_id" id="city_id" class="mdp fge" onchange="get_raion('');dropdown_change();"><option value="-1">ყველა</option>
 <option value="1" selected>თბილისი</option>
-<optgroup label="     აჭარა">
+<optgroup label="  აფხაზეთი">
+<option value="26">გაგრა</option>
+<option value="23">გალი</option>
+<option value="25">გუდაუთა</option>
+<option value="150">გულრიფში</option>
+<option value="129">კოდორი</option>
+<option value="24">ოჩამჩირე</option>
+<option value="22">სოხუმი</option>
+<option value="151">ტყვარჩელი</option>
+</optgroup>
+<optgroup label="  აჭარა">
 <option value="3">ბათუმი</option>
 <option value="135">გონიო</option>
 <option value="45">კვარიათი</option>
@@ -391,136 +402,151 @@ $(document).ready(function(){
 <option value="131">ხელვაჩაური</option>
 <option value="152">ხულო</option>
 </optgroup>
-<option value="70">აბასთუმანი</option>
-<option value="71">აბაშა</option>
-<option value="72">აგარა</option>
-<option value="73">ადიგენი</option>
-<option value="74">ამბროლაური</option>
-<option value="146">ანაკლია</option>
-<option value="132">ანანური</option>
-<option value="75">ასპინძა</option>
-<option value="76">ახალგორი</option>
-<option value="77">ახალდაბა</option>
-<option value="78">ახალქალაქი</option>
-<option value="79">ახალციხე</option>
-<option value="80">ახმეტა</option>
-<option value="166">ბაზალეთი</option>
-<option value="16">ბაკურიანი</option>
-<option value="81">ბაღდათი</option>
+<optgroup label="  გურია">
 <option value="82">ბახმარო</option>
-<option value="83">ბოლნისი</option>
-<option value="17">ბორჯომი</option>
-<option value="142">ბულაჩაური</option>
-<option value="26">გაგრა</option>
-<option value="23">გალი</option>
-<option value="84">გარდაბანი</option>
-<option value="9">გორი</option>
 <option value="30">გრიგოლეთი</option>
-<option value="25">გუდაუთა</option>
-<option value="86">გუდაური</option>
-<option value="150">გულრიფში</option>
-<option value="12">გურჯაანი</option>
-<option value="130">დედოფლის წყარო</option>
-<option value="87">დმანისი</option>
-<option value="88">დუშეთი</option>
-<option value="140">ვაზისუბანი</option>
-<option value="89">ვანი</option>
-<option value="141">ზედაზენი</option>
-<option value="7">ზესტაფონი</option>
-<option value="43">ზუგდიდი</option>
-<option value="127">თეთრიწყარო</option>
-<option value="11">თელავი</option>
-<option value="90">თერჯოლა</option>
-<option value="91">თიანეთი</option>
-<option value="92">იგოეთი</option>
-<option value="93">კარდენახი</option>
-<option value="39">კასპი</option>
-<option value="129">კოდორი</option>
-<option value="154">ლაგოდეხი</option>
 <option value="94">ლანჩხუთი</option>
-<option value="95">ლენტეხი</option>
-<option value="161">ლიკანი</option>
-<option value="149">მანგლისი</option>
-<option value="15">მარნეული</option>
-<option value="96">მარტვილი</option>
-<option value="167">მარტყოფი</option>
-<option value="97">მესტია</option>
-<option value="35">მისაქციელი</option>
-<option value="160">მუხრანი</option>
-<option value="13">მცხეთა</option>
 <option value="144">ნატანები</option>
-<option value="98">ნატახტარი</option>
-<option value="176">ნაფეტვრები</option>
-<option value="138">ნინოწმინდა</option>
-<option value="177">ნიჩბისი</option>
-<option value="157">ნუნისი</option>
 <option value="20">ოზურგეთი</option>
-<option value="2">ონი</option>
-<option value="24">ოჩამჩირე</option>
-<option value="99">პანკისი</option>
-<option value="100">ჟინვალი</option>
-<option value="10">რუსთავი</option>
-<option value="14">საგარეჯო</option>
-<option value="37">საგურამო</option>
+<option value="145">სუფსა</option>
+<option value="38">ურეკი</option>
+<option value="41">შეკვეთილი</option>
+<option value="42">ჩოხატაური</option>
+</optgroup>
+<optgroup label="  ზემო სვანეთი">
+<option value="95">ლენტეხი</option>
+<option value="97">მესტია</option>
+</optgroup>
+<optgroup label="  იმერეთი">
+<option value="81">ბაღდათი</option>
+<option value="89">ვანი</option>
+<option value="7">ზესტაფონი</option>
+<option value="90">თერჯოლა</option>
+<option value="157">ნუნისი</option>
 <option value="101">საირმე</option>
 <option value="6">სამტრედია</option>
-<option value="102">სართიჭალა</option>
 <option value="19">საჩხერე</option>
-<option value="5">სენაკი</option>
-<option value="103">სიონი</option>
-<option value="104">სიღნაღი</option>
-<option value="22">სოხუმი</option>
-<option value="105">სურამი</option>
-<option value="145">სუფსა</option>
-<option value="151">ტყვარჩელი</option>
 <option value="106">ტყიბული</option>
-<option value="38">ურეკი</option>
-<option value="107">ფასანაური</option>
-<option value="4">ფოთი</option>
-<option value="108">ქარელი</option>
-<option value="110">ქსანი</option>
 <option value="8">ქუთაისი</option>
-<option value="111">ყაზბეგი</option>
-<option value="44">ყვარელი</option>
-<option value="113">შატილი</option>
-<option value="41">შეკვეთილი</option>
-<option value="143">შიომღვიმე</option>
-<option value="42">ჩოხატაური</option>
-<option value="114">ჩხოროწყუ</option>
-<option value="128">ცაგერი</option>
-<option value="133">ციხისძირი</option>
-<option value="147">ციხისძირი</option>
-<option value="115">ცხვარიჭამია</option>
-<option value="27">ცხინვალი</option>
-<option value="116">წალენჯიხა</option>
-<option value="117">წალკა</option>
-<option value="158">წაღვერი</option>
-<option value="29">წეროვანი</option>
-<option value="118">წილკანი</option>
-<option value="119">წინანდალი</option>
-<option value="120">წიწამური</option>
-<option value="121">წნორი</option>
 <option value="122">წყალტუბო</option>
 <option value="123">ჭიათურა</option>
 <option value="124">ხარაგაული</option>
-<option value="18">ხაშური</option>
-<option value="125">ხობი</option>
 <option value="126">ხონი</option>
-<option value="153">ჯავა</option></select>
+</optgroup>
+<optgroup label="  კახეთი">
+<option value="80">ახმეტა</option>
+<option value="12">გურჯაანი</option>
+<option value="130">დედოფლის წყარო</option>
+<option value="140">ვაზისუბანი</option>
+<option value="11">თელავი</option>
+<option value="93">კარდენახი</option>
+<option value="154">ლაგოდეხი</option>
+<option value="99">პანკისი</option>
+<option value="14">საგარეჯო</option>
+<option value="102">სართიჭალა</option>
+<option value="104">სიღნაღი</option>
+<option value="44">ყვარელი</option>
+<option value="119">წინანდალი</option>
+<option value="120">წიწამური</option>
+<option value="121">წნორი</option>
+</optgroup>
+<optgroup label="  მცხეთა-მთიანეთი">
+<option value="132">ანანური</option>
+<option value="76">ახალგორი</option>
+<option value="166">ბაზალეთი</option>
+<option value="142">ბულაჩაური</option>
+<option value="86">გუდაური</option>
+<option value="88">დუშეთი</option>
+<option value="141">ზედაზენი</option>
+<option value="91">თიანეთი</option>
+<option value="35">მისაქციელი</option>
+<option value="160">მუხრანი</option>
+<option value="13">მცხეთა</option>
+<option value="98">ნატახტარი</option>
+<option value="176">ნაფეტვრები</option>
+<option value="177">ნიჩბისი</option>
+<option value="100">ჟინვალი</option>
+<option value="37">საგურამო</option>
+<option value="103">სიონი</option>
+<option value="107">ფასანაური</option>
+<option value="111">ყაზბეგი</option>
+<option value="113">შატილი</option>
+<option value="143">შიომღვიმე</option>
+<option value="133">ციხისძირი</option>
+<option value="115">ცხვარიჭამია</option>
+<option value="29">წეროვანი</option>
+<option value="118">წილკანი</option>
+</optgroup>
+<optgroup label="  რაჭა">
+<option value="74">ამბროლაური</option>
+<option value="2">ონი</option>
+<option value="128">ცაგერი</option>
+</optgroup>
+<optgroup label="  სამაჩაბლო">
+<option value="27">ცხინვალი</option>
+<option value="153">ჯავა</option>
+</optgroup>
+<optgroup label="  სამეგრელო">
+<option value="71">აბაშა</option>
+<option value="146">ანაკლია</option>
+<option value="43">ზუგდიდი</option>
+<option value="96">მარტვილი</option>
+<option value="5">სენაკი</option>
+<option value="4">ფოთი</option>
+<option value="114">ჩხოროწყუ</option>
+<option value="116">წალენჯიხა</option>
+<option value="125">ხობი</option>
+</optgroup>
+<optgroup label="  სამცხე-ჯავახეთი">
+<option value="70">აბასთუმანი</option>
+<option value="73">ადიგენი</option>
+<option value="75">ასპინძა</option>
+<option value="77">ახალდაბა</option>
+<option value="78">ახალქალაქი</option>
+<option value="79">ახალციხე</option>
+<option value="16">ბაკურიანი</option>
+<option value="17">ბორჯომი</option>
+<option value="161">ლიკანი</option>
+<option value="138">ნინოწმინდა</option>
+<option value="158">წაღვერი</option>
+</optgroup>
+<optgroup label="  ქვემო ქართლი">
+<option value="83">ბოლნისი</option>
+<option value="84">გარდაბანი</option>
+<option value="87">დმანისი</option>
+<option value="127">თეთრიწყარო</option>
+<option value="149">მანგლისი</option>
+<option value="15">მარნეული</option>
+<option value="167">მარტყოფი</option>
+<option value="10">რუსთავი</option>
+<option value="117">წალკა</option>
+</optgroup>
+<optgroup label="  შიდა ქართლი">
+<option value="72">აგარა</option>
+<option value="9">გორი</option>
+<option value="92">იგოეთი</option>
+<option value="39">კასპი</option>
+<option value="105">სურამი</option>
+<option value="108">ქარელი</option>
+<option value="110">ქსანი</option>
+<option value="18">ხაშური</option>
+</optgroup></select>
 </div>
       </div>
     </td>
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="raion_id" id="raion_id" class="mdp fge" onchange="get_ubani('')"></select>
+      <select name="raion_id" id="raion_id" class="mdp fge" onchange="get_ubani('');dropdown_change();"></select>
 </div>
       </div>
     </td>
-    <td valign="middle"><input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
-    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
     <td valign="middle">
-    <div class="search_input my_dropdown_div fge ui-corner-all ">
+    <input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()">
+</td>
+    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()"></td>
+    <td valign="middle">
+    <div class="search_input my_dropdown_div fge ui-corner-all " style="width:80% !important">
       <div class="drop_down_arrow_new ">
       <select name="valuta" id="valuta" class="mdp fen"><option value="1">GEL</option>
 <option value="2" selected>USD</option>
@@ -529,8 +555,8 @@ $(document).ready(function(){
       </div>
     </td>
     <td align="right" valign="middle">
-<input type="submit" class="my_button btn_red ui-corner-all fge caps_text btntohide" value="ძებნა"><div class="search_more fge">
-<input name="price_kv" type="checkbox" id="price_kv" value="2" class="float_left is_detailed">კვ.მ. ფასი</div>
+        <input id="btn1" type="submit" class="my_button btn_red ui-corner-all fge caps_text btntohide" value="ძებნა"><div class="search_more fge">
+    <input name="price_kv" type="checkbox" id="price_kv" value="2" class="float_left is_detailed">კვ.მ. ფასი</div>
 </td>
   </tr>
 <tr class="search_more">
@@ -674,8 +700,8 @@ $(document).ready(function(){
       </div>
    
     </td>
-    <td>
-        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all " style="width:127% !important;">
+    <td colspan="2">
+        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all ">
           <div class="drop_down_arrow_new ">
               <select name="danishnuleba_id" id="danishnuleba_id" class="mdp fge is_detailed"><option value="0">ყველა</option>
 <option value="30">ავტო სერვისი</option>
@@ -694,7 +720,7 @@ $(document).ready(function(){
         </div>
     
     </td>
-    <td align="right"><input type="submit" class="my_button btn_red ui-corner-all fge caps_text" value="ძებნა"></td>
+
   </tr>
 <tr>
 <td colspan="2" class="fge"> </td>
@@ -708,6 +734,17 @@ $(document).ready(function(){
 </div>
     </td>
     </tr>
+<tr class="search_more">
+<td colspan="2" class="fge"> </td>
+        <td colspan="2"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td align="right" colspan="2">
+            <input id="btn2" type="submit" class="my_button btn_red ui-corner-all fge caps_text" value="ძებნა">
+</td>
+    </tr>
 </table>
 <input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="danishnuleba_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="ყველა"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
 </form>
@@ -718,7 +755,7 @@ $(document).ready(function(){
 <div id="rb_309"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
-								var fo = new SWFObject("bnrs/7537a03bd1046ed96faf963f7d8f0e61.swf", "testflash", "950", "100", "8.0.0", "#FFFFFF");
+								var fo = new SWFObject("bnrs/ec6059eb1d074f884afe3f99bd839bf4.swf", "testflash", "950", "100", "8.0.0", "#FFFFFF");
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_309");		
 								// ]]>
@@ -932,7 +969,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1435458635" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1437444091" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
 </div>
 </div>
 
@@ -966,7 +1003,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="ისანი"> </li>
 <li class="transparent_class r_14" title="კრწანისი"> </li>
 <li class="transparent_class r_15" title="ჩუღურეთი"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1435458635" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
+<img src="images/charts/chart_21.png?t=1437444091" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1060,13 +1097,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7757)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7880)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (5973)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6061)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2104)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2149)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (60)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (66)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=1&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>განცხადების დამატება</a></div>
@@ -1095,9 +1132,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10032564</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">857</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">911</span>
 		<span class="icons_li fen srch_icons_id float_right fge" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">ნანახია:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">13.05.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">20.07.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1288,99 +1325,99 @@ $(document).ready(function() {
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10023282"><img src="mg/1405/thmb/10023282_t_198152.jpg" width="114" height="70" alt="იყიდება 204 კვ.მ. აგარაკი წავკისში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10023356"><img src="mg/1405/thmb/10023356_t_142583.jpg" width="114" height="70" alt="იყიდება 220 კვ.მ. აგარაკი ტაბახმელაში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10023282">იყიდება 204 კვ.მ. აგარაკი წავკისში <span class="orange_num">79000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10023356">იყიდება 220 კვ.მ. აგარაკი ტაბახმელაში <span class="orange_num">75000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=63f009bc036189e202ff20f633746dce')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=f1dbcf15855ac66304207df10e06f92d')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10045430"><img src="mg/1502/thmb/10045430_t_242842.jpg" width="114" height="70" alt="იყიდება 800 კვ.მ. აგარაკი ოქროყანაში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=6120307"><img src="mg/1304/thmb/6120307_t_2_o.jpg" width="114" height="70" alt="იყიდება 350 კვ.მ. აგარაკი მანგლისში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10045430">იყიდება 800 კვ.მ. აგარაკი ოქროყანაში <span class="orange_num">80000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=6120307">იყიდება 350 კვ.მ. აგარაკი მანგლისში <span class="orange_num">70000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=07582a17b8fe565825fbd3049565c299')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=44ff01a95f6995072449a0f21e7fe965')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10010806"><img src="mg/1311/thmb/10010806_t_81526.jpg" width="114" height="70" alt="იყიდება 110 კვ.მ. აგარაკი თამარ მეფის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10016503"><img src="mg/1402/thmb/10016503_t_113476.jpg" width="114" height="70" alt="იყიდება 270 კვ.მ. აგარაკი მცხეთაში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10010806">იყიდება 110 კვ.მ. აგარაკი თამარ მეფის ქუჩაზე <span class="orange_num">89000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10016503">იყიდება 270 კვ.მ. აგარაკი მცხეთაში <span class="orange_num">90000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=56b43bfe898c210553e4bdbc703fe452')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=db777b2251be91568ab2a4b1578328e3')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10025080"><img src="mg/1405/thmb/10025080_t_148879.jpg" width="114" height="70" alt="იყიდება 200 კვ.მ. აგარაკი კიკეთში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10054134"><img src="mg/1506/thmb/10054134_t_293924.jpg" width="114" height="70" alt="იყიდება 300 კვ.მ. აგარაკი წეროვანში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10025080">იყიდება 200 კვ.მ. აგარაკი კიკეთში <span class="orange_num">65000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10054134">იყიდება 300 კვ.მ. აგარაკი წეროვანში <span class="orange_num">69500 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=ef47212d7201520460153f6f62947eab')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=43b635b05503a50f7e8c69df7ec15032')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=9423899"><img src="mg/1209/thmb/9423899_t_3_o.jpg" width="114" height="70" alt="იყიდება 150 კვ.მ. აგარაკი წავკისში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=7987325"><img src="mg/1204/thmb/7987325_t_1_o.jpg" width="114" height="70" alt="იყიდება 350 კვ.მ. აგარაკი კოჯორში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=9423899">იყიდება 150 კვ.მ. აგარაკი წავკისში <span class="orange_num">80000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=7987325">იყიდება 350 კვ.მ. აგარაკი კოჯორში <span class="orange_num">73000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=e30573d00154916e9f0ae0da49c0c99c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=778da5624f604b2067d043d511a90fca')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10005277"><img src="mg/1308/thmb/10005277_t_62908.jpg" width="114" height="70" alt="იყიდება 171 კვ.მ. აგარაკი წეროვანში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10042233"><img src="mg/1501/thmb/10042233_t_228750.jpg" width="114" height="70" alt="იყიდება 340 კვ.მ. აგარაკი გრიგოლეთში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10005277">იყიდება 171 კვ.მ. აგარაკი წეროვანში <span class="orange_num">90000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10042233">იყიდება 340 კვ.მ. აგარაკი გრიგოლეთში <span class="orange_num">85000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=f6f8a009baca9e4608bc2a1fdb7ab9cc')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=03c98ebebfd2fdd31a8e310b0007a170')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10055182"><img src="mg/1506/thmb/10055182_t_302434.jpg" width="114" height="70" alt="იყიდება 110 კვ.მ. აგარაკი ბაკურიანში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10014159"><img src="images/no_image.gif" width="114" height="70" alt="იყიდება 300 კვ.მ. აგარაკი სურამში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10055182">იყიდება 110 კვ.მ. აგარაკი ბაკურიანში <span class="orange_num">85000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10014159">იყიდება 300 კვ.მ. აგარაკი სურამში <span class="orange_num">80000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=ce8310230f670ff3161cf71b460ac563')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=52d5bf0d7cb6801c57cee350818c1146')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10029114"><img src="images/no_image.gif" width="114" height="70" alt="იყიდება 250 კვ.მ. აგარაკი ანანურში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10025970"><img src="images/no_image.gif" width="114" height="70" alt="იყიდება 260 კვ.მ. აგარაკი მუხათწყაროში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10029114">იყიდება 250 კვ.მ. აგარაკი ანანურში <span class="orange_num">83000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10025970">იყიდება 260 კვ.მ. აგარაკი მუხათწყაროში <span class="orange_num">69000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=2ac760a3e290cdf24ec907230d49d4ff')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=190404db4ad8a3733658fcc9de8253de')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10025858"><img src="mg/1406/thmb/10025858_t_163350.jpg" width="114" height="70" alt="იყიდება 200 კვ.მ. აგარაკი საგურამოში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10025706"><img src="mg/1405/thmb/10025706_t_151621.jpg" width="114" height="70" alt="იყიდება 450 კვ.მ. აგარაკი ბეთანიაში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10025858">იყიდება 200 კვ.მ. აგარაკი საგურამოში <span class="orange_num">78000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10025706">იყიდება 450 კვ.მ. აგარაკი ბეთანიაში <span class="orange_num">80000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=63d837fa728dc8226f85c34da568b3fe')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=60780f1b0ee246ccbb2f4d824e0f371c')">
 </div>
 					
 				</li>
