@@ -6,7 +6,7 @@
 <meta content="index, follow" name="robots">
 <link href="https://plus.google.com/107236721681071105864" rel="publisher">
 <meta property="og:title" content="Makler.ge - For Sale Commercial space  in Misaktsieli 3 room(s) - ID: 10006231">
-<meta property="og:image" content="http://www.makler.ge/mg/1308/10006231_m_63070.jpg">
+<meta property="og:image" content="http://www.makler.ge/mg/1308/10006231_330209.jpg">
 <meta property="og:url" content="http://www.makler.ge/?pg=ann&amp;id=10006231&amp;lan=2">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="google-site-verification" content="ezrv2stO-W54frvbm3D-irb8cpwZPAS8hYeTMDeCqUE">
@@ -36,6 +36,7 @@ img#bg { position:absolute; z-index:-1; }
 			gotourl=$(this).children("a").attr("href");  
 			location.href=gotourl;
 		});
+        
 
 		//$('.elementontop').click(function (e) {
        // $(this).hide();
@@ -292,12 +293,12 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=2"><img src="images/logo_en.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
-<div id="rb_284"></div>
+<div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
-								var fo = new SWFObject("bnrs/103501410ad3bec5513e528e7609ae4a.swf", "testflash", "468", "60", "8.0.0", "#FFFFFF");
+								var fo = new SWFObject("bnrs/b1c524120b685398db1487d6ed485900.swf", "testflash", "468", "60", "8.0.0", "#FFFFFF");
 									fo.addParam("wmode", "opaque");
-									fo.write("rb_284");		
+									fo.write("rb_313");		
 								// ]]>
 								</script>
 </div>
@@ -312,6 +313,15 @@ $(document).ready(function(){
 	reorder_lis("div_street_id");
 	update_scrollbar();
 	
+    
+    toggle_danishnuleba();
+   // dropdown_change();
+    
+    $("#tp").change(function(e) {
+       toggle_danishnuleba();
+    });
+
+    
 });
 
 </script><div class="search_div" id="srchfrm">
@@ -343,7 +353,7 @@ $(document).ready(function(){
 <td colspan="2" valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="cat" id="cat" class="mdp fen"><option value="-1">All</option>
+      <select name="cat" id="cat" class="mdp fen" onchange="dropdown_change();"><option value="-1">All</option>
 <option value="1" selected>For Sale</option>
 <option value="2">For Rent</option>
 <option value="3">For lease</option>
@@ -354,7 +364,7 @@ $(document).ready(function(){
     <td colspan="2" valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="tp" id="tp" class="mdp fen"><option value="-1">All</option>
+      <select name="tp" id="tp" class="mdp fen" onchange="dropdown_change();"><option value="-1">All</option>
 <option value="12" selected>Apartment</option>
 <option value="11">Private house</option>
 <option value="13">Office</option>
@@ -367,11 +377,22 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('')"><option value="-1">All</option>
+      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('');dropdown_change();"><option value="-1">All</option>
 <option value="1" selected>Tbilisi</option>
-<optgroup label="     Adjara">
+<optgroup label="  Abkhazia">
+<option value="26">Gagra</option>
+<option value="23">Gali</option>
+<option value="25">Gudauta</option>
+<option value="150">Gulripshi</option>
+<option value="129">Kodori</option>
+<option value="24">Ochamchire</option>
+<option value="22">Sokhumi</option>
+<option value="151">Tkvarcheli</option>
+</optgroup>
+<optgroup label="  Adjara">
 <option value="3">Batumi</option>
 <option value="137">Chakvi</option>
+<option value="147">Cikhisdziri</option>
 <option value="135">Gonio</option>
 <option value="109">Keda</option>
 <option value="131">Khelvachauri</option>
@@ -382,136 +403,151 @@ $(document).ready(function(){
 <option value="134">Sarpi</option>
 <option value="139">Shuakhevi</option>
 </optgroup>
-<option value="70">Abastumani</option>
-<option value="71">Abasha</option>
-<option value="73">Adigeni</option>
-<option value="72">Agara</option>
-<option value="77">Akhaldaba</option>
-<option value="76">Akhalgori</option>
-<option value="78">Akhalkalaki</option>
-<option value="79">Akhaltsikhe</option>
-<option value="80">Akhmeta</option>
-<option value="74">Ambrolauri</option>
-<option value="146">Anaklia</option>
-<option value="132">Ananuri</option>
-<option value="75">Aspindza</option>
-<option value="81">Bagdadi</option>
+<optgroup label="  Guria">
 <option value="82">Bakhmaro</option>
-<option value="16">Bakuriani</option>
-<option value="166">Bazaleti</option>
-<option value="83">Bolnisi</option>
-<option value="17">Borjomi</option>
-<option value="142">Bulachauri</option>
-<option value="123">Chiatura</option>
-<option value="114">Chkhorotsku</option>
 <option value="42">Chokhatauri</option>
-<option value="147">Cikhisdziri</option>
-<option value="130">Dedoplis tskaro</option>
-<option value="87">Dmanisi</option>
-<option value="88">Dusheti</option>
-<option value="26">Gagra</option>
-<option value="23">Gali</option>
-<option value="84">Gardabani</option>
-<option value="9">Gori</option>
 <option value="30">Grigoleti</option>
-<option value="86">Gudauri</option>
-<option value="25">Gudauta</option>
-<option value="150">Gulripshi</option>
-<option value="12">Gurjaani</option>
-<option value="92">Igoeti</option>
-<option value="153">Java</option>
-<option value="100">Jinvali</option>
-<option value="93">Kardenakhi</option>
-<option value="108">Kareli</option>
-<option value="39">Kaspi</option>
-<option value="111">Kazbegi</option>
+<option value="94">Lanchkhuti</option>
+<option value="144">Natanebi</option>
+<option value="20">Ozurgeti</option>
+<option value="41">Shekvetili</option>
+<option value="145">Supsa</option>
+<option value="38">Ureki</option>
+</optgroup>
+<optgroup label="  Imereti">
+<option value="81">Bagdadi</option>
+<option value="123">Chiatura</option>
 <option value="124">Kharagauli</option>
-<option value="18">Khashuri</option>
-<option value="125">Khobi</option>
 <option value="126">Khoni</option>
-<option value="129">Kodori</option>
-<option value="110">Ksani</option>
 <option value="8">Kutaisi</option>
+<option value="157">Nunisi</option>
+<option value="19">Sachkhere</option>
+<option value="101">Sairme</option>
+<option value="6">Samtredia</option>
+<option value="90">Terjola</option>
+<option value="106">Tkibuli</option>
+<option value="122">Tskaltubo</option>
+<option value="89">Vani</option>
+<option value="7">Zestaphoni</option>
+</optgroup>
+<optgroup label="  Kakheti">
+<option value="80">Akhmeta</option>
+<option value="130">Dedoplis tskaro</option>
+<option value="12">Gurjaani</option>
+<option value="93">Kardenakhi</option>
 <option value="44">Kvareli</option>
 <option value="154">Lagodekhi</option>
-<option value="94">Lanchkhuti</option>
-<option value="95">Lentekhi</option>
-<option value="161">Likani</option>
+<option value="99">Pankisi</option>
+<option value="14">Sagarejo</option>
+<option value="102">Sartichala</option>
+<option value="104">Signagi</option>
+<option value="11">Telavi</option>
+<option value="119">Tsinandali</option>
+<option value="120">Tsitsamuri</option>
+<option value="121">Tsnori</option>
+<option value="140">Vazisubani</option>
+</optgroup>
+<optgroup label="  Kvemo Kartli">
+<option value="83">Bolnisi</option>
+<option value="87">Dmanisi</option>
+<option value="84">Gardabani</option>
 <option value="149">Manglisi</option>
 <option value="15">Marneuli</option>
 <option value="167">Martkofi</option>
-<option value="96">Martvili</option>
-<option value="97">Mestia</option>
+<option value="10">Rustavi</option>
+<option value="127">Tetritskaro</option>
+<option value="117">Tsalka</option>
+</optgroup>
+<optgroup label="  Mtskheta-Mtianeti">
+<option value="76">Akhalgori</option>
+<option value="132">Ananuri</option>
+<option value="166">Bazaleti</option>
+<option value="142">Bulachauri</option>
+<option value="88">Dusheti</option>
+<option value="86">Gudauri</option>
+<option value="100">Jinvali</option>
+<option value="111">Kazbegi</option>
 <option value="35">Misaktsieli</option>
 <option value="13">Mtskheta</option>
 <option value="160">Mukhrani</option>
 <option value="176">Nafetvrebi</option>
 <option value="98">Natakhtari</option>
-<option value="144">Natanebi</option>
 <option value="177">Nichbisi</option>
-<option value="138">Ninotsminda</option>
-<option value="157">Nunisi</option>
-<option value="24">Ochamchire</option>
-<option value="2">Oni</option>
-<option value="20">Ozurgeti</option>
-<option value="99">Pankisi</option>
 <option value="107">Pasanauri</option>
-<option value="4">Poti</option>
-<option value="10">Rustavi</option>
-<option value="19">Sachkhere</option>
-<option value="14">Sagarejo</option>
 <option value="37">Saguramo</option>
-<option value="101">Sairme</option>
-<option value="6">Samtredia</option>
-<option value="102">Sartichala</option>
-<option value="5">Senaki</option>
 <option value="113">Shatili</option>
-<option value="41">Shekvetili</option>
 <option value="143">Shiomgvime</option>
-<option value="104">Signagi</option>
 <option value="103">Sioni</option>
-<option value="22">Sokhumi</option>
-<option value="145">Supsa</option>
-<option value="105">Surami</option>
-<option value="11">Telavi</option>
-<option value="90">Terjola</option>
-<option value="127">Tetritskaro</option>
 <option value="91">Tianeti</option>
-<option value="106">Tkibuli</option>
-<option value="151">Tkvarcheli</option>
-<option value="128">Tsageri</option>
-<option value="158">Tsagveri</option>
-<option value="116">Tsalenjikha</option>
-<option value="117">Tsalka</option>
 <option value="29">Tserovani</option>
 <option value="133">Tsikhisdziri</option>
 <option value="118">Tsilkani</option>
-<option value="119">Tsinandali</option>
-<option value="120">Tsitsamuri</option>
-<option value="122">Tskaltubo</option>
-<option value="27">Tskhinvali</option>
 <option value="115">Tskhvarichamia</option>
-<option value="121">Tsnori</option>
-<option value="38">Ureki</option>
-<option value="89">Vani</option>
-<option value="140">Vazisubani</option>
 <option value="141">Zedazeni</option>
-<option value="7">Zestaphoni</option>
-<option value="43">Zugdidi</option></select>
+</optgroup>
+<optgroup label="  Racha">
+<option value="74">Ambrolauri</option>
+<option value="2">Oni</option>
+<option value="128">Tsageri</option>
+</optgroup>
+<optgroup label="  Samegrelo">
+<option value="71">Abasha</option>
+<option value="146">Anaklia</option>
+<option value="114">Chkhorotsku</option>
+<option value="125">Khobi</option>
+<option value="96">Martvili</option>
+<option value="4">Poti</option>
+<option value="5">Senaki</option>
+<option value="116">Tsalenjikha</option>
+<option value="43">Zugdidi</option>
+</optgroup>
+<optgroup label="  Samtskhe-Javakheti">
+<option value="70">Abastumani</option>
+<option value="73">Adigeni</option>
+<option value="77">Akhaldaba</option>
+<option value="78">Akhalkalaki</option>
+<option value="79">Akhaltsikhe</option>
+<option value="75">Aspindza</option>
+<option value="16">Bakuriani</option>
+<option value="17">Borjomi</option>
+<option value="161">Likani</option>
+<option value="138">Ninotsminda</option>
+<option value="158">Tsagveri</option>
+</optgroup>
+<optgroup label="  Shida Kartli">
+<option value="72">Agara</option>
+<option value="9">Gori</option>
+<option value="92">Igoeti</option>
+<option value="108">Kareli</option>
+<option value="39">Kaspi</option>
+<option value="18">Khashuri</option>
+<option value="110">Ksani</option>
+<option value="105">Surami</option>
+</optgroup>
+<optgroup label="  South Ossetia">
+<option value="153">Java</option>
+<option value="27">Tskhinvali</option>
+</optgroup>
+<optgroup label="  Zemo Svaneti">
+<option value="95">Lentekhi</option>
+<option value="97">Mestia</option>
+</optgroup></select>
 </div>
       </div>
     </td>
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('')"></select>
+      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('');dropdown_change();"></select>
 </div>
       </div>
     </td>
-    <td valign="middle"><input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
-    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
     <td valign="middle">
-    <div class="search_input my_dropdown_div fge ui-corner-all ">
+    <input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()">
+</td>
+    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()"></td>
+    <td valign="middle">
+    <div class="search_input my_dropdown_div fge ui-corner-all " style="width:80% !important">
       <div class="drop_down_arrow_new ">
       <select name="valuta" id="valuta" class="mdp fen"><option value="1">GEL</option>
 <option value="2" selected>USD</option>
@@ -520,8 +556,8 @@ $(document).ready(function(){
       </div>
     </td>
     <td align="right" valign="middle">
-<input type="submit" class="my_button btn_red ui-corner-all fen caps_text btntohide" value="Search"><div class="search_more fen">
-<input name="price_kv" type="checkbox" id="price_kv" value="2" class="float_left is_detailed">Price sq.m.</div>
+        <input id="btn1" type="submit" class="my_button btn_red ui-corner-all fen caps_text btntohide" value="Search"><div class="search_more fen">
+    <input name="price_kv" type="checkbox" id="price_kv" value="2" class="float_left is_detailed">Price sq.m.</div>
 </td>
   </tr>
 <tr class="search_more">
@@ -566,7 +602,7 @@ $(document).ready(function(){
     <td class="fen">Project</td>
     <td class="fen">View</td>
     <td colspan="2" class="fen">Subway</td>
-    <td class="fen"> </td>
+    <td id="danishnuleba_td" class="fen">Purpose</td>
     <td class="fen"> </td>
   </tr>
 <tr class="search_more">
@@ -575,6 +611,7 @@ $(document).ready(function(){
       <div class="drop_down_arrow_new ">
       <select name="mdgomareoba" id="mdgomareoba" class="mdp fen is_detailed"><option value="0">All</option>
 <option value="2">New building</option>
+<option value="4">Old Building</option>
 <option value="3">Under construction</option></select>
 </div>
       </div>
@@ -664,8 +701,27 @@ $(document).ready(function(){
       </div>
    
     </td>
-    <td> </td>
-    <td align="right"><input type="submit" class="my_button btn_red ui-corner-all fen caps_text" value="Search"></td>
+    <td colspan="2">
+        <div id="danishnuleba_div" class="search_input my_dropdown_div fge ui-corner-all ">
+          <div class="drop_down_arrow_new ">
+              <select name="danishnuleba_id" id="danishnuleba_id" class="mdp fen is_detailed"><option value="0">All</option>
+<option value="30">Auto Service</option>
+<option value="23">Cafe-bar</option>
+<option value="34">Educational</option>
+<option value="25">Enterteinment Center</option>
+<option value="27">Factory</option>
+<option value="29">Farm</option>
+<option value="24">Hotel</option>
+<option value="22">Restaraunt</option>
+<option value="21">Shop</option>
+<option value="33">Shopping center</option>
+<option value="28">Store</option>
+<option value="26">Workroom</option></select>
+</div>
+        </div>
+    
+    </td>
+
   </tr>
 <tr>
 <td colspan="2" class="fen"> </td>
@@ -679,19 +735,30 @@ $(document).ready(function(){
 </div>
     </td>
     </tr>
+<tr class="search_more">
+<td colspan="2" class="fen"> </td>
+        <td colspan="2"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td align="right" colspan="2">
+            <input id="btn2" type="submit" class="my_button btn_red ui-corner-all fen caps_text" value="Search">
+</td>
+    </tr>
 </table>
-<input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="All"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
+<input type="hidden" id="city_val" value="1"><input type="hidden" id="raion_val" value="0"><input type="hidden" id="ubani_val" value="0" class="is_detailed"><input type="hidden" id="street_val" value="0" class="is_detailed"><input type="hidden" id="metro_val" value="0" class="is_detailed"><input type="hidden" id="danishnuleba_val" value="0" class="is_detailed"><input type="hidden" id="tetxall" value="All"><input type="hidden" id="is_detailed_search" name="is_detailed_search" value="2"><input type="hidden" id="sb" name="sb" value="d"><input type="hidden" id="sd" name="sd" value="d"><input type="hidden" id="ipg" name="ipg" value="ann">
 </form>
 </div>
 
 		<table width="950" border="0" align="center" cellspacing="0" cellpadding="0"><tr>
 <td style="border:solid 1px #CCC;">
-<div id="rb_272"></div>
+<div id="rb_309"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
-								var fo = new SWFObject("bnrs/dce8e5dd1dbebdcb77246dfe8f2ef67e.swf", "testflash", "950", "100", "8.0.0", "#FFFFFF");
+								var fo = new SWFObject("bnrs/ec6059eb1d074f884afe3f99bd839bf4.swf", "testflash", "950", "100", "8.0.0", "#FFFFFF");
 									fo.addParam("wmode", "opaque");
-									fo.write("rb_272");		
+									fo.write("rb_309");		
 								// ]]>
 								</script>
 </td>
@@ -840,11 +907,11 @@ function resize_frame(){
 </td>
       </tr></table>
 </div>
+     <!--<div class="left_holder">
+         <iframe src="http://modules.bog.ge/if/Calculators/LoanHypoPlus_Vertical.aspx" name="LoanHypoPlus " scrolling="no" frameborder="0" height="400"  width="210" style="background-color:#fff; border: #cccccc 1px solid;" class="ui-corner-all"></iframe>
+     </div>-->
      <div class="left_holder">
-         <iframe src="http://modules.bog.ge/if/Calculators/LoanHypoPlus_Vertical.aspx" name="LoanHypoPlus " scrolling="no" frameborder="0" height="400" width="210" style="background-color:#fff; border: #cccccc 1px solid;" class="ui-corner-all"></iframe>
-     </div>
-     <div class="left_holder">
-         <iframe src="http://ksb.ge/loan.html" name="ksb " scrolling="no" frameborder="0" height="330" width="210" style="background-color:#fff; border: #cccccc 1px solid;" class="ui-corner-all"></iframe>
+         <iframe src="http://ksb.ge/fb/calc/" name="ksb " scrolling="no" frameborder="0" height="330" width="210" style="background-color:#fff; border: #cccccc 1px solid;" class="ui-corner-all"></iframe>
      </div>
     
     </td>
@@ -903,7 +970,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1423620035" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1439258503" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -927,22 +994,26 @@ $(document).ready(function() {
 </div>
     <div id="2chart_pic" class="chart_pic ">
         <ul class="chart_2_hover">
-<li class="transparent_class r_1" title="Vake-Saburtalo"> </li>
-<li class="transparent_class r_2" title="Old Tbilisi"> </li>
-<li class="transparent_class r_3" title="Didube-Chugureti"> </li>
-<li class="transparent_class r_4" title="Gldani-Nadzaladevi"> </li>
-<li class="transparent_class r_5" title="Isani-Samgori"> </li>
-<li class="transparent_class r_6" title="Didgori"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1423620035" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<li class="transparent_class r_1" title="Saburtalo"> </li>
+<li class="transparent_class r_2" title="Mtatsminda"> </li>
+<li class="transparent_class r_3" title="Didube"> </li>
+<li class="transparent_class r_4" title="Nadzaladevi"> </li>
+<li class="transparent_class r_5" title="Samgori"> </li>
+<li class="transparent_class r_6" title="Vake"> </li>
+<li class="transparent_class r_12" title="Gldani"> </li>
+<li class="transparent_class r_13" title="Isani"> </li>
+<li class="transparent_class r_14" title="Krtsanisi"> </li>
+<li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
+<img src="images/charts/chart_21.png?t=1439258503" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
-<li class="en r_li_list set_mouse_pointer is_blue" id="r_1" title="Vake-Saburtalo">V-S</li>
-<li class="en r_li_list set_mouse_pointer is_blue" id="r_2" title="Old Tbilisi">OT</li>
-<li class="en r_li_list set_mouse_pointer is_blue" id="r_3" title="Didube-Chugureti">D-CH</li>
-<li class="en r_li_list set_mouse_pointer is_blue" id="r_4" title="Gldani-Nadzaladevi">G-N</li>
-<li class="en r_li_list set_mouse_pointer is_blue" id="r_5" title="Isani-Samgori">I-S</li>
-<li class="en r_li_list set_mouse_pointer is_blue" id="r_6" title="Didgori">D
+<li class="en r_li_list set_mouse_pointer is_blue" id="r_1" title="Saburtalo">V-S</li>
+<li class="en r_li_list set_mouse_pointer is_blue" id="r_2" title="Mtatsminda">OT</li>
+<li class="en r_li_list set_mouse_pointer is_blue" id="r_3" title="Didube">D-CH</li>
+<li class="en r_li_list set_mouse_pointer is_blue" id="r_4" title="Nadzaladevi">G-N</li>
+<li class="en r_li_list set_mouse_pointer is_blue" id="r_5" title="Samgori">I-S</li>
+<li class="en r_li_list set_mouse_pointer is_blue" id="r_6" title="Vake">D
 	</li>            </ul>
 </div>
         <div class="chart_description fen">
@@ -1028,13 +1099,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7465)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7898)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (5817)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6049)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (1919)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2189)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (41)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (57)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1063,9 +1134,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10006231</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">983</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">1141</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">10.02.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">10.08.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1076,8 +1147,8 @@ $(document).ready(function() {
 <tr>
 <td>
 			<div class="ann_thmb ann_thmb_main float_left" alt="1" name="1">
-				<div class="ann_thmb_main_indiv" id="middleshower" this_id="thmb_63070">
-<a class="fancy_opener thmb_63070" this_id="thmb_63070" href="javascript:;"><img src="mg/1308/10006231_m_63070.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_63071" this_id="thmb_63071" style="display:none;" href="javascript:;"><img src="mg/1308/10006231_m_63071.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a>
+				<div class="ann_thmb_main_indiv" id="middleshower" this_id="thmb_330209">
+<a class="fancy_opener thmb_330209" this_id="thmb_330209" href="javascript:;"><img src="mg/1308/10006231_m_330209.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_330210" this_id="thmb_330210" style="display:none;" href="javascript:;"><img src="mg/1308/10006231_m_330210.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_330211" this_id="thmb_330211" style="display:none;" href="javascript:;"><img src="mg/1308/10006231_m_330211.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_330212" this_id="thmb_330212" style="display:none;" href="javascript:;"><img src="mg/1308/10006231_m_330212.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_330213" this_id="thmb_330213" style="display:none;" href="javascript:;"><img src="mg/1308/10006231_m_330213.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a>
 </div>
 			</div>
 		</td>
@@ -1087,7 +1158,7 @@ $(document).ready(function() {
 		<div class="thmb_viewer">
 			<div class="thmbs_arrow a_left" show="prev" style="visibility: hidden;"></div>
 			<div class="thmbs_content" id="shownow" now="1" last="1"><div class="thumbs_6 show_1">
-<a id="thmb_63070" href="mg/1308/10006231_63070.jpg" alt="1" name="1" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1308/thmb/10006231_t_63070.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_63071" href="mg/1308/10006231_63071.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1308/thmb/10006231_t_63071.jpg" title="" width="80" height="60" alt="2"></a>
+<a id="thmb_330209" href="mg/1308/10006231_330209.jpg" alt="1" name="1" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1308/thmb/10006231_t_330209.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_330210" href="mg/1308/10006231_330210.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1308/thmb/10006231_t_330210.jpg" title="" width="80" height="60" alt="2"></a><a id="thmb_330211" href="mg/1308/10006231_330211.jpg" alt="3" name="3" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1308/thmb/10006231_t_330211.jpg" title="" width="80" height="60" alt="3"></a><a id="thmb_330212" href="mg/1308/10006231_330212.jpg" alt="4" name="4" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1308/thmb/10006231_t_330212.jpg" title="" width="80" height="60" alt="4"></a><a id="thmb_330213" href="mg/1308/10006231_330213.jpg" alt="5" name="5" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1308/thmb/10006231_t_330213.jpg" title="" width="80" height="60" alt="5"></a>
 </div></div>
 			<div class="thmbs_arrow a_right thmbs_hoverer" show="next" style="visibility: hidden;"></div>
 		</div>
@@ -1104,11 +1175,11 @@ $(document).ready(function() {
 <tr>
 <td width="100" valign="top"><a href="http://tbc.ge/en" target="_blank"><img src="images/logo-tbc.png" border="0" title="http://tbc.ge/en" alt="http://tbc.ge/en" width="100"></a></td>
 						<td class="ann_tbc caps_text">
-<a href="http://tbcbank.ge/en/online_forms/order_loan/" target="_blank">Get a loan</a>  1267$ per month</td>
+<a href="http://tbcbank.ge/en/online_forms/order_loan/" target="_blank">Get a loan</a>  1140$ per month</td>
 					  </tr>
 <tr>
 <td width="100" class="mc_title" valign="top">For Sale</td>
-			<td class="orange_num" valign="top"><a href="javascript:;" class="orange_num" title="10000 $ Â» 100000 $"><img src="img/arr_up.gif" align="left" alt="arrow">100000 $ / 58.82 $ m² </a></td>
+			<td class="orange_num" valign="top"><a href="javascript:;" class="orange_num" title="100000 $ Â» 90000 $"><img src="img/arr_down.gif" align="left" alt="arrow">90000 $ / 52.94 $ m² </a></td>
 		  </tr>
 <tr>
 <td class="mc_title">Space</td>
@@ -1232,7 +1303,7 @@ $(document).ready(function() {
 <td colspan="2" valign="top"> </td>
                   </tr>
 <!--<tr>
-                    <td colspan="2" valign="top">Working, Storeroom, Heating - Conditioning, <b>Heating system: </b>central, gas, electricity, <b>Hot water: </b>gas, electricity</td>
+                    <td colspan="2" valign="top">Working, Storeroom, <b>Heating system: </b>gas, <b>Hot water: </b>gas</td>
                   </tr>-->
 </table>
 </td>
@@ -1242,7 +1313,7 @@ $(document).ready(function() {
 <td class="page_title is_orange">Additional information</td>
 		</tr>
 <tr>
-<td style="padding-top:10px;">Working, Storeroom, Heating - Conditioning, <b>Heating system: </b>central, gas, electricity, <b>Hot water: </b>gas, electricity</td>
+<td style="padding-top:10px;">Working, Storeroom, <b>Heating system: </b>gas, <b>Hot water: </b>gas</td>
 		</tr>
 <tr>
 <td> </td>
@@ -1259,110 +1330,110 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fen similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=3759978"><img src="mg/0906/thmb/3759978_t_1_o.jpg" width="114" height="70" alt="For Sale 200 sq.m. Commercial space  in Misaktsieli"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10055261"><img src="mg/1506/thmb/10055261_t_302117.jpg" width="114" height="70" alt="For Sale 310 sq.m. Commercial space  in Gurjaani"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=3759978">For Sale 200 sq.m. Commercial space  in Misaktsieli <span class="orange_num">120000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10055261">For Sale 310 sq.m. Commercial space  in Gurjaani <span class="orange_num">100000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=13b8db9c47545b3eb9cc137876f86091')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=50e913083fd4a3b9045fbad4e3d92fb0')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10015499"><img src="mg/1401/thmb/10015499_t_109091.jpg" width="114" height="70" alt="For Sale 3100 sq.m. Commercial space  in Misaktsieli"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=4623526"><img src="mg/1303/thmb/4623526_t_1_o.jpg" width="114" height="70" alt="For Sale 100 sq.m. Commercial space in Vazha-pshavela avenue"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10015499">For Sale 3100 sq.m. Commercial space  in Misaktsieli <span class="orange_num">115000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=4623526">For Sale 100 sq.m. Commercial space in Vazha-pshavela avenue <span class="orange_num">85000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c4eee0a5d03d23fea6e5975866c8d521')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=edf8d2f2a20c6e1ff76883ea7206f838')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=4893199"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 200 sq.m. Commercial space in Libani st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10059253"><img src="mg/1507/thmb/10059253_t_325212.jpg" width="114" height="70" alt="For Sale 180 sq.m. Commercial space in Gobronidze st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=4893199">For Sale 200 sq.m. Commercial space in Libani st. <span class="orange_num">110000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10059253">For Sale 180 sq.m. Commercial space in Gobronidze st. <span class="orange_num">108000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=caa49ebd867d95347ded1abdca4623da')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=aa10acf0813ee254467c1b3ced682ce2')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10025177"><img src="mg/1405/thmb/10025177_t_149191.jpg" width="114" height="70" alt="For Sale 850 sq.m. Commercial space  in Telavi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10059634"><img src="mg/1508/thmb/10059634_t_327514.jpg" width="114" height="70" alt="For Sale 280 sq.m. Commercial space in S. Tsintsadze I turn"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10025177">For Sale 850 sq.m. Commercial space  in Telavi <span class="orange_num">120000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10059634">For Sale 280 sq.m. Commercial space in S. Tsintsadze I turn <span class="orange_num">95000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=48a437eacd290fe84cc0f1664c0ca949')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=bfbb148f5ca0969c456b7ce54230fd71')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10040738"><img src="mg/1412/thmb/10040738_t_219380.jpg" width="114" height="70" alt="For Sale 104 sq.m. Commercial space  in Poti"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=943649"><img src="mg/1301/thmb/943649_t_1_o.jpg" width="114" height="70" alt="For Sale 400 sq.m. Commercial space  in Poti"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10040738">For Sale 104 sq.m. Commercial space  in Poti <span class="orange_num">95000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=943649">For Sale 400 sq.m. Commercial space  in Poti <span class="orange_num">145000 gel</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=225f4758bc1543db080404001c114505')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c0b12f6404b4df509371c6f107b76bf4')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10018844"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 78 sq.m. Commercial space  in Telavi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=3821877"><img src="mg/1305/thmb/3821877_t_312196.jpg" width="114" height="70" alt="For Sale 43 sq.m. Commercial space in Marijani st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10018844">For Sale 78 sq.m. Commercial space  in Telavi <span class="orange_num">110000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=3821877">For Sale 43 sq.m. Commercial space in Marijani st. <span class="orange_num">75000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e47e74055f4e1da439454154d300ece9')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=3c540a74166bcff3fd91b21fac08cdd9')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10044463"><img src="mg/1501/thmb/10044463_t_239761.jpg" width="114" height="70" alt="For Sale 400 sq.m. Commercial space  in Zugdidi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10059748"><img src="mg/1508/thmb/10059748_t_328220.jpg" width="114" height="70" alt="For Sale 104 sq.m. Commercial space  in Poti"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10044463">For Sale 400 sq.m. Commercial space  in Zugdidi <span class="orange_num">90000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10059748">For Sale 104 sq.m. Commercial space  in Poti , Negotiable</a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=8c8ca1c051c5ca6deb646fcc17980724')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=22d2b08133a44b023b4991da88737202')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10044742"><img src="mg/1502/thmb/10044742_t_239706.jpg" width="114" height="70" alt="For Sale 106 sq.m. Commercial space  in Gudauri"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10029686"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 230 sq.m. Commercial space  in Gldani dist."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10044742">For Sale 106 sq.m. Commercial space  in Gudauri <span class="orange_num">100000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10029686">For Sale 230 sq.m. Commercial space  in Gldani dist. <span class="orange_num">90000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d750677d227d8d9a1184304024c22c5e')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=bf93e251b31e19ca784b50a3cd4e528c')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10044804"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 90 sq.m. Commercial space in Vazha-pshavela avenue"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=9513996"><img src="mg/1305/thmb/9513996_t_195360.jpg" width="114" height="70" alt="For Sale 35 sq.m. Commercial space in Al. Kazbegi Ave."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10044804">For Sale 90 sq.m. Commercial space in Vazha-pshavela avenue <span class="orange_num">95000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=9513996">For Sale 35 sq.m. Commercial space in Al. Kazbegi Ave. <span class="orange_num">90000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=29c416f197d7091398aec972d0523da6')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=f55302da89c1a6ec61cb119b97624b31')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=6020772"><img src="mg/1002/thmb/6020772_t_1_o.jpg" width="114" height="70" alt="For Sale 100 sq.m. Commercial space in M.Lagidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10048065"><img src="mg/1503/thmb/10048065_t_256657.jpg" width="114" height="70" alt="For Sale 80 sq.m. Commercial space in Kipshidze st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=6020772">For Sale 100 sq.m. Commercial space in M.Lagidze st. <span class="orange_num">100000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10048065">For Sale 80 sq.m. Commercial space in Kipshidze st. <span class="orange_num">83000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=7b59573918e1c710bd1a6f582db7414c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=f0ab2d3ddf0b340505fe2f011dd55f0a')">
 </div>
 					
 				</li>
@@ -1382,7 +1453,7 @@ $(document).ready(function() {
 	$(document).ready(function(){
 		
    		
-					$(".tbc_ipo_price_fld").val(100000.00);
+					$(".tbc_ipo_price_fld").val(90000.00);
 					calc_go();
 				
 			
