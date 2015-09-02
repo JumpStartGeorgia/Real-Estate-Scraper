@@ -296,7 +296,7 @@ $(document).mouseup(function (e)
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
-								var fo = new SWFObject("bnrs/4442181c46116ff13b44c85baa7bf253.swf", "testflash", "468", "60", "8.0.0", "#FFFFFF");
+								var fo = new SWFObject("bnrs/b1c524120b685398db1487d6ed485900.swf", "testflash", "468", "60", "8.0.0", "#FFFFFF");
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
@@ -315,6 +315,7 @@ $(document).ready(function(){
 	
     
     toggle_danishnuleba();
+   // dropdown_change();
     
     $("#tp").change(function(e) {
        toggle_danishnuleba();
@@ -376,7 +377,7 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('');"><option value="-1">All</option>
+      <select name="city_id" id="city_id" class="mdp fen" onchange="get_raion('');dropdown_change();"><option value="-1">All</option>
 <option value="1" selected>Tbilisi</option>
 <optgroup label="  Abkhazia">
 <option value="26">Gagra</option>
@@ -537,12 +538,14 @@ $(document).ready(function(){
     <td valign="middle">
 	<div class="search_input my_dropdown_div fge ui-corner-all ">
       <div class="drop_down_arrow_new ">
-      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('');"></select>
+      <select name="raion_id" id="raion_id" class="mdp fen" onchange="get_ubani('');dropdown_change();"></select>
 </div>
       </div>
     </td>
-    <td valign="middle"><input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
-    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value=""></td>
+    <td valign="middle">
+    <input type="text" name="price_f" id="price_f" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()">
+</td>
+    <td valign="middle"><input type="text" name="price_t" id="price_t" class="search_input in70td txtfld ui-corner-all fen is_number" value="" onblur="dropdown_change()"></td>
     <td valign="middle">
     <div class="search_input my_dropdown_div fge ui-corner-all " style="width:80% !important">
       <div class="drop_down_arrow_new ">
@@ -967,7 +970,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1436320899" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441161862" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -1001,7 +1004,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1436320899" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1441161862" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1096,13 +1099,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7860)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7870)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6030)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6050)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2156)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2178)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (63)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (55)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1131,7 +1134,7 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10011616</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">1929</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">2084</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
 		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">07.07.2015</span>
 	</div>
@@ -1312,16 +1315,14 @@ $(document).ready(function() {
 </table>
 </td>
 		  </tr></table>
-<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
-<td valign="top">
-				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="fen">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="fen">
 <tr>
-<td class="page_title is_orange no_border" style="padding-top:20px;">LOCATION  </td>
-						</tr>
+<td class="page_title is_orange no_border" style="padding-top:20px;">LOCATION</td>
+			</tr>
 <tr>
-<td style="padding-top:1px;padding-bottom:10px;">
-							
-			<form method="post" action="http://www.city24.ge/sharemap/index.php" id="city24_form" target="city24_map">
+<td style="padding-top:10px;padding-bottom:10px;">
+				
+			<form method="post" action="https://www.city24.ge/sharemap/index.php" id="city24_form" target="city24_map">
 				<input type="hidden" name="map_data" id="map_data" value="03d49c6ea610421f6b15dc118f386370c6f66"><input type="hidden" name="map_lang" id="map_lang" value="en"><input type="hidden" name="option" id="option" value="1"><input type="hidden" name="showb" id="showb" value="y">
 </form>
 			<script type="text/javascript">   
@@ -1329,52 +1330,11 @@ $(document).ready(function() {
 					$("#city24_form").submit();
 				});
 			
-			</script><iframe name="city24_map" id="city24_map" width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.city24.ge/sharemap/index.php"></iframe>
+			</script><iframe name="city24_map" id="city24_map" width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.city24.ge/sharemap/index.php"></iframe>
 			
-							</td>
-						</tr>
+				</td>
+			</tr>
 </table>
-</td>
-				<td valign="top" width="320">
-			<table width="300" align="right" border="0" cellspacing="0" cellpadding="0" class=" fen ui-corner-all"><tr>
-<td class="broker_info_tbl ui-corner-all">
-					<div class="broker_info_title_div caps_text is_orange">Contact Person</div>
-					
-					
-				<ul class="broker_info_name_and" style="background-image:url('mg/brokers/49405db534ad6dcfead7c3b1b5c3edc1.jpg')">
-<li class="caps_text is_blue">Maiko Vashakidze</li>
-					<li>The best sales and rental manager of 2013-2014</li>
-					<li style="height:40px;"> </li>
-					<li class="is_orange fen">+ 995 595 92 50 10</li>
-<li class="is_orange fen">+995 32 247 10 20 </li>
-<li class="is_orange fen">m.vashakidze@makler.ge</li>
-					<li><a class="caps_text" href="?lan=2&amp;pg=search&amp;broker=6285">All Announcements (549)</a></li>
-				</ul>
-<div class="broker_info_feedback_div" id="broker_info_div">
-					<form class="forms">
-						<ul>
-<li><input type="text" name="fname" id="fname" class="input wbg ui-corner-all input_reg brfeed" placeholder="Name"></li>
-							<li><input type="tel" name="ftel" id="ftel" class="input wbg ui-corner-all input_reg brfeed" placeholder="Phone"></li>
-							<li><input type="email" name="fmail" id="fmail" class="input wbg ui-corner-all input_reg brfeed" placeholder="E-mail"></li>
-							<li><textarea name="ftext" rows="6" id="ftext" class="input wbg ui-corner-all input_reg brfeed" placeholder="Message">Hi, I found your listing on www.makler.ge . Please send me more information about  For Sale, For Rent Commercial space in Tbilisi  in Mtatsminda dist. in Ingorokva st. . Thank you.</textarea></li>
-							<li>
-<input name="code" type="text" id="fcode" class="input en in120td ui-corner-all validate float_left brfeed" style="height:25px;" placeholder="Security Code"><img src="inc/get_captcha.php" alt="" id="captcha" class="ui-corner-all float_left"><img src="images/refresh-icon.png" alt="" id="refresh" class="float_right" onclick="change_captcha();">
-</li>
-							<li class="for_feedback_button">
-							<input type="button" id="submit_boroker_feedback" class="my_button btn_green ui-corner-all caps_text" value="Send Message">
-</li>
-						</ul>
-<input type="hidden" name="MM_broker_feedback" id="MM_broker_feedback" value="send" class="brfeed"><input type="hidden" name="action" id="action" value="175a764e77f5046145e1e8702b627665" class="brfeed"><input type="hidden" name="fmain_id" id="fmain_id" value="10011616" class="brfeed"><input type="hidden" name="lan" id="lan" value="2" class="brfeed"><input type="hidden" id="undeferror" value="Your message was not sent because of some error.
-Please, try again later">
-</form>
-				</div>
-			
-					
-					
-					</td>
-				</tr></table>
-</td>
-			  </tr></table>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="fen">
 <tr>
 <td> </td>
@@ -1386,18 +1346,7 @@ Please, try again later">
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fen similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10048148"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 200 sq.m. Commercial space in R.Lagidze st."></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10048148">For Sale 200 sq.m. Commercial space in R.Lagidze st. <span class="orange_num">500000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=a9bec1972a887f3b2394e20927147673')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10047131"><img src="images/no_image.gif" width="114" height="70" alt="For Rent 155 sq.m. Commercial space in R.Lagidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10047131"><img src="mg/1503/thmb/10047131_t_328226.jpg" width="114" height="70" alt="For Rent 155 sq.m. Commercial space in R.Lagidze st."></a></div>
 					<div class="ann_text fen">
 					<a href="?lan=2&amp;pg=ann&amp;id=10047131">For Rent 155 sq.m. Commercial space in R.Lagidze st. <span class="orange_num">4650 $</span></a>
 					 
@@ -1408,88 +1357,99 @@ Please, try again later">
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056360"><img src="mg/1506/thmb/10056360_t_309076.jpg" width="114" height="70" alt="For Sale 572 sq.m. Commercial space in Agmashenebeli ave."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=2654203"><img src="mg/1303/thmb/2654203_t_102969.jpg" width="114" height="70" alt="For Sale 1650 sq.m. Commercial space in Kakheti highway"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10056360">For Sale 572 sq.m. Commercial space in Agmashenebeli ave. <span class="orange_num">743000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=2654203">For Sale 1650 sq.m. Commercial space in Kakheti highway <span class="orange_num">530000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d8b54df7fe84030b47ba3ff03b6bb5c7')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=1974b4c7484386c20c455f77794f8c66')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10055095"><img src="mg/1506/thmb/10055095_t_301421.jpg" width="114" height="70" alt="For Rent 280 sq.m. Commercial space in Vazha-pshavela avenue"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056089"><img src="mg/1506/thmb/10056089_t_307535.jpg" width="114" height="70" alt="For Sale 291 sq.m. Commercial space in S. Tsintsadze st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10055095">For Rent 280 sq.m. Commercial space in Vazha-pshavela avenue <span class="orange_num">4200 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10056089">For Sale 291 sq.m. Commercial space in S. Tsintsadze st. <span class="orange_num">670000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=ed25e0a6c9b8921e8c4237714c9663ef')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e992f46f2f2099920bdcd968c21fea2c')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056924"><img src="mg/1507/thmb/10056924_t_312372.jpg" width="114" height="70" alt="For Sale 462 sq.m. Commercial space in Budapeshti st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10059345"><img src="mg/1507/thmb/10059345_t_325769.jpg" width="114" height="70" alt="For Sale 950 sq.m. Commercial space in Digomi 7"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10056924">For Sale 462 sq.m. Commercial space in Budapeshti st. <span class="orange_num">693990 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10059345">For Sale 950 sq.m. Commercial space in Digomi 7 <span class="orange_num">700000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=3c102a9141462bd89612214268701275')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e51ba740472f94275f906ecd20d8927c')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056709"><img src="mg/1506/thmb/10056709_t_310866.jpg" width="114" height="70" alt="For Rent 655 sq.m. Commercial space  in Saburtalo dist."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10039187"><img src="mg/1411/thmb/10039187_t_210586.jpg" width="114" height="70" alt="For Rent 610 sq.m. Commercial space  in Gldani dist."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10056709">For Rent 655 sq.m. Commercial space  in Saburtalo dist. <span class="orange_num">5500 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10039187">For Rent 610 sq.m. Commercial space  in Gldani dist. <span class="orange_num">5000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=f0573fd818cca5fa09a1595dcba75479')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=b6d4b5b79c43b2efeeaa72d8348716bd')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10051220"><img src="mg/1504/thmb/10051220_t_275492.jpg" width="114" height="70" alt="For Sale 498 sq.m. Commercial space in Tevdore mgvdeli st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10061275"><img src="mg/1508/thmb/10061275_t_338169.jpg" width="114" height="70" alt="For Rent 390 sq.m. Commercial space in Tbilisi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10051220">For Sale 498 sq.m. Commercial space in Tevdore mgvdeli st. <span class="orange_num">498000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10061275">For Rent 390 sq.m. Commercial space in Tbilisi <span class="orange_num">5000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=41efd88a2b5fdc50cb40ce248dd48d9d')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=75f9d56ac86ca9e4bd4b11a298d96f5a')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=719515"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 320 sq.m. Commercial space in Batumi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10037497"><img src="images/no_image.gif" width="114" height="70" alt="For Rent 400 sq.m. Commercial space in Agmashenebeli ave."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=719515">For Sale 320 sq.m. Commercial space in Batumi <span class="orange_num">640000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10037497">For Rent 400 sq.m. Commercial space in Agmashenebeli ave. <span class="orange_num">4500 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=da5ec2b9d86a9f95ac798e555b48aa50')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=66eca3d7b1b977b2cff2e5831becb0bc')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10001351"><img src="mg/1306/thmb/10001351_t_202226.jpg" width="114" height="70" alt="For Rent 1250 sq.m. Commercial space in Delisi st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10038248"><img src="mg/1411/thmb/10038248_t_204928.jpg" width="114" height="70" alt="For Rent 220 sq.m. Commercial space in Agladze st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10001351">For Rent 1250 sq.m. Commercial space in Delisi st. <span class="orange_num">5000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10038248">For Rent 220 sq.m. Commercial space in Agladze st. <span class="orange_num">5000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d241e872c0b4f0ef6759a5217afb9bc3')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=eac4ebd24e705449f403c8159fc7fd53')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10045694"><img src="mg/1502/thmb/10045694_t_244328.jpg" width="114" height="70" alt="For Rent 295 sq.m. Commercial space in Imedashvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10061104"><img src="mg/1508/thmb/10061104_t_336886.jpg" width="114" height="70" alt="For Rent 100 sq.m. Commercial space in I. Chavchavadze Ave."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10045694">For Rent 295 sq.m. Commercial space in Imedashvili st. <span class="orange_num">5900 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10061104">For Rent 100 sq.m. Commercial space in I. Chavchavadze Ave. <span class="orange_num">4500 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d782138b3d7e1b24381fa7a8196d5be4')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=005fe14eaf6e27ce41a2f0302f21ddc2')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10038269"><img src="mg/1411/thmb/10038269_t_205355.jpg" width="114" height="70" alt="For Rent 320 sq.m. Commercial space in Lubliani st."></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10038269">For Rent 320 sq.m. Commercial space in Lubliani st. <span class="orange_num">5000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e854a739d21e1b97d0e45367d497c738')">
 </div>
 					
 				</li>
