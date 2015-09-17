@@ -293,6 +293,7 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=2"><img src="images/logo_en.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
+<div class="banner_over banner_468" this_h="https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/" this_t="_blank" onclick="trackOutboundLink('https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/'); return false;"> </div>
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
@@ -300,7 +301,41 @@ $(document).mouseup(function (e)
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
-								</script>
+								</script><script>
+//google link tracking
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url, new_window) {
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      if (!new_window) {
+        //document.location = url;
+      }
+    }
+  });
+  if (new_window){
+    window.open(url);
+  }
+}
+//google link tracking
+
+
+  $('.banner_468').each(function(index, element){
+    element = $(element);
+    var link = element.attr('href');
+    var new_window = element.attr('target') == '_blank' ? true : false;
+    element.click(function(){
+      trackOutboundLink(link, new_window);
+      return false;
+    });
+  });
+  
+  
+  
+</script>
 </div>
             </div>
             
@@ -970,7 +1005,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441418493" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1442457065" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -1004,7 +1039,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1441418493" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1442457065" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1099,13 +1134,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7872)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7979)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6060)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6146)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2164)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2190)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (48)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1134,9 +1169,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10061789</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">10</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">56</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">04.09.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">16.09.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1148,7 +1183,7 @@ $(document).ready(function() {
 <td>
 			<div class="ann_thmb ann_thmb_main float_left" alt="1" name="1">
 				<div class="ann_thmb_main_indiv" id="middleshower" this_id="thmb_341499">
-<a class="fancy_opener thmb_341499" this_id="thmb_341499" href="javascript:;"><img src="mg/1509/10061789_m_341499.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_341500" this_id="thmb_341500" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_341500.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_341501" this_id="thmb_341501" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_341501.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_341502" this_id="thmb_341502" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_341502.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a>
+<a class="fancy_opener thmb_341499" this_id="thmb_341499" href="javascript:;"><img src="mg/1509/10061789_m_341499.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_341500" this_id="thmb_341500" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_341500.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_341501" this_id="thmb_341501" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_341501.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_341502" this_id="thmb_341502" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_341502.jpg" title="" class="main_thmb_img_v" alt="thumbnail"></a><a class="fancy_opener thmb_348664" this_id="thmb_348664" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348664.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348666" this_id="thmb_348666" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348666.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348667" this_id="thmb_348667" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348667.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348668" this_id="thmb_348668" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348668.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348669" this_id="thmb_348669" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348669.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348670" this_id="thmb_348670" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348670.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348671" this_id="thmb_348671" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348671.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348672" this_id="thmb_348672" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348672.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348673" this_id="thmb_348673" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348673.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348674" this_id="thmb_348674" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348674.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a><a class="fancy_opener thmb_348675" this_id="thmb_348675" style="display:none;" href="javascript:;"><img src="mg/1509/10061789_m_348675.jpg" title="" class="main_thmb_img_h" alt="thumbnail"></a>
 </div>
 			</div>
 		</td>
@@ -1156,11 +1191,19 @@ $(document).ready(function() {
 <tr>
 <td>
 		<div class="thmb_viewer">
-			<div class="thmbs_arrow a_left" show="prev" style="visibility: hidden;"></div>
-			<div class="thmbs_content" id="shownow" now="1" last="1"><div class="thumbs_6 show_1">
-<a id="thmb_341499" href="mg/1509/10061789_341499.jpg" alt="1" name="1" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_341499.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_341500" href="mg/1509/10061789_341500.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_341500.jpg" title="" width="80" height="60" alt="2"></a><a id="thmb_341501" href="mg/1509/10061789_341501.jpg" alt="3" name="3" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_341501.jpg" title="" width="80" height="60" alt="3"></a><a id="thmb_341502" href="mg/1509/10061789_341502.jpg" alt="4" name="4" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_341502.jpg" title="" width="80" height="60" alt="4"></a>
-</div></div>
-			<div class="thmbs_arrow a_right thmbs_hoverer" show="next" style="visibility: hidden;"></div>
+			<div class="thmbs_arrow a_left" show="prev"></div>
+			<div class="thmbs_content" id="shownow" now="1" last="3">
+<div class="thumbs_6 show_1">
+<a id="thmb_341499" href="mg/1509/10061789_341499.jpg" alt="1" name="1" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_341499.jpg" title="" width="80" height="60" alt="1"></a><a id="thmb_341500" href="mg/1509/10061789_341500.jpg" alt="2" name="2" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_341500.jpg" title="" width="80" height="60" alt="2"></a><a id="thmb_341501" href="mg/1509/10061789_341501.jpg" alt="3" name="3" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_341501.jpg" title="" width="80" height="60" alt="3"></a><a id="thmb_341502" href="mg/1509/10061789_341502.jpg" alt="4" name="4" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_341502.jpg" title="" width="80" height="60" alt="4"></a><a id="thmb_348664" href="mg/1509/10061789_348664.jpg" alt="5" name="5" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348664.jpg" title="" width="80" height="60" alt="5"></a><a id="thmb_348666" href="mg/1509/10061789_348666.jpg" alt="6" name="6" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348666.jpg" title="" width="80" height="60" alt="6"></a>
+</div>
+<div class="thumbs_6 show_2" style="display:none;">
+<a id="thmb_348667" href="mg/1509/10061789_348667.jpg" alt="7" name="7" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348667.jpg" title="" width="80" height="60" alt="7"></a><a id="thmb_348668" href="mg/1509/10061789_348668.jpg" alt="8" name="8" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348668.jpg" title="" width="80" height="60" alt="8"></a><a id="thmb_348669" href="mg/1509/10061789_348669.jpg" alt="9" name="9" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348669.jpg" title="" width="80" height="60" alt="9"></a><a id="thmb_348670" href="mg/1509/10061789_348670.jpg" alt="10" name="10" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348670.jpg" title="" width="80" height="60" alt="10"></a><a id="thmb_348671" href="mg/1509/10061789_348671.jpg" alt="11" name="11" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348671.jpg" title="" width="80" height="60" alt="11"></a><a id="thmb_348672" href="mg/1509/10061789_348672.jpg" alt="12" name="12" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348672.jpg" title="" width="80" height="60" alt="12"></a>
+</div>
+<div class="thumbs_6 show_3" style="display:none;">
+<a id="thmb_348673" href="mg/1509/10061789_348673.jpg" alt="13" name="13" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348673.jpg" title="" width="80" height="60" alt="13"></a><a id="thmb_348674" href="mg/1509/10061789_348674.jpg" alt="14" name="14" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348674.jpg" title="" width="80" height="60" alt="14"></a><a id="thmb_348675" href="mg/1509/10061789_348675.jpg" alt="15" name="15" class="fancybox-thumbs thmbswitcher" data-fancybox-group="gallery"><img src="mg/1509/thmb/10061789_t_348675.jpg" title="" width="80" height="60" alt="15"></a>
+</div>
+</div>
+			<div class="thmbs_arrow a_right thmbs_hoverer" show="next"></div>
 		</div>
 		</td>
 	  </tr>
@@ -1203,7 +1246,7 @@ $(document).ready(function() {
 			  </tr>
 <tr>
 <td valign="top" class="mc_title">Phone</td>
-                    <td valign="top">2471020; 595925020; </td>
+                    <td valign="top">2471020; 599526677; </td>
                   </tr>
 <tr>
 <td colspan="2" valign="top"> </td>
@@ -1342,110 +1385,110 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fen similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10043506"><img src="mg/1501/thmb/10043506_t_234374.jpg" width="114" height="70" alt="For Sale 120 sq.m. Commercial space in Agmashenebeli ave."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=495356"><img src="mg/1106/thmb/495356_t_5_o.jpg" width="114" height="70" alt="For Sale 308 sq.m. Commercial space  in Marneuli"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10043506">For Sale 120 sq.m. Commercial space in Agmashenebeli ave. <span class="orange_num">96000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=495356">For Sale 308 sq.m. Commercial space  in Marneuli <span class="orange_num">200000 gel</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=a84717a3d23dc6d04667d0622f7de42c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=adae06bc6d8cc25c042372a8775e89a4')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=6885464"><img src="mg/1303/thmb/6885464_t_62459.jpg" width="114" height="70" alt="For Sale 110 sq.m. Commercial space in S. Tsintsadze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=56892"><img src="mg/1210/thmb/56892_t_1_o.jpg" width="114" height="70" alt="For Sale 70 sq.m. Commercial space  in Kutaisi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=6885464">For Sale 110 sq.m. Commercial space in S. Tsintsadze st. <span class="orange_num">125000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=56892">For Sale 70 sq.m. Commercial space  in Kutaisi <span class="orange_num">220000 gel</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=03e3a101fdb6de17d75f8f5f790a44de')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=2cccf8dd079546ffcd00f0c60b1362be')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10031044"><img src="mg/1407/thmb/10031044_t_272685.jpg" width="114" height="70" alt="For Sale 138 sq.m. Commercial space in Oniashvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10000507"><img src="mg/1305/thmb/10000507_t_44607.jpg" width="114" height="70" alt="For Sale 95 sq.m. Commercial space in Tsagareli st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10031044">For Sale 138 sq.m. Commercial space in Oniashvili st. <span class="orange_num">128000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10000507">For Sale 95 sq.m. Commercial space in Tsagareli st. <span class="orange_num">100000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=efb003a746d0ef5725b86e7850eeae11')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d201681844a9dfb8c2013575eef3d032')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10043792"><img src="mg/1501/thmb/10043792_t_235340.jpg" width="114" height="70" alt="For Sale 205 sq.m. Commercial space in Nutsubidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=5997611"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 45 sq.m. Commercial space in L. Asatiani st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10043792">For Sale 205 sq.m. Commercial space in Nutsubidze st. <span class="orange_num">123000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=5997611">For Sale 45 sq.m. Commercial space in L. Asatiani st. <span class="orange_num">120000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=67f2d9fcd7454ba69c719e3b14d1633f')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=dc275fe232a2f0c4ced91911e6af5c5b')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10055764"><img src="mg/1506/thmb/10055764_t_305493.jpg" width="114" height="70" alt="For Sale 200 sq.m. Commercial space in Gobronidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=1917058"><img src="mg/1210/thmb/1917058_t_1_o.jpg" width="114" height="70" alt="For Sale 130 sq.m. Commercial space in Ketevan Tsamebuli ave."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10055764">For Sale 200 sq.m. Commercial space in Gobronidze st. <span class="orange_num">125000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=1917058">For Sale 130 sq.m. Commercial space in Ketevan Tsamebuli ave. <span class="orange_num">90000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=f5eee2dd8b2efd665870e984e530b516')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=822741bcff6ef52e0bb9e30a23e2b73c')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10059253"><img src="mg/1507/thmb/10059253_t_325212.jpg" width="114" height="70" alt="For Sale 180 sq.m. Commercial space in Gobronidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10032893"><img src="mg/1408/thmb/10032893_t_176715.jpg" width="114" height="70" alt="For Sale 889 sq.m. Commercial space  in Samtredia"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10059253">For Sale 180 sq.m. Commercial space in Gobronidze st. <span class="orange_num">108000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10032893">For Sale 889 sq.m. Commercial space  in Samtredia <span class="orange_num">130000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=aa10acf0813ee254467c1b3ced682ce2')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=b95d061f1b3b4f7a491f49475b39aa14')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10054656"><img src="mg/1506/thmb/10054656_t_297768.jpg" width="114" height="70" alt="For Sale 2000 sq.m. Commercial space  in Lilo dist."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10044463"><img src="mg/1501/thmb/10044463_t_239761.jpg" width="114" height="70" alt="For Sale 400 sq.m. Commercial space  in Zugdidi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10054656">For Sale 2000 sq.m. Commercial space  in Lilo dist. <span class="orange_num">130000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10044463">For Sale 400 sq.m. Commercial space  in Zugdidi <span class="orange_num">90000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=0e59ebee7569d25ffc381cef5de22029')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=8c8ca1c051c5ca6deb646fcc17980724')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10061655"><img src="mg/1509/thmb/10061655_t_340482.jpg" width="114" height="70" alt="For Sale 604 sq.m. Commercial space  in Lilo dist."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10046513"><img src="mg/1502/thmb/10046513_t_248257.jpg" width="114" height="70" alt="For Sale 70 sq.m. Commercial space in I.Javakhishvili st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10061655">For Sale 604 sq.m. Commercial space  in Lilo dist. <span class="orange_num">90000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10046513">For Sale 70 sq.m. Commercial space in I.Javakhishvili st. <span class="orange_num">95000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=ff2dd27b02fe348d4958dd7077870d86')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=29fa6fdbe1d84fd7ade80f1cb073fbb6')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10061405"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 184 sq.m. Commercial space in Khizanishvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10062767"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 80 sq.m. Commercial space in Mtskheta st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10061405">For Sale 184 sq.m. Commercial space in Khizanishvili st. <span class="orange_num">114000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10062767">For Sale 80 sq.m. Commercial space in Mtskheta st. <span class="orange_num">120000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=357f26c1426a1afaf8364eeda29d0a10')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=b9cf948cff018be3e29602ec388fee0e')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=6020772"><img src="mg/1002/thmb/6020772_t_1_o.jpg" width="114" height="70" alt="For Sale 100 sq.m. Commercial space in M.Lagidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=155287"><img src="mg/1205/thmb/155287_t_1_o.jpg" width="114" height="70" alt="For Sale 110 sq.m. Commercial space in Berbuki st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=6020772">For Sale 100 sq.m. Commercial space in M.Lagidze st. <span class="orange_num">100000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=155287">For Sale 110 sq.m. Commercial space in Berbuki st. <span class="orange_num">125000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=7b59573918e1c710bd1a6f582db7414c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=12bfe130559e177c23b46df5b9f0bb16')">
 </div>
 					
 				</li>

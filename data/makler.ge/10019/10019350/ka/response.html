@@ -293,6 +293,7 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=1"><img src="images/logo_ge.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
+<div class="banner_over banner_468" this_h="https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/" this_t="_blank" onclick="trackOutboundLink('https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/'); return false;"> </div>
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
@@ -300,7 +301,41 @@ $(document).mouseup(function (e)
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
-								</script>
+								</script><script>
+//google link tracking
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url, new_window) {
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      if (!new_window) {
+        //document.location = url;
+      }
+    }
+  });
+  if (new_window){
+    window.open(url);
+  }
+}
+//google link tracking
+
+
+  $('.banner_468').each(function(index, element){
+    element = $(element);
+    var link = element.attr('href');
+    var new_window = element.attr('target') == '_blank' ? true : false;
+    element.click(function(){
+      trackOutboundLink(link, new_window);
+      return false;
+    });
+  });
+  
+  
+  
+</script>
 </div>
             </div>
             
@@ -969,7 +1004,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441159969" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1442456425" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
 </div>
 </div>
 
@@ -1003,7 +1038,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="ისანი"> </li>
 <li class="transparent_class r_14" title="კრწანისი"> </li>
 <li class="transparent_class r_15" title="ჩუღურეთი"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1441159969" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
+<img src="images/charts/chart_21.png?t=1442456425" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1097,13 +1132,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7870)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7979)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6050)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6146)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2178)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2190)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (48)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=1&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>განცხადების დამატება</a></div>
@@ -1132,7 +1167,7 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10019350</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">4488</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">4598</span>
 		<span class="icons_li fen srch_icons_id float_right fge" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">ნანახია:</span>
 		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">17.08.2015</span>
 	</div>
@@ -1308,7 +1343,7 @@ $(document).ready(function() {
 					<li class="is_orange fen">+995 599 76 40 40</li>
 <li class="is_orange fen">+995 32 247 10 20</li>
 <li class="is_orange fen">broker@makler.ge</li>
-					<li><a class="caps_text" href="?lan=1&amp;pg=search&amp;broker=3">ყველა განცხადება (903)</a></li>
+					<li><a class="caps_text" href="?lan=1&amp;pg=search&amp;broker=3">ყველა განცხადება (896)</a></li>
 				</ul>
 <div class="broker_info_feedback_div" id="broker_info_div">
 					<form class="forms">
@@ -1347,33 +1382,33 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fge similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=2285162"><img src="mg/1304/thmb/2285162_t_240789.jpg" width="114" height="70" alt="იყიდება 200000 კვ.მ. მიწა მუხიანში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10018928"><img src="mg/1403/thmb/10018928_t_224205.jpg" width="114" height="70" alt="იყიდება 1625 კვ.მ. მიწა წყნეთის გზატკეცილზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=2285162">იყიდება 200000 კვ.მ. მიწა მუხიანში <span class="orange_num">1000000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10018928">იყიდება 1625 კვ.მ. მიწა წყნეთის გზატკეცილზე <span class="orange_num">720000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=51e3b121c02aaa55eb12e74f10ae8262')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=572a2f7bf93de9b6d123fbb0cdc70e7d')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10056035"><img src="mg/lands/land_t_10056035.jpg" width="114" height="70" alt="იყიდება 15000 კვ.მ. მიწა გუდაურში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10023680"><img src="mg/lands/land_t_10023680.jpg" width="114" height="70" alt="იყიდება 30000 კვ.მ. მიწა ბორჯომში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10056035">იყიდება 15000 კვ.მ. მიწა გუდაურში <span class="orange_num">1050000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10023680">იყიდება 30000 კვ.მ. მიწა ბორჯომში <span class="orange_num">1050000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b29048dcddc00997d4d42e0e0f36373e')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b55585fbf7b81727836f992941bd6abe')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=2202630"><img src="mg/lands/land_t_2202630.jpg" width="114" height="70" alt="იყიდება 15000 კვ.მ. მიწა ფოთში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=9766095"><img src="mg/lands/land_t_9766095.jpg" width="114" height="70" alt="იყიდება 100000 კვ.მ. მიწა შეკვეთილში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=2202630">იყიდება 15000 კვ.მ. მიწა ფოთში <span class="orange_num">750000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=9766095">იყიდება 100000 კვ.მ. მიწა შეკვეთილში <span class="orange_num">800000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=115b56863a189f4f791d2681f9a17664')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=c79ff3d5f6536c8948ead4291536e09d')">
 </div>
 					
 				</li>
@@ -1402,55 +1437,55 @@ $(document).ready(function() {
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10006549"><img src="mg/lands/land_t_10006549.jpg" width="114" height="70" alt="იყიდება 11440 კვ.მ. მიწა ფოთში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=4076108"><img src="mg/1304/thmb/4076108_t_225886.jpg" width="114" height="70" alt="იყიდება 644 კვ.მ. მიწა ქეთევან წამებულის გამზირზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10006549">იყიდება 11440 კვ.მ. მიწა ფოთში <span class="orange_num">800800 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=4076108">იყიდება 644 კვ.მ. მიწა ქეთევან წამებულის გამზირზე <span class="orange_num">750000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=c2dbfdc48bfde777fb338b60d293ca43')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=14e89b7167dc261be0ce0f06d012c378')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10014588"><img src="mg/1401/thmb/10014588_t_119517.jpg" width="114" height="70" alt="იყიდება 1016 კვ.მ. მიწა აწყურის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10024035"><img src="mg/lands/land_t_10024035.jpg" width="114" height="70" alt="იყიდება 500000 კვ.მ. მიწა გარდაბანში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10014588">იყიდება 1016 კვ.მ. მიწა აწყურის ქუჩაზე <span class="orange_num">720000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10024035">იყიდება 500000 კვ.მ. მიწა გარდაბანში <span class="orange_num">1000000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=2b31d2eb4e3c94a544bfd9d0122bfccf')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=6f04020531dcc4cf587d936707715dde')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10018307"><img src="mg/lands/land_t_10018307.jpg" width="114" height="70" alt="იყიდება 2500 კვ.მ. მიწა ბათუმში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=2285162"><img src="mg/1304/thmb/2285162_t_240789.jpg" width="114" height="70" alt="იყიდება 200000 კვ.მ. მიწა მუხიანში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10018307">იყიდება 2500 კვ.მ. მიწა ბათუმში <span class="orange_num">750000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=2285162">იყიდება 200000 კვ.მ. მიწა მუხიანში <span class="orange_num">1000000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=5c95d26effe1ef852df36e8434a12725')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=51e3b121c02aaa55eb12e74f10ae8262')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=3214248"><img src="mg/lands/land_t_3214248.jpg" width="114" height="70" alt="იყიდება 80000 კვ.მ. მიწა ბაზალეთში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10056035"><img src="mg/lands/land_t_10056035.jpg" width="114" height="70" alt="იყიდება 15000 კვ.მ. მიწა გუდაურში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=3214248">იყიდება 80000 კვ.მ. მიწა ბაზალეთში <span class="orange_num">800000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10056035">იყიდება 15000 კვ.მ. მიწა გუდაურში <span class="orange_num">1050000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=f94cfc48b8ba84d2835f4ac0a20d0d17')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b29048dcddc00997d4d42e0e0f36373e')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10008454"><img src="mg/lands/land_t_10008454.jpg" width="114" height="70" alt="იყიდება 950 კვ.მ. მიწა გერგეთის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=2202630"><img src="mg/lands/land_t_2202630.jpg" width="114" height="70" alt="იყიდება 15000 კვ.მ. მიწა ფოთში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10008454">იყიდება 950 კვ.მ. მიწა გერგეთის ქუჩაზე <span class="orange_num">1000000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=2202630">იყიდება 15000 კვ.მ. მიწა ფოთში <span class="orange_num">750000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=5f14d668a5604b70b94ee1e50a3cfbf2')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=115b56863a189f4f791d2681f9a17664')">
 </div>
 					
 				</li>

@@ -293,6 +293,7 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=1"><img src="images/logo_ge.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
+<div class="banner_over banner_468" this_h="https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/" this_t="_blank" onclick="trackOutboundLink('https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/'); return false;"> </div>
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
@@ -300,7 +301,41 @@ $(document).mouseup(function (e)
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
-								</script>
+								</script><script>
+//google link tracking
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url, new_window) {
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      if (!new_window) {
+        //document.location = url;
+      }
+    }
+  });
+  if (new_window){
+    window.open(url);
+  }
+}
+//google link tracking
+
+
+  $('.banner_468').each(function(index, element){
+    element = $(element);
+    var link = element.attr('href');
+    var new_window = element.attr('target') == '_blank' ? true : false;
+    element.click(function(){
+      trackOutboundLink(link, new_window);
+      return false;
+    });
+  });
+  
+  
+  
+</script>
 </div>
             </div>
             
@@ -969,7 +1004,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441160033" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1442456484" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
 </div>
 </div>
 
@@ -1003,7 +1038,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="ისანი"> </li>
 <li class="transparent_class r_14" title="კრწანისი"> </li>
 <li class="transparent_class r_15" title="ჩუღურეთი"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1441160033" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
+<img src="images/charts/chart_21.png?t=1442456484" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1097,13 +1132,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7870)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7979)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6050)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6146)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2178)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2190)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (48)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=1&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>განცხადების დამატება</a></div>
@@ -1132,7 +1167,7 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10049109</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">289</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">300</span>
 		<span class="icons_li fen srch_icons_id float_right fge" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">ნანახია:</span>
 		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">14.08.2015</span>
 	</div>
@@ -1292,99 +1327,99 @@ $(document).ready(function() {
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=9519089"><img src="mg/1302/thmb/9519089_t_256118.jpg" width="114" height="70" alt="ქირავდება 338 კვ.მ. კომერციული ფართი ლესია უკრაინკას ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=630716"><img src="mg/1201/thmb/630716_t_1_o.jpg" width="114" height="70" alt="ქირავდება 550 კვ.მ. კომერციული ფართი ბარათაშვილის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=9519089">ქირავდება 338 კვ.მ. კომერციული ფართი ლესია უკრაინკას ქუჩაზე <span class="orange_num">3700 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=630716">ქირავდება 550 კვ.მ. კომერციული ფართი ბარათაშვილის ქუჩაზე <span class="orange_num">3920 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=3c6046f8811c94e41058f448f58348dd')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=cefb1d9d79ebed6b1df4dea46268f8b3')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10060337"><img src="mg/1508/thmb/10060337_t_339807.jpg" width="114" height="70" alt="ქირავდება 125 კვ.მ. კომერციული ფართი გლდანში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10048906"><img src="mg/1503/thmb/10048906_t_277289.jpg" width="114" height="70" alt="ქირავდება 320 კვ.მ. კომერციული ფართი ალ. ყაზბეგის გამზირზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10060337">ქირავდება 125 კვ.მ. კომერციული ფართი გლდანში <span class="orange_num">3750 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10048906">ქირავდება 320 კვ.მ. კომერციული ფართი ალ. ყაზბეგის გამზირზე <span class="orange_num">4000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=3b670a8505ba8007f718d328dd0371c6')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=99bc83288ae176e3a18c0a6debacbc35')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10051241"><img src="mg/1504/thmb/10051241_t_275592.jpg" width="114" height="70" alt="ქირავდება 250 კვ.მ. კომერციული ფართი გურამიშვილის გამზირზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10062916"><img src="mg/1509/thmb/10062916_t_348993.jpg" width="114" height="70" alt="ქირავდება 200 კვ.მ. კომერციული ფართი აგლაძის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10051241">ქირავდება 250 კვ.მ. კომერციული ფართი გურამიშვილის გამზირზე <span class="orange_num">3000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10062916">ქირავდება 200 კვ.მ. კომერციული ფართი აგლაძის ქუჩაზე <span class="orange_num">3000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=28fa22de02f400ddc55ff23133061186')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b94be9ad62aaf8f1396ab6044752fbea')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10055101"><img src="mg/1506/thmb/10055101_t_307521.jpg" width="114" height="70" alt="ქირავდება 120 კვ.მ. კომერციული ფართი ვაჟა-ფშაველას გამზირზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=1937666"><img src="mg/1201/thmb/1937666_t_1_o.jpg" width="114" height="70" alt="ქირავდება 175 კვ.მ. კომერციული ფართი აღმაშენებლის გამზირზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10055101">ქირავდება 120 კვ.მ. კომერციული ფართი ვაჟა-ფშაველას გამზირზე <span class="orange_num">3000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=1937666">ქირავდება 175 კვ.მ. კომერციული ფართი აღმაშენებლის გამზირზე <span class="orange_num">3000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=a619b77a4a76ebc0e34f71bd07299d45')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=2adcdcd75af28f705321fd4a7a0dda39')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10055834"><img src="mg/1506/thmb/10055834_t_306594.jpg" width="114" height="70" alt="ქირავდება 206 კვ.მ. კომერციული ფართი სულხან ცინცაძის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10056190"><img src="mg/1506/thmb/10056190_t_341939.jpg" width="114" height="70" alt="ქირავდება 206 კვ.მ. კომერციული ფართი რ. ერისთავის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10055834">ქირავდება 206 კვ.მ. კომერციული ფართი სულხან ცინცაძის ქუჩაზე <span class="orange_num">4000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10056190">ქირავდება 206 კვ.მ. კომერციული ფართი რ. ერისთავის ქუჩაზე <span class="orange_num">3000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=8e242a1a576feb7fbfcf76a5665b0762')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=781c6646e418c1bd8247d1a45d1e5a00')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10050853"><img src="images/no_image.gif" width="114" height="70" alt="ქირავდება 60 კვ.მ. კომერციული ფართი მ. წინამძღვრიშვილის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10062549"><img src="mg/1509/thmb/10062549_t_346477.jpg" width="114" height="70" alt="ქირავდება 1800 კვ.მ. კომერციული ფართი კუკიაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10050853">ქირავდება 60 კვ.მ. კომერციული ფართი მ. წინამძღვრიშვილის ქუჩაზე <span class="orange_num">3000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10062549">ქირავდება 1800 კვ.მ. კომერციული ფართი კუკიაზე <span class="orange_num">3600 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=ce0497a2f53c64ae9f4399b926d77b3c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=e09743fbf7c325c28dc4953f9b3b3277')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10055091"><img src="mg/1506/thmb/10055091_t_300844.jpg" width="114" height="70" alt="ქირავდება 160 კვ.მ. კომერციული ფართი იოანე პეტრიწის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10060093"><img src="mg/1508/thmb/10060093_t_330618.jpg" width="114" height="70" alt="ქირავდება 1000 კვ.მ. კომერციული ფართი ქერჩის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10055091">ქირავდება 160 კვ.მ. კომერციული ფართი იოანე პეტრიწის ქუჩაზე <span class="orange_num">3000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10060093">ქირავდება 1000 კვ.მ. კომერციული ფართი ქერჩის ქუჩაზე <span class="orange_num">4000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=1f1be6f6f7abba6bf7ff7ecbc28f3b45')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=436945fdd2b0ab32e15d7516d828bb55')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10049603"><img src="mg/1504/thmb/10049603_t_266611.jpg" width="114" height="70" alt="ქირავდება 500 კვ.მ. კომერციული ფართი თ.ერისთავის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10045694"><img src="mg/1502/thmb/10045694_t_244328.jpg" width="114" height="70" alt="ქირავდება 295 კვ.მ. კომერციული ფართი იმედაშვილის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10049603">ქირავდება 500 კვ.მ. კომერციული ფართი თ.ერისთავის ქუჩაზე <span class="orange_num">3500 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10045694">ქირავდება 295 კვ.მ. კომერციული ფართი იმედაშვილის ქუჩაზე <span class="orange_num">3000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=2a9ebf43b9ee033e9da3e4bc1b96d36a')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=d782138b3d7e1b24381fa7a8196d5be4')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10060556"><img src="mg/1508/thmb/10060556_t_333340.jpg" width="114" height="70" alt="ქირავდება 120 კვ.მ. კომერციული ფართი ც.დადიანის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10055095"><img src="mg/1506/thmb/10055095_t_301421.jpg" width="114" height="70" alt="ქირავდება 280 კვ.მ. კომერციული ფართი ვაჟა-ფშაველას გამზირზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10060556">ქირავდება 120 კვ.მ. კომერციული ფართი ც.დადიანის ქუჩაზე <span class="orange_num">3000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10055095">ქირავდება 280 კვ.მ. კომერციული ფართი ვაჟა-ფშაველას გამზირზე <span class="orange_num">4200 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b973ae61fdc8d71142525cf510fdb2cf')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=ed25e0a6c9b8921e8c4237714c9663ef')">
 </div>
 					
 				</li>

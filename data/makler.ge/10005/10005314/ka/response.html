@@ -293,6 +293,7 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=1"><img src="images/logo_ge.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
+<div class="banner_over banner_468" this_h="https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/" this_t="_blank" onclick="trackOutboundLink('https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/'); return false;"> </div>
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
@@ -300,7 +301,41 @@ $(document).mouseup(function (e)
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
-								</script>
+								</script><script>
+//google link tracking
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url, new_window) {
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      if (!new_window) {
+        //document.location = url;
+      }
+    }
+  });
+  if (new_window){
+    window.open(url);
+  }
+}
+//google link tracking
+
+
+  $('.banner_468').each(function(index, element){
+    element = $(element);
+    var link = element.attr('href');
+    var new_window = element.attr('target') == '_blank' ? true : false;
+    element.click(function(){
+      trackOutboundLink(link, new_window);
+      return false;
+    });
+  });
+  
+  
+  
+</script>
 </div>
             </div>
             
@@ -969,7 +1004,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441504854" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1442455998" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
 </div>
 </div>
 
@@ -1003,7 +1038,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="ისანი"> </li>
 <li class="transparent_class r_14" title="კრწანისი"> </li>
 <li class="transparent_class r_15" title="ჩუღურეთი"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1441504854" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
+<img src="images/charts/chart_21.png?t=1442455998" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1097,13 +1132,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7873)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7979)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6060)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6146)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2168)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2190)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (48)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=1&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>განცხადების დამატება</a></div>
@@ -1132,7 +1167,7 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10005314</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">1627</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">1655</span>
 		<span class="icons_li fen srch_icons_id float_right fge" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">ნანახია:</span>
 		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">05.09.2015</span>
 	</div>
@@ -1347,7 +1382,7 @@ $(document).ready(function() {
 					<li class="is_orange fen">+995 599 76 40 40</li>
 <li class="is_orange fen">+995 32 247 10 20</li>
 <li class="is_orange fen">broker@makler.ge</li>
-					<li><a class="caps_text" href="?lan=1&amp;pg=search&amp;broker=3">ყველა განცხადება (901)</a></li>
+					<li><a class="caps_text" href="?lan=1&amp;pg=search&amp;broker=3">ყველა განცხადება (896)</a></li>
 				</ul>
 <div class="broker_info_feedback_div" id="broker_info_div">
 					<form class="forms">
@@ -1386,66 +1421,22 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fge similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10061865"><img src="mg/1509/thmb/10061865_t_341991.jpg" width="114" height="70" alt="იყიდება 82 კვ.მ. კომერციული ფართი ბათუმში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=9366564"><img src="mg/1109/thmb/9366564_t_1_o.jpg" width="114" height="70" alt="იყიდება 1129.35 კვ.მ. კომერციული ფართი ფოთში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10061865">იყიდება 82 კვ.მ. კომერციული ფართი ბათუმში <span class="orange_num">300000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=9366564">იყიდება 1129.35 კვ.მ. კომერციული ფართი ფოთში <span class="orange_num">395273 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=95a640eb7179c27618188567069477d4')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=46ab214fe63617b76795b60c0d47c4d7')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10012759"><img src="mg/1312/thmb/10012759_t_136685.jpg" width="114" height="70" alt="იყიდება 965 კვ.მ. კომერციული ფართი გლდანში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10062916"><img src="mg/1509/thmb/10062916_t_348993.jpg" width="114" height="70" alt="იყიდება 200 კვ.მ. კომერციული ფართი აგლაძის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10012759">იყიდება 965 კვ.მ. კომერციული ფართი გლდანში <span class="orange_num">300000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10062916">იყიდება 200 კვ.მ. კომერციული ფართი აგლაძის ქუჩაზე <span class="orange_num">400000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=fc9a21b83a30ddcced108eeb32c36862')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10061645"><img src="mg/1509/thmb/10061645_t_340452.jpg" width="114" height="70" alt="იყიდება 270 კვ.მ. კომერციული ფართი გურამიშვილის გამზირზე"></a></div>
-					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10061645">იყიდება 270 კვ.მ. კომერციული ფართი გურამიშვილის გამზირზე <span class="orange_num">405000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=cc60c4652153b08244322ad1d3136b7a')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=9891710"><img src="mg/1302/thmb/9891710_t_51600.jpg" width="114" height="70" alt="იყიდება 756 კვ.მ. კომერციული ფართი გუდაურში"></a></div>
-					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=9891710">იყიდება 756 კვ.მ. კომერციული ფართი გუდაურში <span class="orange_num">350000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=09bdd958c3746fc622686f8625a8825b')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=7517177"><img src="mg/1304/thmb/7517177_t_48259.jpg" width="114" height="70" alt="იყიდება 950 კვ.მ. კომერციული ფართი რუსთავში"></a></div>
-					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=7517177">იყიდება 950 კვ.მ. კომერციული ფართი რუსთავში <span class="orange_num">300000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=019e10ee96cad9202c8f132260dcfdc4')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10014672"><img src="mg/1401/thmb/10014672_t_105293.jpg" width="114" height="70" alt="იყიდება 1200 კვ.მ. კომერციული ფართი რუსთავში"></a></div>
-					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10014672">იყიდება 1200 კვ.მ. კომერციული ფართი რუსთავში <span class="orange_num">330000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=d0dd49399693967c76a576be83a20e1c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b94be9ad62aaf8f1396ab6044752fbea')">
 </div>
 					
 				</li>
@@ -1454,7 +1445,7 @@ $(document).ready(function() {
 				<li>
 					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10045569"><img src="mg/1502/thmb/10045569_t_243422.jpg" width="114" height="70" alt="იყიდება 210 კვ.მ. კომერციული ფართი ბუდაპეშტის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10045569">იყიდება 210 კვ.მ. კომერციული ფართი ბუდაპეშტის ქუჩაზე <span class="orange_num">420000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10045569">იყიდება 210 კვ.მ. კომერციული ფართი ბუდაპეშტის ქუჩაზე <span class="orange_num">357000 $</span></a>
 					 
 					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=4b34722d7b0e0f461e3de784ee652188')">
 </div>
@@ -1463,33 +1454,77 @@ $(document).ready(function() {
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10056200"><img src="mg/1506/thmb/10056200_t_307503.jpg" width="114" height="70" alt="იყიდება 520 კვ.მ. კომერციული ფართი ე. ამაშუკელის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10040403"><img src="mg/1412/thmb/10040403_t_223530.jpg" width="114" height="70" alt="იყიდება 110 კვ.მ. კომერციული ფართი ფალიაშვილის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10056200">იყიდება 520 კვ.მ. კომერციული ფართი ე. ამაშუკელის ქუჩაზე <span class="orange_num">365000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10040403">იყიდება 110 კვ.მ. კომერციული ფართი ფალიაშვილის ქუჩაზე <span class="orange_num">300000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=e07b442ff8d30e9c03158aec1c6e6680')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=53694ed2bb3d1d1a968039b64a2c3059')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10060258"><img src="mg/1508/thmb/10060258_t_339402.jpg" width="114" height="70" alt="იყიდება 158 კვ.მ. კომერციული ფართი სანაპიროს ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10042164"><img src="mg/1412/thmb/10042164_t_228319.jpg" width="114" height="70" alt="იყიდება 6000 კვ.მ. კომერციული ფართი ფონიჭალაში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10060258">იყიდება 158 კვ.მ. კომერციული ფართი სანაპიროს ქუჩაზე <span class="orange_num">370000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10042164">იყიდება 6000 კვ.მ. კომერციული ფართი ფონიჭალაში <span class="orange_num">390000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=460298f87be99f6e00a85d1ac447098c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=47867ac7d53662991ce8bcb4e08d6602')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10053900"><img src="mg/1505/thmb/10053900_t_298949.jpg" width="114" height="70" alt="იყიდება 60 კვ.მ. კომერციული ფართი კ. აფხაზის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10055614"><img src="mg/1506/thmb/10055614_t_304014.jpg" width="114" height="70" alt="იყიდება 330 კვ.მ. კომერციული ფართი გლდანში"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10053900">იყიდება 60 კვ.მ. კომერციული ფართი კ. აფხაზის ქუჩაზე <span class="orange_num">300000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10055614">იყიდება 330 კვ.მ. კომერციული ფართი გლდანში <span class="orange_num">330000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=9be4d30e61edc90b1f45686c3b7d6168')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=de53c16eb2f964c70d0ce56198f8b712')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10057324"><img src="mg/1507/thmb/10057324_t_314410.jpg" width="114" height="70" alt="იყიდება 260 კვ.მ. კომერციული ფართი ს.ჩიქოვანის ქუჩაზე"></a></div>
+					<div class="ann_text fge">
+					<a href="?lan=1&amp;pg=ann&amp;id=10057324">იყიდება 260 კვ.მ. კომერციული ფართი ს.ჩიქოვანის ქუჩაზე <span class="orange_num">312000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=a005202651d83949d60518f8e0df2579')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10038269"><img src="mg/1411/thmb/10038269_t_205355.jpg" width="114" height="70" alt="იყიდება 320 კვ.მ. კომერციული ფართი ლუბლიანის ქუჩაზე"></a></div>
+					<div class="ann_text fge">
+					<a href="?lan=1&amp;pg=ann&amp;id=10038269">იყიდება 320 კვ.მ. კომერციული ფართი ლუბლიანის ქუჩაზე <span class="orange_num">400000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=e854a739d21e1b97d0e45367d497c738')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10014212"><img src="mg/1401/thmb/10014212_t_102582.jpg" width="114" height="70" alt="იყიდება 689 კვ.მ. კომერციული ფართი თბილისში"></a></div>
+					<div class="ann_text fge">
+					<a href="?lan=1&amp;pg=ann&amp;id=10014212">იყიდება 689 კვ.მ. კომერციული ფართი თბილისში <span class="orange_num">405000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=0f3621be6ea6c1dceb7bff6d68acfadb')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10014214"><img src="mg/1401/thmb/10014214_t_102571.jpg" width="114" height="70" alt="იყიდება 1080 კვ.მ. კომერციული ფართი ურეკის ქუჩაზე"></a></div>
+					<div class="ann_text fge">
+					<a href="?lan=1&amp;pg=ann&amp;id=10014214">იყიდება 1080 კვ.მ. კომერციული ფართი ურეკის ქუჩაზე <span class="orange_num">380000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=9af7efc697f151056925f45165eb6fe8')">
 </div>
 					
 				</li>

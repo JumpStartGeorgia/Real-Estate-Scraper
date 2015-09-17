@@ -293,6 +293,7 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=2"><img src="images/logo_en.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
+<div class="banner_over banner_468" this_h="https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/" this_t="_blank" onclick="trackOutboundLink('https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/'); return false;"> </div>
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
@@ -300,7 +301,41 @@ $(document).mouseup(function (e)
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
-								</script>
+								</script><script>
+//google link tracking
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url, new_window) {
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      if (!new_window) {
+        //document.location = url;
+      }
+    }
+  });
+  if (new_window){
+    window.open(url);
+  }
+}
+//google link tracking
+
+
+  $('.banner_468').each(function(index, element){
+    element = $(element);
+    var link = element.attr('href');
+    var new_window = element.attr('target') == '_blank' ? true : false;
+    element.click(function(){
+      trackOutboundLink(link, new_window);
+      return false;
+    });
+  });
+  
+  
+  
+</script>
 </div>
             </div>
             
@@ -970,7 +1005,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441161295" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1442457746" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -1004,7 +1039,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1441161295" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1442457746" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1099,13 +1134,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7870)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7979)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6050)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6146)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2178)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2190)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (48)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1134,7 +1169,7 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10048762</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">722</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">758</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
 		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">15.08.2015</span>
 	</div>
@@ -1347,7 +1382,7 @@ $(document).ready(function() {
 					<li class="is_orange fen">+995 595 10 10 22</li>
 <li class="is_orange fen">+995 32 247 10 20 </li>
 <li class="is_orange fen">lika.j@makler.ge</li>
-					<li><a class="caps_text" href="?lan=2&amp;pg=search&amp;broker=55884">All Announcements (472)</a></li>
+					<li><a class="caps_text" href="?lan=2&amp;pg=search&amp;broker=55884">All Announcements (484)</a></li>
 				</ul>
 <div class="broker_info_feedback_div" id="broker_info_div">
 					<form class="forms">
@@ -1385,17 +1420,6 @@ Please, try again later">
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fen similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056703"><img src="mg/1506/thmb/10056703_t_310865.jpg" width="114" height="70" alt="For Rent 380 sq.m. Commercial space on Ir. Abashidze st."></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10056703">For Rent 380 sq.m. Commercial space on Ir. Abashidze st. <span class="orange_num">10000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e811724fe5c0b745639cede43e597cb7')">
-</div>
-					
-				</li>
-				
-			
-				<li>
 					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=8858074"><img src="mg/1303/thmb/8858074_t_297486.jpg" width="114" height="70" alt="For Sale 350 sq.m. Commercial space in I. Chavchavadze Ave."></a></div>
 					<div class="ann_text fen">
 					<a href="?lan=2&amp;pg=ann&amp;id=8858074">For Sale 350 sq.m. Commercial space in I. Chavchavadze Ave. <span class="orange_num">1800000 $</span></a>
@@ -1407,53 +1431,86 @@ Please, try again later">
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10010559"><img src="mg/1311/thmb/10010559_t_164104.jpg" width="114" height="70" alt="For Sale 1600 sq.m. Commercial space in Gulia st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056703"><img src="mg/1506/thmb/10056703_t_310865.jpg" width="114" height="70" alt="For Rent 380 sq.m. Commercial space on Ir. Abashidze st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10010559">For Sale 1600 sq.m. Commercial space in Gulia st. <span class="orange_num">1650000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10056703">For Rent 380 sq.m. Commercial space on Ir. Abashidze st. <span class="orange_num">10000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d3305edc18e4948d0a78ee25f1b4b572')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e811724fe5c0b745639cede43e597cb7')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=5918775"><img src="mg/1304/thmb/5918775_t_1_o.jpg" width="114" height="70" alt="For Sale 8000 sq.m. Commercial space  in Kojori"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10036662"><img src="mg/1410/thmb/10036662_t_193822.jpg" width="114" height="70" alt="For Rent 1900 sq.m. Commercial space in Gldanis khevi st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=5918775">For Sale 8000 sq.m. Commercial space  in Kojori <span class="orange_num">1500000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10036662">For Rent 1900 sq.m. Commercial space in Gldanis khevi st. <span class="orange_num">13000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=cfcd8e09ebd48bc3962ef1fb0deee91e')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=29ab431e17b3d716a79bfa1e80804ce1')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10014232"><img src="mg/1401/thmb/10014232_t_102698.jpg" width="114" height="70" alt="For Rent 600 sq.m. Commercial space in E.Mikeladze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10055647"><img src="mg/1506/thmb/10055647_t_304553.jpg" width="114" height="70" alt="For Rent 310 sq.m. Commercial space in Pekini Ave."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10014232">For Rent 600 sq.m. Commercial space in E.Mikeladze st. <span class="orange_num">12000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10055647">For Rent 310 sq.m. Commercial space in Pekini Ave. <span class="orange_num">13000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=3e15082f8177a26b00a255815cf8ca2a')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=fb94a6ba967e5a96449186a4acaf640d')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10024379"><img src="mg/1405/thmb/10024379_t_146216.jpg" width="114" height="70" alt="For Sale 405 sq.m. Commercial space in Baratashvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10060088"><img src="mg/1508/thmb/10060088_t_330576.jpg" width="114" height="70" alt="For Rent 2100 sq.m. Commercial space  in Gldani dist."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10024379">For Sale 405 sq.m. Commercial space in Baratashvili st. <span class="orange_num">1800000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10060088">For Rent 2100 sq.m. Commercial space  in Gldani dist. <span class="orange_num">10500 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=ac0ec84b64f6c47fdc313f0973b9977b')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e6df9c35f92f6d4d7058aed7da0f087a')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056355"><img src="mg/1506/thmb/10056355_t_318337.jpg" width="114" height="70" alt="For Sale 3600 sq.m. Commercial space in Ana Politkovskaya st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=2664623"><img src="mg/1103/thmb/2664623_t_1_o.jpg" width="114" height="70" alt="For Rent 1408 sq.m. Commercial space in Agladze st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10056355">For Sale 3600 sq.m. Commercial space in Ana Politkovskaya st. <span class="orange_num">2000000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=2664623">For Rent 1408 sq.m. Commercial space in Agladze st. <span class="orange_num">11200 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=d8975a74cc55bb3c43e74fbbe8cbec5a')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10041526"><img src="mg/1412/thmb/10041526_t_224088.jpg" width="114" height="70" alt="For Sale 500 sq.m. Commercial space in Guramishvili avenue"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10041526">For Sale 500 sq.m. Commercial space in Guramishvili avenue <span class="orange_num">1600000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c50607c253840c26335441ef6f191b24')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10008918"><img src="mg/1310/thmb/10008918_t_72215.jpg" width="114" height="70" alt="For Rent 500 sq.m. Commercial space in Shardeni st."></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10008918">For Rent 500 sq.m. Commercial space in Shardeni st. <span class="orange_num">10000 $</span></a>
+					 
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=87dd8a2b728fd60272d4de234dc43e53')">
+</div>
+					
+				</li>
+				
+			
+				<li>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10056355"><img src="mg/1506/thmb/10056355_t_318337.jpg" width="114" height="70" alt="For Sale 3600 sq.m. Commercial space in Tbilisi"></a></div>
+					<div class="ann_text fen">
+					<a href="?lan=2&amp;pg=ann&amp;id=10056355">For Sale 3600 sq.m. Commercial space in Tbilisi <span class="orange_num">1750000 $</span></a>
 					 
 					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=1e6ce122cec5c44790efad30e5a477a9')">
 </div>
@@ -1462,33 +1519,11 @@ Please, try again later">
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10049161"><img src="mg/1503/thmb/10049161_t_264356.jpg" width="114" height="70" alt="For Sale 600 sq.m. Commercial space in Agmashenebeli ave."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=7983011"><img src="mg/1101/thmb/7983011_t_1_o.jpg" width="114" height="70" alt="For Sale 2400 sq.m. Commercial space in Beliashvili st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10049161">For Sale 600 sq.m. Commercial space in Agmashenebeli ave. <span class="orange_num">2000000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=7983011">For Sale 2400 sq.m. Commercial space in Beliashvili st. <span class="orange_num">1500000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c727531ae93437471a8820276ecf783d')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=3037632"><img src="mg/1210/thmb/3037632_t_1_o.jpg" width="114" height="70" alt="For Sale 3200 sq.m. Commercial space in Moskovi Ave."></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=3037632">For Sale 3200 sq.m. Commercial space in Moskovi Ave. <span class="orange_num">1500000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c64724fa30952841f6593263be86698f')">
-</div>
-					
-				</li>
-				
-			
-				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10049976"><img src="mg/1504/thmb/10049976_t_268804.jpg" width="114" height="70" alt="For Sale 700 sq.m. Commercial space in Gorgasali st."></a></div>
-					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10049976">For Sale 700 sq.m. Commercial space in Gorgasali st. <span class="orange_num">1500000 $</span></a>
-					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=677ce349e2af6ebeee1bc9eabfbf9c75')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=62371f7c9a2ee0d5f6fd6247a06e9614')">
 </div>
 					
 				</li>

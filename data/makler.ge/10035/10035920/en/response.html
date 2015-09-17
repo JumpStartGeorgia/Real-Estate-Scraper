@@ -293,6 +293,7 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=2"><img src="images/logo_en.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
+<div class="banner_over banner_468" this_h="https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/" this_t="_blank" onclick="trackOutboundLink('https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/'); return false;"> </div>
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
@@ -300,7 +301,41 @@ $(document).mouseup(function (e)
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
-								</script>
+								</script><script>
+//google link tracking
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url, new_window) {
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      if (!new_window) {
+        //document.location = url;
+      }
+    }
+  });
+  if (new_window){
+    window.open(url);
+  }
+}
+//google link tracking
+
+
+  $('.banner_468').each(function(index, element){
+    element = $(element);
+    var link = element.attr('href');
+    var new_window = element.attr('target') == '_blank' ? true : false;
+    element.click(function(){
+      trackOutboundLink(link, new_window);
+      return false;
+    });
+  });
+  
+  
+  
+</script>
 </div>
             </div>
             
@@ -970,7 +1005,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441332111" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1442457385" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -1004,7 +1039,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1441332111" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1442457385" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1099,13 +1134,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7880)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7979)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6061)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6146)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2179)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2190)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (56)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (48)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1134,7 +1169,7 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10035920</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">597</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">629</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
 		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">03.09.2015</span>
 	</div>
@@ -1310,99 +1345,99 @@ $(document).ready(function() {
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10035935"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 185 sq.m. Private house in Gergeti st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=1434101"><img src="mg/1303/thmb/1434101_t_1_o.jpg" width="114" height="70" alt="For Sale 600 sq.m. Private house in Gogebashvili st"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10035935">For Sale 185 sq.m. Private house in Gergeti st. <span class="orange_num">400000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=1434101">For Sale 600 sq.m. Private house in Gogebashvili st <span class="orange_num">450000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=79fbe80a10b4086796ec7134401eb2d0')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=84090a60c76193bad23b008726e35666')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10040154"><img src="mg/1411/thmb/10040154_t_216679.jpg" width="114" height="70" alt="For Sale 540 sq.m. Private house in Tbilisi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10055080"><img src="mg/1506/thmb/10055080_t_300994.jpg" width="114" height="70" alt="For Sale 218 sq.m. Private house in Tskneti dist."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10040154">For Sale 540 sq.m. Private house in Tbilisi <span class="orange_num">486750 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10055080">For Sale 218 sq.m. Private house in Tskneti dist. <span class="orange_num">500000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=780a55e6a7e8af2f697cdef89600004e')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=0f6e5c2854bf4319cb7c34c7361fc5d0')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=8149971"><img src="mg/1303/thmb/8149971_t_328842.jpg" width="114" height="70" alt="For Sale 400 sq.m. Private house in Agmashenebeli alley"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10062790"><img src="images/no_image.gif" width="114" height="70" alt="For Sale 350 sq.m. Private house in Shatberashvili II blind alley"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=8149971">For Sale 400 sq.m. Private house in Agmashenebeli alley <span class="orange_num">500000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10062790">For Sale 350 sq.m. Private house in Shatberashvili II blind alley <span class="orange_num">400000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=4dfee1ff1104ae730bf8b32d7f1685f8')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=e6854f3aa77ffd4e39397cf9c27ba8a7')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10059347"><img src="mg/1507/thmb/10059347_t_325780.jpg" width="114" height="70" alt="For Sale 360 sq.m. Private house in Digomi 7"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10038645"><img src="mg/1411/thmb/10038645_t_213137.jpg" width="114" height="70" alt="For Sale 264 sq.m. Private house in Rcheulishvili st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10059347">For Sale 360 sq.m. Private house in Digomi 7 <span class="orange_num">400000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10038645">For Sale 264 sq.m. Private house in Rcheulishvili st. <span class="orange_num">410000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=a63911a51e76717f8fc9003c5bef8d2c')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=315ce7a07a6de7d99fa12a504f01d2b6')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=1819192"><img src="mg/1206/thmb/1819192_t_1_o.jpg" width="114" height="70" alt="For Sale 520 sq.m. Private house in Tskneti dist."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10052924"><img src="mg/1505/thmb/10052924_t_329185.jpg" width="114" height="70" alt="For Sale 570 sq.m. Private house in Digomi 9"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=1819192">For Sale 520 sq.m. Private house in Tskneti dist. <span class="orange_num">450000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10052924">For Sale 570 sq.m. Private house in Digomi 9 <span class="orange_num">500000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=3dfa82da102448bb2f3ff6f0e6cf67c8')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=7710065fc4db169fc538f92102167cbb')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10013306"><img src="mg/1312/thmb/10013306_t_99381.jpg" width="114" height="70" alt="For Sale 1050 sq.m. Private house in Arakishvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=654424"><img src="mg/1206/thmb/654424_t_1_o.jpg" width="114" height="70" alt="For Sale 400 sq.m. Private house in Batumi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10013306">For Sale 1050 sq.m. Private house in Arakishvili st. <span class="orange_num">400000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=654424">For Sale 400 sq.m. Private house in Batumi <span class="orange_num">400000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=07e97849eaf6f7c573d70ce9354652b8')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=cee17292f3acc379dbbbb22a0e9798eb')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10026028"><img src="mg/1406/thmb/10026028_t_152717.jpg" width="114" height="70" alt="For Sale 430 sq.m. Private house in Digomi 9"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=2457404"><img src="mg/1212/thmb/2457404_t_1_o.jpg" width="114" height="70" alt="For Sale 1418 sq.m. Private house in Lubliani st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10026028">For Sale 430 sq.m. Private house in Digomi 9 <span class="orange_num">430000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=2457404">For Sale 1418 sq.m. Private house in Lubliani st. <span class="orange_num">500000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=ab10bea224c6050d3167182d18fbd7dd')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=6cacd9e67b9f157e91c84e0d3fa7a530')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10046247"><img src="mg/1502/thmb/10046247_t_299247.jpg" width="114" height="70" alt="For Sale 332 sq.m. Private house in Teleti blind alley"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10029688"><img src="mg/1407/thmb/10029688_t_164583.jpg" width="114" height="70" alt="For Sale 635 sq.m. Private house in Batumi"></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10046247">For Sale 332 sq.m. Private house in Teleti blind alley <span class="orange_num">400000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10029688">For Sale 635 sq.m. Private house in Batumi <span class="orange_num">400000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=1e228a55a302e3025810e5df25fc7982')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=5bec5db44545b5d43e2593440e1e45c1')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10052441"><img src="mg/1505/thmb/10052441_t_339327.jpg" width="114" height="70" alt="For Sale 587 sq.m. Private house in Tbilisi"></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10046910"><img src="mg/1502/thmb/10046910_t_250376.jpg" width="114" height="70" alt="For Sale 250 sq.m. Private house in Didi kheivani st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10052441">For Sale 587 sq.m. Private house in Tbilisi <span class="orange_num">450000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10046910">For Sale 250 sq.m. Private house in Didi kheivani st. <span class="orange_num">405000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=304c3753a629b93bc22045dff8f1fbb0')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=32afe8912f2bfb92a4a428cb93120e95')">
 </div>
 					
 				</li>

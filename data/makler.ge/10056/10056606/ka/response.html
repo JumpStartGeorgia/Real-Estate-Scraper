@@ -293,6 +293,7 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=1"><img src="images/logo_ge.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
+<div class="banner_over banner_468" this_h="https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/" this_t="_blank" onclick="trackOutboundLink('https://www.facebook.com/Dirsi-%E1%83%93%E1%83%98%E1%83%A0%E1%83%A1%E1%83%98-499056783459581/timeline/'); return false;"> </div>
 <div id="rb_313"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
@@ -300,7 +301,41 @@ $(document).mouseup(function (e)
 									fo.addParam("wmode", "opaque");
 									fo.write("rb_313");		
 								// ]]>
-								</script>
+								</script><script>
+//google link tracking
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url, new_window) {
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      if (!new_window) {
+        //document.location = url;
+      }
+    }
+  });
+  if (new_window){
+    window.open(url);
+  }
+}
+//google link tracking
+
+
+  $('.banner_468').each(function(index, element){
+    element = $(element);
+    var link = element.attr('href');
+    var new_window = element.attr('target') == '_blank' ? true : false;
+    element.click(function(){
+      trackOutboundLink(link, new_window);
+      return false;
+    });
+  });
+  
+  
+  
+</script>
 </div>
             </div>
             
@@ -969,7 +1004,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441160647" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1442455653" title="ფასის ცვლილება კვ.მ.-ზე თბილისში($)" alt="ფასის ცვლილება კვ.მ.-ზე თბილისში($)"></div>
 </div>
 </div>
 
@@ -1003,7 +1038,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="ისანი"> </li>
 <li class="transparent_class r_14" title="კრწანისი"> </li>
 <li class="transparent_class r_15" title="ჩუღურეთი"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1441160647" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
+<img src="images/charts/chart_21.png?t=1442455653" title="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)" alt="მიმდინარე ფასი კვ.მ.-ზე თბილისში ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1097,13 +1132,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7870)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=1&amp;pg=search&amp;f=t">ყველა (7979)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6050)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=1">იყიდება (6146)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2178)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=2">ქირავდება (2190)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=1&amp;pg=search&amp;f=t&amp;cat=4">დღიური გაქ. (48)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=1&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>განცხადების დამატება</a></div>
@@ -1132,9 +1167,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10056606</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">174</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">204</span>
 		<span class="icons_li fen srch_icons_id float_right fge" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">ნანახია:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">10.07.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">16.09.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1335,110 +1370,110 @@ $(document).ready(function() {
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fge similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10005488"><img src="mg/1308/thmb/10005488_t_60400.jpg" width="114" height="70" alt="იყიდება 66 კვ.მ. ბინა დ. ყიფიანის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10020069"><img src="mg/1403/thmb/10020069_t_277577.jpg" width="114" height="70" alt="იყიდება 140 კვ.მ. ბინა ძმ. ზუბალაშვილების ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10005488">იყიდება 66 კვ.მ. ბინა დ. ყიფიანის ქუჩაზე <span class="orange_num">92400 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10020069">იყიდება 140 კვ.მ. ბინა ძმ. ზუბალაშვილების ქუჩაზე <span class="orange_num">130000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=59337b126a05556c76d338fdfb5c6d14')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=442093f97497b74d89abb614570eb7c5')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10022264"><img src="mg/1404/thmb/10022264_t_148573.jpg" width="114" height="70" alt="იყიდება 100 კვ.მ. ბინა ჩიტაძის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10062804"><img src="mg/1509/thmb/10062804_t_348256.jpg" width="114" height="70" alt="ქირავდება 90 კვ.მ. ბინა მთაწმინდაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10022264">იყიდება 100 კვ.მ. ბინა ჩიტაძის ქუჩაზე <span class="orange_num">110000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10062804">ქირავდება 90 კვ.მ. ბინა მთაწმინდაზე <span class="orange_num">600 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=f83f4ebb2929c193091d5a72748c4f77')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=d354c113f700d34bb18da39d76f6cf78')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10032287"><img src="mg/1408/thmb/10032287_t_174124.jpg" width="114" height="70" alt="ქირავდება 100 კვ.მ. ბინა კოტეტიშვილის შესახვევში"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10029884"><img src="images/no_image.gif" width="114" height="70" alt="იყიდება 98 კვ.მ. ბინა ამაღლების ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10032287">ქირავდება 100 კვ.მ. ბინა კოტეტიშვილის შესახვევში <span class="orange_num">800 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10029884">იყიდება 98 კვ.მ. ბინა ამაღლების ქუჩაზე <span class="orange_num">125000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=3d7997d21106045039e21f82b5c95b59')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=6660d60adf4d8dfff9137b3d7acf9341')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10036038"><img src="mg/1410/thmb/10036038_t_190887.jpg" width="114" height="70" alt="იყიდება 80 კვ.მ. ბინა ჩიტაძის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=79129"><img src="mg/1304/thmb/79129_t_98949.jpg" width="114" height="70" alt="იყიდება 120 კვ.მ. ბინა შევჩენკოს ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10036038">იყიდება 80 კვ.მ. ბინა ჩიტაძის ქუჩაზე <span class="orange_num">98000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=79129">იყიდება 120 კვ.მ. ბინა შევჩენკოს ქუჩაზე <span class="orange_num">130000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=e6f5c75306c5efab2167f626088c28c2')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=a752cc33bfd9ef4210b4532d7732c8d1')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=439788"><img src="mg/1102/thmb/439788_t_1_o.jpg" width="114" height="70" alt="იყიდება 125 კვ.მ. ბინა ბერიძის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10057286"><img src="mg/1507/thmb/10057286_t_314226.jpg" width="114" height="70" alt="ქირავდება 85 კვ.მ. ბინა ძმ. ზუბალაშვილების ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=439788">იყიდება 125 კვ.მ. ბინა ბერიძის ქუჩაზე <span class="orange_num">96000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10057286">ქირავდება 85 კვ.მ. ბინა ძმ. ზუბალაშვილების ქუჩაზე <span class="orange_num">800 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=6166e01f1c57a97c31a356cca87f7527')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=f617b7b05bffe1f877768f2fecdb1e63')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10049696"><img src="mg/1504/thmb/10049696_t_304257.jpg" width="114" height="70" alt="ქირავდება 90 კვ.მ. ბინა მთაწმინდის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10062635"><img src="mg/1509/thmb/10062635_t_347071.jpg" width="114" height="70" alt="ქირავდება 70 კვ.მ. ბინა ჩიტაძის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10049696">ქირავდება 90 კვ.მ. ბინა მთაწმინდის ქუჩაზე <span class="orange_num">700 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10062635">ქირავდება 70 კვ.მ. ბინა ჩიტაძის ქუჩაზე <span class="orange_num">700 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b46a14468b1685a507049a7ee7bfb191')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b1d9d85e4f762058303e7d4490fd4f18')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10052191"><img src="mg/1505/thmb/10052191_t_304165.jpg" width="114" height="70" alt="ქირავდება 120 კვ.მ. ბინა რუსთაველის გამზირზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=7482092"><img src="mg/1105/thmb/7482092_t_82274.jpg" width="114" height="70" alt="იყიდება 90 კვ.მ. ბინა ე.გაბაშვილის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10052191">ქირავდება 120 კვ.მ. ბინა რუსთაველის გამზირზე <span class="orange_num">800 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=7482092">იყიდება 90 კვ.მ. ბინა ე.გაბაშვილის ქუჩაზე <span class="orange_num">112000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=99c9b6347479b19b4d619e33362aa3a7')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=e4889bc85e0a162c5d059a1670182aae')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10015602"><img src="mg/1401/thmb/10015602_t_119929.jpg" width="114" height="70" alt="იყიდება 85 კვ.მ. ბინა ბროსეს ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10033453"><img src="mg/1408/thmb/10033453_t_344570.jpg" width="114" height="70" alt="იყიდება 125 კვ.მ. ბინა ძმ. ზუბალაშვილების ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10015602">იყიდება 85 კვ.მ. ბინა ბროსეს ქუჩაზე <span class="orange_num">95000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10033453">იყიდება 125 კვ.მ. ბინა ძმ. ზუბალაშვილების ქუჩაზე <span class="orange_num">95000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=b6e39d3873ab603ab73001d543914c08')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=d5a5b5be49322293ce55c989de239341')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10044628"><img src="mg/1502/thmb/10044628_t_239211.jpg" width="114" height="70" alt="იყიდება 80 კვ.მ. ბინა ბარათაშვილის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10061951"><img src="mg/1509/thmb/10061951_t_342459.jpg" width="114" height="70" alt="ქირავდება 70 კვ.მ. ბინა ალ. ჭავჭავაძის ქუჩაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10044628">იყიდება 80 კვ.მ. ბინა ბარათაშვილის ქუჩაზე <span class="orange_num">93000 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=10061951">ქირავდება 70 კვ.მ. ბინა ალ. ჭავჭავაძის ქუჩაზე <span class="orange_num">600 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=0c8b0f055eed1080414ae86ea43955d9')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=95ec77aa3aa0f7b1a857f3024bc0c868')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=10061105"><img src="mg/1508/thmb/10061105_t_336893.jpg" width="114" height="70" alt="ქირავდება 42 კვ.მ. ბინა პუშკინის ქუჩაზე"></a></div>
+					<div class="ann_thmb"><a href="?lan=1&amp;pg=ann&amp;id=5803844"><img src="mg/1305/thmb/5803844_t_89501.jpg" width="114" height="70" alt="იყიდება 64 კვ.მ. ბინა მთაწმინდაზე"></a></div>
 					<div class="ann_text fge">
-					<a href="?lan=1&amp;pg=ann&amp;id=10061105">ქირავდება 42 კვ.მ. ბინა პუშკინის ქუჩაზე <span class="orange_num">700 $</span></a>
+					<a href="?lan=1&amp;pg=ann&amp;id=5803844">იყიდება 64 კვ.მ. ბინა მთაწმინდაზე <span class="orange_num">130000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=7db746633c9c40d2af0c6dd09994c6e8')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="გახსნა ახალ ფანჯარაში" onclick="view_ann_in_popup('pann.php?lan=1&amp;action=330c2350436c4906a2af4f315a6d4593')">
 </div>
 					
 				</li>
