@@ -197,8 +197,7 @@ $(document).mouseup(function (e)
 <a href="javascript:;">Useful Information</a>
                     
                     <ul class="header_sub_menu ui-corner-tr ui-corner-bottom">
-<li class="ui-corner-tr"><a href="?lan=2&amp;pg=st&amp;p=5">Valuation</a></li>
-                    		<li class="mm_sub_li_top_border"><a href="?lan=2&amp;pg=inf">Distances between cities</a></li>
+<li class="mm_sub_li_top_border"><a href="?lan=2&amp;pg=inf">Distances between cities</a></li>
                     		<li class="mm_sub_li_top_border"><a href="?lan=2&amp;pg=sv">Registration services for individuals</a></li>
                     		<li class="mm_sub_li_top_border"><a href="?lan=2&amp;pg=sv2">Registration services for businesses</a></li>
                     		<li class="mm_sub_li_top_border ui-corner-bottom"><a href="?lan=2&amp;pg=pap">Newspaper Realestate.ge</a></li>
@@ -293,14 +292,48 @@ $(document).mouseup(function (e)
             	<div id="logo_big"><a href="?lan=2"><img src="images/logo_en.png" width="220" height="75" title="makler.ge - logo" alt="Makler.ge - logo"></a></div>
               <div id="multiline">Multiline:<br><span class="multiline_number">(+995 32) 247-10-20</span><br>Mon - Fri 10:00 - 18:00</div>
               <div id="main_banner">
-<div id="rb_313"></div>
+<div id="rb_239"></div>
 <script type="text/javascript" language="javascript">
 								// <![CDATA[
-								var fo = new SWFObject("bnrs/b1c524120b685398db1487d6ed485900.swf", "testflash", "468", "60", "8.0.0", "#FFFFFF");
+								var fo = new SWFObject("bnrs/239.swf", "testflash", "468", "60", "8.0.0", "#FFFFFF");
 									fo.addParam("wmode", "opaque");
-									fo.write("rb_313");		
+									fo.write("rb_239");		
 								// ]]>
-								</script>
+								</script><script>
+//google link tracking
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url, new_window) {
+  ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+    function () {
+      if (!new_window) {
+        //document.location = url;
+      }
+    }
+  });
+  if (new_window){
+    window.open(url);
+  }
+}
+//google link tracking
+
+
+  $('.banner_468').each(function(index, element){
+    element = $(element);
+    var link = element.attr('href');
+    var new_window = element.attr('target') == '_blank' ? true : false;
+    element.click(function(){
+      trackOutboundLink(link, new_window);
+      return false;
+    });
+  });
+  
+  
+  
+</script>
 </div>
             </div>
             
@@ -970,7 +1003,7 @@ $(document).ready(function() {
             <li id="ccmms_4" class="tab_spacer">
         </ul>
 </div>
-    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1441160944" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
+    <div id="chart_pic" class="chart_pic"><img src="images/charts/chart_1.png?t=1446084068" title="Price change per sq.m in Tbilisi ($)" alt="Price change per sq.m in Tbilisi ($)"></div>
 </div>
 </div>
 
@@ -1004,7 +1037,7 @@ $(document).ready(function() {
 <li class="transparent_class r_13" title="Isani"> </li>
 <li class="transparent_class r_14" title="Krtsanisi"> </li>
 <li class="transparent_class r_15" title="Chugureti"> </li>        </ul>
-<img src="images/charts/chart_21.png?t=1441160944" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
+<img src="images/charts/chart_21.png?t=1446084068" title="Current price on sq.m. in Tbilisi ($)" alt="Current price on sq.m. in Tbilisi ($)">
 </div>
         <div id="raionnames">
             <ul>
@@ -1099,13 +1132,13 @@ $(document).ready(function() {
                  
 <div id="home_tabs">
 <ul id="tablist" class="float_left">
-<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (7870)</a></li>
+<li id="mm_1" class="mm_tab  caps_text" this_id="1"><a href="?lan=2&amp;pg=search&amp;f=t">All (8291)</a></li>
 	<li id="mms_1" class="tab_spacer ">
-	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6050)</a></li>
+	<li id="mm_2" class="mm_tab  caps_text" this_id="2"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=1">For Sale (6305)</a></li>
 	<li id="mms_2" class="tab_spacer ">
-	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2178)</a></li>
+	<li id="mm_3" class="mm_tab  caps_text" this_id="3"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=2">For Rent (2357)</a></li>
 	<li id="mms_3" class="tab_spacer ">
-	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (55)</a></li>
+	<li id="mm_4" class="mm_tab  caps_text" this_id="4"><a href="?lan=2&amp;pg=search&amp;f=t&amp;cat=4">Daily rent (30)</a></li>
 	<li id="mms_4" class="tab_spacer ">
 </ul>
 <div id="add_button"><a name="ann" href="?lan=2&amp;pg=myann" class="my_button btn_green ui-corner-all caps_text"><span>   </span>Add announcement</a></div>
@@ -1134,9 +1167,9 @@ $(document).ready(function() {
 		</span>
 		<span class="icons_li fen srch_icons_id float_left " style="height:20px; width:auto !important; text-align:left; padding-top:1px;">10010200</span>
 		 
-		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">2070</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange " style="height:20px; width:auto !important; text-align:left; padding-top:2px;padding-left:5px !important; background-image:none;">2088</span>
 		<span class="icons_li fen srch_icons_id float_right fen" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">Viewed:</span>
-		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">01.09.2015</span>
+		<span class="icons_li fen srch_icons_id float_right is_orange" style="height:20px; width:auto !important; text-align:left; padding-top:2px; background-image:none;">28.10.2015</span>
 	</div>
 </div>
 <div class="div_for_content">
@@ -1179,7 +1212,7 @@ $(document).ready(function() {
                   </tr>
 <tr>
 <td width="100" class="mc_title" valign="top">For Rent</td>
-			<td class="orange_num" valign="top"><a href="javascript:;" class="orange_num" title="1200 $ Â» 1000 $"><img src="img/arr_down.gif" align="left" alt="arrow">1000 $ / 8.00 $ m² </a></td>
+			<td class="orange_num" valign="top"><a href="javascript:;" class="orange_num" title="1500 $ Â» 1200 $"><img src="img/arr_down.gif" align="left" alt="arrow">1200 $ / 9.60 $ m² </a></td>
 		  </tr>
 <tr>
 <td class="mc_title">Space</td>
@@ -1244,7 +1277,7 @@ $(document).ready(function() {
 <span class="dc_title">WC:</span><span class="dc_val">2</span>
 </li>
 <li>
-<span class="dc_title">Bathroom:</span><span class="dc_val">1</span>
+<span class="">Bathroom:</span><span class="dc_val"></span>
 </li>
 <li>
 <span class="dc_title">Shower:</span><span class="dc_val">1</span>
@@ -1255,7 +1288,7 @@ $(document).ready(function() {
 <span class="">Fireplace:</span><span class="dc_val"></span>
 </li>
 <li>
-<span class="dc_title">Air-conditioner:</span><span class="dc_val">1</span>
+<span class="dc_title">Air-conditioner:</span><span class="dc_val">2</span>
 </li>
 <li>
 <span class="dc_title">Balcony:</span><span class="dc_val">2</span>
@@ -1331,7 +1364,7 @@ $(document).ready(function() {
 					<li class="is_orange fen">+995 599 76 40 40</li>
 <li class="is_orange fen">+995 32 247 10 20</li>
 <li class="is_orange fen">broker@makler.ge</li>
-					<li><a class="caps_text" href="?lan=2&amp;pg=search&amp;broker=3">All Announcements (903)</a></li>
+					<li><a class="caps_text" href="?lan=2&amp;pg=search&amp;broker=3">All Announcements (871)</a></li>
 				</ul>
 <div class="broker_info_feedback_div" id="broker_info_div">
 					<form class="forms">
@@ -1369,110 +1402,110 @@ Please, try again later">
 <td style="padding-top:20px;" class="">
 						<ul class="announcments_home float_left fen similars">
 <li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10055854"><img src="mg/1506/thmb/10055854_t_305581.jpg" width="114" height="70" alt="For Rent 124 sq.m. Apartment in T. Abuladze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=5099026"><img src="mg/0905/thmb/5099026_t_367758.jpg" width="114" height="70" alt="For Rent 180 sq.m. Apartment in N. Ramishvili st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10055854">For Rent 124 sq.m. Apartment in T. Abuladze st. <span class="orange_num">1000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=5099026">For Rent 180 sq.m. Apartment in N. Ramishvili st. <span class="orange_num">1300 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=42a7ea5931f11c6e25c7e9c52b4d56e2')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=1664491d1ac589b76c53a3f4007d3de1')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10061403"><img src="mg/1508/thmb/10061403_t_339941.jpg" width="114" height="70" alt="For Rent 65 sq.m. Apartment in Paliashvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10047620"><img src="mg/1503/thmb/10047620_t_263307.jpg" width="114" height="70" alt="For Rent 136 sq.m. Apartment in I. Chavchavadze Ave."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10061403">For Rent 65 sq.m. Apartment in Paliashvili st. <span class="orange_num">1000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10047620">For Rent 136 sq.m. Apartment in I. Chavchavadze Ave. <span class="orange_num">1300 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c9856876be55dfe5f8c819589a2d7712')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=32e3701b7c1e05c643f708cbd5200e9a')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=3022832"><img src="mg/1304/thmb/3022832_t_10_o.jpg" width="114" height="70" alt="For Rent 105 sq.m. Apartment in  Shatberashvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10052238"><img src="mg/1505/thmb/10052238_t_281452.jpg" width="114" height="70" alt="For Rent 86 sq.m. Apartment in Taktakishvili st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=3022832">For Rent 105 sq.m. Apartment in  Shatberashvili st. <span class="orange_num">900 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10052238">For Rent 86 sq.m. Apartment in Taktakishvili st. <span class="orange_num">1300 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=80be6a2061ee9e560e23e1701b7236a1')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=0d1acfb8797b2c884dabbe3a8235f7c6')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=8446685"><img src="mg/1304/thmb/8446685_t_1_o.jpg" width="114" height="70" alt="For Rent 210 sq.m. Apartment on A.Razmadze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10059661"><img src="mg/1508/thmb/10059661_t_327812.jpg" width="114" height="70" alt="For Rent 145 sq.m. Apartment in I. Chavchavadze Ave."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=8446685">For Rent 210 sq.m. Apartment on A.Razmadze st. <span class="orange_num">1200 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10059661">For Rent 145 sq.m. Apartment in I. Chavchavadze Ave. <span class="orange_num">1400 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=8f25012db1be1cf4115a687bde72f323')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=25781ed7a464f66a4d292fb1a5e73fe2')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10012633"><img src="mg/1312/thmb/10012633_t_95607.jpg" width="114" height="70" alt="For Rent 230 sq.m. Apartment on Ir. Abashidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10066043"><img src="mg/1510/thmb/10066043_t_366607.jpg" width="114" height="70" alt="For Rent 230 sq.m. Apartment in Paliashvili st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10012633">For Rent 230 sq.m. Apartment on Ir. Abashidze st. <span class="orange_num">900 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10066043">For Rent 230 sq.m. Apartment in Paliashvili st. <span class="orange_num">1000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=525b12685d866737664f3706b79992ed')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=22611c2fc459769bb721beb61dd00a0e')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10059870"><img src="mg/1508/thmb/10059870_t_339437.jpg" width="114" height="70" alt="For Rent 140 sq.m. Apartment in Kobuleti st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10066200"><img src="images/no_image.gif" width="114" height="70" alt="For Rent 176 sq.m. Apartment in Mtskheta st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10059870">For Rent 140 sq.m. Apartment in Kobuleti st. <span class="orange_num">800 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10066200">For Rent 176 sq.m. Apartment in Mtskheta st. <span class="orange_num">1100 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=3fa6d324a9087e66d0a0519db24dd8c0')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=17896a2023943963c23e285ad1c5a38b')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10061225"><img src="mg/1508/thmb/10061225_t_337862.jpg" width="114" height="70" alt="For Rent 110 sq.m. Apartment on Ir. Abashidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=9153329"><img src="mg/1104/thmb/9153329_t_1_o.jpg" width="114" height="70" alt="For Rent 145 sq.m. Apartment on A.Razmadze st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10061225">For Rent 110 sq.m. Apartment on Ir. Abashidze st. <span class="orange_num">1000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=9153329">For Rent 145 sq.m. Apartment on A.Razmadze st. <span class="orange_num">1400 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=f954aa7c1b68111a066ea9cd9b0856c4')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=ba133f698c4381dc5398d87af6c35e1b')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=2723765"><img src="images/no_image.gif" width="114" height="70" alt="For Rent 86 sq.m. Apartment in Gabashvili st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10044796"><img src="mg/1502/thmb/10044796_t_333298.jpg" width="114" height="70" alt="For Rent 120 sq.m. Apartment in Paliashvili st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=2723765">For Rent 86 sq.m. Apartment in Gabashvili st. <span class="orange_num">1000 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10044796">For Rent 120 sq.m. Apartment in Paliashvili st. <span class="orange_num">1200 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=c4ee4a830dac8878e593ddfd83a0f108')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=00b77acf9aa0eed138e764080f1485b2')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10061471"><img src="images/no_image.gif" width="114" height="70" alt="For Rent 135 sq.m. Apartment in I. Chavchavadze Ave."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=10064934"><img src="mg/1510/thmb/10064934_t_359632.jpg" width="114" height="70" alt="For Rent 108 sq.m. Apartment in I. Chavchavadze Ave."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=10061471">For Rent 135 sq.m. Apartment in I. Chavchavadze Ave. , Negotiable</a>
+					<a href="?lan=2&amp;pg=ann&amp;id=10064934">For Rent 108 sq.m. Apartment in I. Chavchavadze Ave. <span class="orange_num">1200 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=0afacf682430e0aa80281b67f06ff868')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=59e6be6318484f2af54870e63e1e060b')">
 </div>
 					
 				</li>
 				
 			
 				<li>
-					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=1743143"><img src="mg/1301/thmb/1743143_t_167599.jpg" width="114" height="70" alt="For Rent 118 sq.m. Apartment in Kipshidze st."></a></div>
+					<div class="ann_thmb"><a href="?lan=2&amp;pg=ann&amp;id=6080464"><img src="mg/1208/thmb/6080464_t_342497.jpg" width="114" height="70" alt="For Rent 160 sq.m. Apartment on A.Razmadze st."></a></div>
 					<div class="ann_text fen">
-					<a href="?lan=2&amp;pg=ann&amp;id=1743143">For Rent 118 sq.m. Apartment in Kipshidze st. <span class="orange_num">900 $</span></a>
+					<a href="?lan=2&amp;pg=ann&amp;id=6080464">For Rent 160 sq.m. Apartment on A.Razmadze st. <span class="orange_num">1000 $</span></a>
 					 
-					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=1a80613825d1dc56d9b3012ca035a8e5')">
+					<img alt="newwindow" src="images/newwindow4.png" class="set_mouse_pointer" title="Open in new window" onclick="view_ann_in_popup('pann.php?lan=2&amp;action=0b80356d5bb0e26761323a049bd31c04')">
 </div>
 					
 				</li>
